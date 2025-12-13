@@ -1,0 +1,44 @@
+{
+  "La Fouine": {
+    "uniqueWords": 2200,
+    "flowScore": 58,
+    "punchlineScore": 38,
+    "hookScore": 63
+  },
+  "Lacrim": {
+    "uniqueWords": 2409,
+    "flowScore": 45,
+    "punchlineScore": 35,
+    "hookScore": 64
+  },
+  "Maes": {
+    "uniqueWords": 1290,
+    "flowScore": 56,
+    "punchlineScore": 38,
+    "hookScore": 58
+  },
+  "Gazo": {
+    "uniqueWords": 1478,
+    "flowScore": 39,
+    "punchlineScore": 45,
+    "hookScore": 60
+  },
+  "M\u00e9dine": {
+    "uniqueWords": 4856,
+    "flowScore": 43,
+    "punchlineScore": 38,
+    "hookScore": 61
+  },
+  "Kalash Criminel": {
+    "uniqueWords": 1587,
+    "flowScore": 50,
+    "punchlineScore": 38,
+    "hookScore": 60
+  },
+  "Alkpote": {
+    "uniqueWords": 3411,
+    "flowScore": 42,
+    "punchlineScore": 36,
+    "hookScore": 61
+  }
+}

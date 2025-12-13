@@ -1,0 +1,6 @@
+lyricsgenius==3.0.1
+spacy>=3.7.0
+phonemizer>=3.0.0
+lexicalrichness>=0.5.1
+python-dotenv>=1.0.0
+tqdm>=4.66.0

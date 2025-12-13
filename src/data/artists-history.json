@@ -1,0 +1,2785 @@
+{
+  "booba": {
+    "artistId": "booba",
+    "artistName": "Booba",
+    "snapshots": [
+      {
+        "year": 1999,
+        "event": "Temps Mort (Lunatic)",
+        "metrics": {
+          "physicalSales": 100000,
+          "certifications": 2,
+          "albumsCount": 1,
+          "influenceScore": 70,
+          "peakAlbumScore": 85,
+          "innovationScore": 80
+        },
+        "estimatedRank": 8,
+        "notes": "Début avec Lunatic, révolution hardcore",
+        "source": "estimated"
+      },
+      {
+        "year": 2002,
+        "event": "Temps Mort (Solo)",
+        "metrics": {
+          "physicalSales": 300000,
+          "certifications": 4,
+          "albumsCount": 2,
+          "influenceScore": 80,
+          "peakAlbumScore": 90,
+          "innovationScore": 85
+        },
+        "estimatedRank": 3,
+        "notes": "Premier album solo, instant classique",
+        "source": "estimated"
+      },
+      {
+        "year": 2004,
+        "event": "Panthéon",
+        "metrics": {
+          "physicalSales": 250000,
+          "certifications": 6,
+          "albumsCount": 3,
+          "influenceScore": 85,
+          "peakAlbumScore": 88,
+          "innovationScore": 80
+        },
+        "estimatedRank": 2,
+        "notes": "Confirmation du statut",
+        "source": "estimated"
+      },
+      {
+        "year": 2006,
+        "event": "Ouest Side",
+        "metrics": {
+          "physicalSales": 500000,
+          "youtubeViews": 5000000,
+          "certifications": 10,
+          "albumsCount": 4,
+          "influenceScore": 90,
+          "peakAlbumScore": 95,
+          "innovationScore": 90
+        },
+        "estimatedRank": 1,
+        "notes": "Sommet artistique, influence maximale",
+        "source": "estimated"
+      },
+      {
+        "year": 2008,
+        "event": "0.9",
+        "metrics": {
+          "physicalSales": 350000,
+          "youtubeViews": 20000000,
+          "certifications": 14,
+          "albumsCount": 5,
+          "influenceScore": 88,
+          "peakAlbumScore": 85,
+          "innovationScore": 75
+        },
+        "estimatedRank": 1,
+        "notes": "Dominance continue",
+        "source": "estimated"
+      },
+      {
+        "year": 2010,
+        "event": "Lunatic",
+        "metrics": {
+          "physicalSales": 200000,
+          "youtubeViews": 50000000,
+          "certifications": 18,
+          "albumsCount": 6,
+          "influenceScore": 85,
+          "peakAlbumScore": 78,
+          "innovationScore": 70
+        },
+        "estimatedRank": 2,
+        "notes": "Transition vers nouvelle ère",
+        "source": "estimated"
+      },
+      {
+        "year": 2012,
+        "event": "Futur",
+        "metrics": {
+          "physicalSales": 150000,
+          "youtubeViews": 150000000,
+          "certifications": 24,
+          "albumsCount": 7,
+          "influenceScore": 82,
+          "peakAlbumScore": 75,
+          "innovationScore": 65
+        },
+        "estimatedRank": 2,
+        "notes": "Adaptation au digital",
+        "source": "estimated"
+      },
+      {
+        "year": 2015,
+        "event": "D.U.C",
+        "metrics": {
+          "monthlyListeners": 3000000,
+          "youtubeViews": 400000000,
+          "certifications": 35,
+          "albumsCount": 8,
+          "influenceScore": 80,
+          "peakAlbumScore": 72,
+          "innovationScore": 60
+        },
+        "estimatedRank": 3,
+        "notes": "Ère streaming, concurrence PNL",
+        "source": "computed"
+      },
+      {
+        "year": 2017,
+        "event": "Trône",
+        "metrics": {
+          "monthlyListeners": 6000000,
+          "youtubeViews": 800000000,
+          "certifications": 55,
+          "albumsCount": 9,
+          "influenceScore": 78,
+          "peakAlbumScore": 80,
+          "innovationScore": 65
+        },
+        "estimatedRank": 2,
+        "notes": "Retour au sommet commercial",
+        "source": "computed"
+      },
+      {
+        "year": 2021,
+        "event": "Ultra",
+        "metrics": {
+          "monthlyListeners": 8000000,
+          "youtubeViews": 2000000000,
+          "certifications": 90,
+          "albumsCount": 10,
+          "influenceScore": 75,
+          "peakAlbumScore": 70,
+          "innovationScore": 55
+        },
+        "estimatedRank": 2,
+        "notes": "Légende établie, moins d'innovation",
+        "source": "computed"
+      },
+      {
+        "year": 2024,
+        "event": "Ad Vitam",
+        "metrics": {
+          "monthlyListeners": 8500000,
+          "youtubeViews": 3200000000,
+          "certifications": 145,
+          "albumsCount": 10,
+          "influenceScore": 95,
+          "peakAlbumScore": 92,
+          "innovationScore": 88,
+          "artisticIntegrity": 72,
+          "uniqueWords": 4187,
+          "flowScore": 50,
+          "punchlineScore": 37,
+          "hookScore": 62
+        },
+        "estimatedRank": 3,
+        "notes": "Carrière exceptionnelle, 25+ ans [Métriques Genius intégrées] [Métriques Genius intégrées] [Métriques Genius intégrées] [Métriques Genius intégrées]",
+        "source": "computed"
+      }
+    ]
+  },
+  "iam": {
+    "artistId": "iam",
+    "artistName": "IAM",
+    "snapshots": [
+      {
+        "year": 1991,
+        "event": "...De la Planète Mars",
+        "metrics": {
+          "physicalSales": 50000,
+          "certifications": 1,
+          "albumsCount": 1,
+          "influenceScore": 60,
+          "peakAlbumScore": 75,
+          "innovationScore": 90
+        },
+        "estimatedRank": 5,
+        "notes": "Pionniers rap FR conscient",
+        "source": "estimated"
+      },
+      {
+        "year": 1993,
+        "event": "Ombre est Lumière",
+        "metrics": {
+          "physicalSales": 300000,
+          "certifications": 4,
+          "albumsCount": 2,
+          "influenceScore": 85,
+          "peakAlbumScore": 90,
+          "innovationScore": 95
+        },
+        "estimatedRank": 2,
+        "notes": "Chef d'oeuvre, révolution lyricale",
+        "source": "estimated"
+      },
+      {
+        "year": 1997,
+        "event": "L'École du Micro d'Argent",
+        "metrics": {
+          "physicalSales": 1500000,
+          "certifications": 10,
+          "albumsCount": 3,
+          "influenceScore": 100,
+          "peakAlbumScore": 100,
+          "innovationScore": 95
+        },
+        "estimatedRank": 1,
+        "notes": "Album légendaire, référence absolue",
+        "source": "estimated"
+      },
+      {
+        "year": 2003,
+        "event": "Revoir un Printemps",
+        "metrics": {
+          "physicalSales": 200000,
+          "certifications": 12,
+          "albumsCount": 4,
+          "influenceScore": 85,
+          "peakAlbumScore": 75,
+          "innovationScore": 70
+        },
+        "estimatedRank": 4,
+        "notes": "Qualité maintenue, nouvelle génération émerge",
+        "source": "estimated"
+      },
+      {
+        "year": 2007,
+        "event": "Saison 5",
+        "metrics": {
+          "physicalSales": 100000,
+          "youtubeViews": 10000000,
+          "certifications": 14,
+          "albumsCount": 5,
+          "influenceScore": 75,
+          "peakAlbumScore": 70,
+          "innovationScore": 55
+        },
+        "estimatedRank": 6,
+        "notes": "Légendes respectées mais dépassées",
+        "source": "estimated"
+      },
+      {
+        "year": 2013,
+        "event": "Arts Martiens",
+        "metrics": {
+          "physicalSales": 50000,
+          "youtubeViews": 30000000,
+          "certifications": 15,
+          "albumsCount": 6,
+          "influenceScore": 70,
+          "peakAlbumScore": 68,
+          "innovationScore": 45
+        },
+        "estimatedRank": 10,
+        "notes": "Statut iconique, moins de pertinence commerciale",
+        "source": "estimated"
+      },
+      {
+        "year": 2017,
+        "event": "Révolution",
+        "metrics": {
+          "monthlyListeners": 800000,
+          "youtubeViews": 50000000,
+          "certifications": 16,
+          "albumsCount": 7,
+          "influenceScore": 68,
+          "peakAlbumScore": 65,
+          "innovationScore": 40
+        },
+        "estimatedRank": 15,
+        "notes": "Légendes vivantes du rap FR",
+        "source": "computed"
+      },
+      {
+        "year": 2024,
+        "metrics": {
+          "monthlyListeners": 1500000,
+          "youtubeViews": 420000000,
+          "certifications": 85,
+          "albumsCount": 9,
+          "influenceScore": 98,
+          "peakAlbumScore": 95,
+          "innovationScore": 95,
+          "artisticIntegrity": 95,
+          "uniqueWords": 7125,
+          "flowScore": 45,
+          "punchlineScore": 35,
+          "hookScore": 61
+        },
+        "estimatedRank": 8,
+        "notes": "Influence historique maximale, pionniers respectés [Métriques Genius intégrées] [Métriques Genius intégrées] [Métriques Genius intégrées] [Métriques Genius intégrées]",
+        "source": "computed"
+      }
+    ]
+  },
+  "kaaris": {
+    "artistId": "kaaris",
+    "artistName": "Kaaris",
+    "snapshots": [
+      {
+        "year": 2012,
+        "event": "Z.E.R.O",
+        "metrics": {
+          "physicalSales": 30000,
+          "youtubeViews": 20000000,
+          "certifications": 1,
+          "albumsCount": 1,
+          "influenceScore": 50,
+          "peakAlbumScore": 70,
+          "innovationScore": 75
+        },
+        "estimatedRank": 15,
+        "notes": "Début prometteur, style trap agressif",
+        "source": "estimated"
+      },
+      {
+        "year": 2013,
+        "event": "Or Noir",
+        "metrics": {
+          "physicalSales": 150000,
+          "youtubeViews": 200000000,
+          "certifications": 4,
+          "albumsCount": 2,
+          "influenceScore": 85,
+          "peakAlbumScore": 92,
+          "innovationScore": 95
+        },
+        "estimatedRank": 3,
+        "notes": "RÉVOLUTION TRAP FR - Album culte, Zoo, 63",
+        "source": "estimated"
+      },
+      {
+        "year": 2014,
+        "event": "Or Noir Part 2",
+        "metrics": {
+          "physicalSales": 120000,
+          "youtubeViews": 350000000,
+          "certifications": 7,
+          "albumsCount": 3,
+          "influenceScore": 88,
+          "peakAlbumScore": 85,
+          "innovationScore": 80
+        },
+        "estimatedRank": 2,
+        "notes": "Sommet de popularité, Sevran style dominant",
+        "source": "estimated"
+      },
+      {
+        "year": 2015,
+        "event": "Le Bruit de mon Âme",
+        "metrics": {
+          "monthlyListeners": 2500000,
+          "youtubeViews": 500000000,
+          "certifications": 10,
+          "albumsCount": 4,
+          "influenceScore": 80,
+          "peakAlbumScore": 75,
+          "innovationScore": 65
+        },
+        "estimatedRank": 4,
+        "notes": "PNL émerge, concurrence forte",
+        "source": "computed"
+      },
+      {
+        "year": 2016,
+        "event": "Okou Gnakouri",
+        "metrics": {
+          "monthlyListeners": 3000000,
+          "youtubeViews": 700000000,
+          "certifications": 14,
+          "albumsCount": 5,
+          "influenceScore": 75,
+          "peakAlbumScore": 78,
+          "innovationScore": 60
+        },
+        "estimatedRank": 5,
+        "notes": "Maintien du niveau, moins d'innovation",
+        "source": "computed"
+      },
+      {
+        "year": 2018,
+        "event": "Dozo",
+        "metrics": {
+          "monthlyListeners": 2800000,
+          "youtubeViews": 900000000,
+          "certifications": 18,
+          "albumsCount": 6,
+          "influenceScore": 65,
+          "peakAlbumScore": 70,
+          "innovationScore": 50
+        },
+        "estimatedRank": 8,
+        "notes": "Affaire Booba, image écornée",
+        "source": "computed"
+      },
+      {
+        "year": 2021,
+        "event": "2.7.0",
+        "metrics": {
+          "monthlyListeners": 2000000,
+          "youtubeViews": 1000000000,
+          "certifications": 22,
+          "albumsCount": 7,
+          "influenceScore": 55,
+          "peakAlbumScore": 65,
+          "innovationScore": 40
+        },
+        "estimatedRank": 12,
+        "notes": "Déclin relatif, nouvelle génération domine",
+        "source": "computed"
+      },
+      {
+        "year": 2024,
+        "metrics": {
+          "monthlyListeners": 2800000,
+          "youtubeViews": 1400000000,
+          "certifications": 32,
+          "albumsCount": 8,
+          "influenceScore": 82,
+          "peakAlbumScore": 92,
+          "innovationScore": 88,
+          "artisticIntegrity": 68,
+          "uniqueWords": 2058,
+          "flowScore": 50,
+          "punchlineScore": 39,
+          "hookScore": 60
+        },
+        "estimatedRank": 18,
+        "notes": "Légende du trap FR, impact diminué [Métriques Genius intégrées] [Métriques Genius intégrées] [Métriques Genius intégrées]",
+        "source": "computed"
+      }
+    ]
+  },
+  "pnl": {
+    "artistId": "pnl",
+    "artistName": "PNL",
+    "snapshots": [
+      {
+        "year": 2015,
+        "event": "Le Monde Chico",
+        "metrics": {
+          "monthlyListeners": 2000000,
+          "youtubeViews": 200000000,
+          "certifications": 5,
+          "albumsCount": 1,
+          "influenceScore": 80,
+          "peakAlbumScore": 90,
+          "innovationScore": 100
+        },
+        "estimatedRank": 5,
+        "notes": "RÉVOLUTION sonore, cloud rap FR",
+        "source": "computed"
+      },
+      {
+        "year": 2016,
+        "event": "Dans la Légende",
+        "metrics": {
+          "monthlyListeners": 5000000,
+          "youtubeViews": 800000000,
+          "certifications": 15,
+          "albumsCount": 2,
+          "influenceScore": 95,
+          "peakAlbumScore": 98,
+          "innovationScore": 100
+        },
+        "estimatedRank": 1,
+        "notes": "Album culte, DA, Onizuka - domination totale",
+        "source": "computed"
+      },
+      {
+        "year": 2017,
+        "metrics": {
+          "monthlyListeners": 6000000,
+          "youtubeViews": 1200000000,
+          "certifications": 25,
+          "albumsCount": 2,
+          "influenceScore": 98,
+          "peakAlbumScore": 98,
+          "innovationScore": 95
+        },
+        "estimatedRank": 1,
+        "notes": "Sommet d'influence, tous les rappeurs s'inspirent de PNL",
+        "source": "computed"
+      },
+      {
+        "year": 2019,
+        "event": "Deux Frères",
+        "metrics": {
+          "monthlyListeners": 10000000,
+          "youtubeViews": 2000000000,
+          "certifications": 45,
+          "albumsCount": 3,
+          "influenceScore": 95,
+          "peakAlbumScore": 92,
+          "innovationScore": 85
+        },
+        "estimatedRank": 1,
+        "notes": "Records de streaming, Au DD clip iconique",
+        "source": "computed"
+      },
+      {
+        "year": 2020,
+        "metrics": {
+          "monthlyListeners": 9000000,
+          "youtubeViews": 2500000000,
+          "certifications": 55,
+          "albumsCount": 3,
+          "influenceScore": 90,
+          "peakAlbumScore": 92,
+          "innovationScore": 80
+        },
+        "estimatedRank": 1,
+        "notes": "Période de silence, hype maximale",
+        "source": "computed"
+      },
+      {
+        "year": 2024,
+        "metrics": {
+          "monthlyListeners": 9500000,
+          "youtubeViews": 4500000000,
+          "certifications": 95,
+          "albumsCount": 4,
+          "influenceScore": 98,
+          "peakAlbumScore": 96,
+          "innovationScore": 98,
+          "artisticIntegrity": 100,
+          "uniqueWords": 1509,
+          "flowScore": 41,
+          "punchlineScore": 36,
+          "hookScore": 61
+        },
+        "estimatedRank": 3,
+        "notes": "Absence prolongée, légende mais moins actifs [Métriques Genius intégrées] [Métriques Genius intégrées] [Métriques Genius intégrées] [Métriques Genius intégrées]",
+        "source": "computed"
+      }
+    ]
+  },
+  "nekfeu": {
+    "artistId": "nekfeu",
+    "artistName": "Nekfeu",
+    "snapshots": [
+      {
+        "year": 2011,
+        "event": "L'Entourage",
+        "metrics": {
+          "youtubeViews": 10000000,
+          "certifications": 0,
+          "albumsCount": 0,
+          "influenceScore": 40,
+          "peakAlbumScore": 70,
+          "innovationScore": 60
+        },
+        "estimatedRank": 25,
+        "notes": "Début avec 1995, battles de freestyle",
+        "source": "estimated"
+      },
+      {
+        "year": 2015,
+        "event": "Feu",
+        "metrics": {
+          "monthlyListeners": 3000000,
+          "youtubeViews": 200000000,
+          "certifications": 8,
+          "albumsCount": 1,
+          "influenceScore": 75,
+          "peakAlbumScore": 95,
+          "innovationScore": 80
+        },
+        "estimatedRank": 4,
+        "notes": "Album révélation, technique + émotion",
+        "source": "computed"
+      },
+      {
+        "year": 2016,
+        "event": "Cyborg",
+        "metrics": {
+          "monthlyListeners": 5000000,
+          "youtubeViews": 400000000,
+          "certifications": 16,
+          "albumsCount": 2,
+          "influenceScore": 80,
+          "peakAlbumScore": 90,
+          "innovationScore": 75
+        },
+        "estimatedRank": 3,
+        "notes": "Confirmation du talent, très technique",
+        "source": "computed"
+      },
+      {
+        "year": 2019,
+        "event": "Les Étoiles Vagabondes",
+        "metrics": {
+          "monthlyListeners": 7000000,
+          "youtubeViews": 800000000,
+          "certifications": 30,
+          "albumsCount": 3,
+          "influenceScore": 78,
+          "peakAlbumScore": 88,
+          "innovationScore": 70
+        },
+        "estimatedRank": 4,
+        "notes": "Album ambitieux, voyage artistique",
+        "source": "computed"
+      },
+      {
+        "year": 2024,
+        "metrics": {
+          "monthlyListeners": 7200000,
+          "youtubeViews": 1800000000,
+          "certifications": 85,
+          "albumsCount": 5,
+          "influenceScore": 82,
+          "peakAlbumScore": 90,
+          "innovationScore": 75,
+          "artisticIntegrity": 88,
+          "uniqueWords": 3693,
+          "flowScore": 41,
+          "punchlineScore": 37,
+          "hookScore": 60
+        },
+        "estimatedRank": 6,
+        "notes": "Rappeur technique respecté, moins de sorties [Métriques Genius intégrées] [Métriques Genius intégrées] [Métriques Genius intégrées] [Métriques Genius intégrées]",
+        "source": "computed"
+      }
+    ]
+  },
+  "ntm": {
+    "artistId": "ntm",
+    "artistName": "NTM",
+    "snapshots": [
+      {
+        "year": 1991,
+        "event": "Authentik",
+        "metrics": {
+          "physicalSales": 100000,
+          "certifications": 2,
+          "albumsCount": 1,
+          "influenceScore": 85,
+          "peakAlbumScore": 85,
+          "innovationScore": 95
+        },
+        "estimatedRank": 2,
+        "notes": "Pionniers hardcore, Saint-Denis",
+        "source": "estimated"
+      },
+      {
+        "year": 1993,
+        "event": "J'Appuie sur la Gâchette",
+        "metrics": {
+          "physicalSales": 250000,
+          "certifications": 4,
+          "albumsCount": 2,
+          "influenceScore": 90,
+          "peakAlbumScore": 90,
+          "innovationScore": 90
+        },
+        "estimatedRank": 1,
+        "notes": "Domination totale avec IAM",
+        "source": "estimated"
+      },
+      {
+        "year": 1995,
+        "event": "Paris Sous les Bombes",
+        "metrics": {
+          "physicalSales": 700000,
+          "certifications": 8,
+          "albumsCount": 3,
+          "influenceScore": 95,
+          "peakAlbumScore": 95,
+          "innovationScore": 85
+        },
+        "estimatedRank": 1,
+        "notes": "Album légendaire, référence",
+        "source": "estimated"
+      },
+      {
+        "year": 1998,
+        "event": "Suprême NTM",
+        "metrics": {
+          "physicalSales": 1000000,
+          "certifications": 12,
+          "albumsCount": 4,
+          "influenceScore": 98,
+          "peakAlbumScore": 92,
+          "innovationScore": 80
+        },
+        "estimatedRank": 1,
+        "notes": "Dernier album, sommet commercial",
+        "source": "estimated"
+      },
+      {
+        "year": 2000,
+        "event": "Séparation",
+        "metrics": {
+          "physicalSales": 0,
+          "certifications": 12,
+          "albumsCount": 4,
+          "influenceScore": 90,
+          "peakAlbumScore": 92,
+          "innovationScore": 70
+        },
+        "estimatedRank": 5,
+        "notes": "Séparation, fin d'une ère",
+        "source": "estimated"
+      },
+      {
+        "year": 2024,
+        "metrics": {
+          "monthlyListeners": 1200000,
+          "youtubeViews": 320000000,
+          "certifications": 65,
+          "albumsCount": 4,
+          "influenceScore": 98,
+          "peakAlbumScore": 95,
+          "innovationScore": 95,
+          "artisticIntegrity": 95,
+          "uniqueWords": 2542,
+          "flowScore": 54,
+          "punchlineScore": 36,
+          "hookScore": 63
+        },
+        "estimatedRank": 10,
+        "notes": "Légendes absolues, groupe séparé [Métriques Genius intégrées] [Métriques Genius intégrées] [Métriques Genius intégrées]",
+        "source": "computed"
+      }
+    ]
+  },
+  "jul": {
+    "artistId": "jul",
+    "artistName": "Jul",
+    "snapshots": [
+      {
+        "year": 2014,
+        "event": "Dans Ma Paranoïa",
+        "metrics": {
+          "monthlyListeners": 500000,
+          "youtubeViews": 50000000,
+          "certifications": 2,
+          "albumsCount": 1,
+          "influenceScore": 40,
+          "peakAlbumScore": 65,
+          "innovationScore": 70
+        },
+        "estimatedRank": 20,
+        "notes": "Début Marseille, style unique",
+        "source": "estimated"
+      },
+      {
+        "year": 2015,
+        "event": "My World",
+        "metrics": {
+          "monthlyListeners": 2000000,
+          "youtubeViews": 200000000,
+          "certifications": 6,
+          "albumsCount": 3,
+          "influenceScore": 55,
+          "peakAlbumScore": 70,
+          "innovationScore": 65
+        },
+        "estimatedRank": 10,
+        "notes": "Montée fulgurante, prolifique",
+        "source": "computed"
+      },
+      {
+        "year": 2016,
+        "event": "Émotions",
+        "metrics": {
+          "monthlyListeners": 4000000,
+          "youtubeViews": 500000000,
+          "certifications": 15,
+          "albumsCount": 5,
+          "influenceScore": 65,
+          "peakAlbumScore": 72,
+          "innovationScore": 60
+        },
+        "estimatedRank": 6,
+        "notes": "Phénomène Marseille, succès populaire",
+        "source": "computed"
+      },
+      {
+        "year": 2018,
+        "event": "La Machine",
+        "metrics": {
+          "monthlyListeners": 6000000,
+          "youtubeViews": 1000000000,
+          "certifications": 40,
+          "albumsCount": 9,
+          "influenceScore": 70,
+          "peakAlbumScore": 70,
+          "innovationScore": 55
+        },
+        "estimatedRank": 4,
+        "notes": "Quantité impressionnante, records de sorties",
+        "source": "computed"
+      },
+      {
+        "year": 2021,
+        "event": "Demain ça ira",
+        "metrics": {
+          "monthlyListeners": 10000000,
+          "youtubeViews": 2000000000,
+          "certifications": 100,
+          "albumsCount": 15,
+          "influenceScore": 75,
+          "peakAlbumScore": 68,
+          "innovationScore": 50
+        },
+        "estimatedRank": 2,
+        "notes": "Roi des certifications, records SNEP",
+        "source": "computed"
+      },
+      {
+        "year": 2024,
+        "metrics": {
+          "monthlyListeners": 14500000,
+          "youtubeViews": 4800000000,
+          "certifications": 120,
+          "albumsCount": 18,
+          "influenceScore": 65,
+          "peakAlbumScore": 72,
+          "innovationScore": 48,
+          "artisticIntegrity": 45,
+          "uniqueWords": 1187,
+          "flowScore": 64,
+          "punchlineScore": 33,
+          "hookScore": 64
+        },
+        "estimatedRank": 1,
+        "notes": "Artiste le plus certifié de France [Métriques Genius intégrées] [Métriques Genius intégrées] [Métriques Genius intégrées] [Métriques Genius intégrées]",
+        "source": "computed"
+      }
+    ]
+  },
+  "sch": {
+    "artistId": "sch",
+    "artistName": "SCH",
+    "snapshots": [
+      {
+        "year": 2015,
+        "event": "A7",
+        "metrics": {
+          "monthlyListeners": 500000,
+          "youtubeViews": 30000000,
+          "certifications": 1,
+          "albumsCount": 1,
+          "influenceScore": 45,
+          "peakAlbumScore": 80,
+          "innovationScore": 75
+        },
+        "estimatedRank": 18,
+        "notes": "Révélation Marseille, style sombre",
+        "source": "computed"
+      },
+      {
+        "year": 2016,
+        "event": "Anarchie",
+        "metrics": {
+          "monthlyListeners": 1500000,
+          "youtubeViews": 150000000,
+          "certifications": 4,
+          "albumsCount": 2,
+          "influenceScore": 60,
+          "peakAlbumScore": 85,
+          "innovationScore": 80
+        },
+        "estimatedRank": 10,
+        "notes": "Confirmation, univers cinématographique",
+        "source": "computed"
+      },
+      {
+        "year": 2019,
+        "event": "JVLIVS",
+        "metrics": {
+          "monthlyListeners": 5000000,
+          "youtubeViews": 600000000,
+          "certifications": 18,
+          "albumsCount": 4,
+          "influenceScore": 78,
+          "peakAlbumScore": 92,
+          "innovationScore": 85
+        },
+        "estimatedRank": 4,
+        "notes": "Album concept, storytelling unique",
+        "source": "computed"
+      },
+      {
+        "year": 2021,
+        "event": "JVLIVS II",
+        "metrics": {
+          "monthlyListeners": 8000000,
+          "youtubeViews": 1200000000,
+          "certifications": 35,
+          "albumsCount": 5,
+          "influenceScore": 85,
+          "peakAlbumScore": 95,
+          "innovationScore": 90
+        },
+        "estimatedRank": 2,
+        "notes": "Chef d'oeuvre, sommet artistique",
+        "source": "computed"
+      },
+      {
+        "year": 2024,
+        "metrics": {
+          "monthlyListeners": 11200000,
+          "youtubeViews": 2800000000,
+          "certifications": 78,
+          "albumsCount": 6,
+          "influenceScore": 78,
+          "peakAlbumScore": 88,
+          "innovationScore": 72,
+          "artisticIntegrity": 75,
+          "uniqueWords": 2388,
+          "flowScore": 37,
+          "punchlineScore": 38,
+          "hookScore": 62
+        },
+        "estimatedRank": 2,
+        "notes": "Top artiste actuel, équilibre commercial/artistique [Métriques Genius intégrées] [Métriques Genius intégrées] [Métriques Genius intégrées] [Métriques Genius intégrées]",
+        "source": "computed"
+      }
+    ]
+  },
+  "rohff": {
+    "artistId": "rohff",
+    "artistName": "Rohff",
+    "snapshots": [
+      {
+        "year": 1999,
+        "event": "Le Code de l'Honneur",
+        "metrics": {
+          "physicalSales": 100000,
+          "certifications": 2,
+          "albumsCount": 1,
+          "influenceScore": 60,
+          "peakAlbumScore": 82,
+          "innovationScore": 70
+        },
+        "estimatedRank": 8,
+        "notes": "Début Vitry, hardcore authentique",
+        "source": "estimated"
+      },
+      {
+        "year": 2001,
+        "event": "La Vie Avant la Mort",
+        "metrics": {
+          "physicalSales": 300000,
+          "certifications": 5,
+          "albumsCount": 2,
+          "influenceScore": 75,
+          "peakAlbumScore": 88,
+          "innovationScore": 75
+        },
+        "estimatedRank": 4,
+        "notes": "Album classique, rivalité Booba débute",
+        "source": "estimated"
+      },
+      {
+        "year": 2004,
+        "event": "La Fierté des Nôtres",
+        "metrics": {
+          "physicalSales": 400000,
+          "certifications": 8,
+          "albumsCount": 3,
+          "influenceScore": 80,
+          "peakAlbumScore": 85,
+          "innovationScore": 70
+        },
+        "estimatedRank": 3,
+        "notes": "Sommet commercial, beef Booba intense",
+        "source": "estimated"
+      },
+      {
+        "year": 2008,
+        "event": "Au-delà de mes Limites",
+        "metrics": {
+          "physicalSales": 200000,
+          "youtubeViews": 30000000,
+          "certifications": 11,
+          "albumsCount": 4,
+          "influenceScore": 72,
+          "peakAlbumScore": 78,
+          "innovationScore": 60
+        },
+        "estimatedRank": 4,
+        "notes": "Transition digitale difficile",
+        "source": "estimated"
+      },
+      {
+        "year": 2013,
+        "event": "PDRG",
+        "metrics": {
+          "physicalSales": 80000,
+          "youtubeViews": 100000000,
+          "certifications": 14,
+          "albumsCount": 5,
+          "influenceScore": 60,
+          "peakAlbumScore": 70,
+          "innovationScore": 50
+        },
+        "estimatedRank": 10,
+        "notes": "Déclin relatif, nouvelle génération",
+        "source": "estimated"
+      },
+      {
+        "year": 2018,
+        "event": "Surnaturel",
+        "metrics": {
+          "monthlyListeners": 1500000,
+          "youtubeViews": 200000000,
+          "certifications": 18,
+          "albumsCount": 6,
+          "influenceScore": 50,
+          "peakAlbumScore": 65,
+          "innovationScore": 40
+        },
+        "estimatedRank": 15,
+        "notes": "Retour mitigé, respect des anciens",
+        "source": "computed"
+      },
+      {
+        "year": 2024,
+        "metrics": {
+          "monthlyListeners": 1800000,
+          "youtubeViews": 680000000,
+          "certifications": 38,
+          "albumsCount": 8,
+          "influenceScore": 72,
+          "peakAlbumScore": 75,
+          "innovationScore": 55,
+          "artisticIntegrity": 65,
+          "uniqueWords": 5524,
+          "flowScore": 57,
+          "punchlineScore": 37,
+          "hookScore": 62
+        },
+        "estimatedRank": 20,
+        "notes": "Légende hardcore, moins d'impact actuel [Métriques Genius intégrées] [Métriques Genius intégrées] [Métriques Genius intégrées] [Métriques Genius intégrées]",
+        "source": "computed"
+      }
+    ]
+  },
+  "damso": {
+    "artistId": "damso",
+    "artistName": "Damso",
+    "snapshots": [
+      {
+        "year": 2016,
+        "event": "Batterie Faible",
+        "metrics": {
+          "monthlyListeners": 800000,
+          "youtubeViews": 50000000,
+          "certifications": 2,
+          "albumsCount": 1,
+          "influenceScore": 50,
+          "peakAlbumScore": 80,
+          "innovationScore": 75
+        },
+        "estimatedRank": 15,
+        "notes": "Révélation Belgique, style unique",
+        "source": "computed"
+      },
+      {
+        "year": 2017,
+        "event": "Ipséité",
+        "metrics": {
+          "monthlyListeners": 4000000,
+          "youtubeViews": 300000000,
+          "certifications": 10,
+          "albumsCount": 2,
+          "influenceScore": 75,
+          "peakAlbumScore": 92,
+          "innovationScore": 90
+        },
+        "estimatedRank": 5,
+        "notes": "Album culte, Bruxelles vie",
+        "source": "computed"
+      },
+      {
+        "year": 2018,
+        "event": "Lithopédion",
+        "metrics": {
+          "monthlyListeners": 7000000,
+          "youtubeViews": 700000000,
+          "certifications": 25,
+          "albumsCount": 3,
+          "influenceScore": 85,
+          "peakAlbumScore": 95,
+          "innovationScore": 92
+        },
+        "estimatedRank": 2,
+        "notes": "Chef d'oeuvre, concept unique",
+        "source": "computed"
+      },
+      {
+        "year": 2020,
+        "event": "QALF",
+        "metrics": {
+          "monthlyListeners": 9000000,
+          "youtubeViews": 1100000000,
+          "certifications": 40,
+          "albumsCount": 4,
+          "influenceScore": 88,
+          "peakAlbumScore": 90,
+          "innovationScore": 85
+        },
+        "estimatedRank": 2,
+        "notes": "Domination francophone, records",
+        "source": "computed"
+      },
+      {
+        "year": 2024,
+        "metrics": {
+          "monthlyListeners": 10800000,
+          "youtubeViews": 2400000000,
+          "certifications": 72,
+          "albumsCount": 5,
+          "influenceScore": 85,
+          "peakAlbumScore": 92,
+          "innovationScore": 82,
+          "artisticIntegrity": 85,
+          "uniqueWords": 1843,
+          "flowScore": 44,
+          "punchlineScore": 37,
+          "hookScore": 60
+        },
+        "estimatedRank": 4,
+        "notes": "Top artiste francophone, Belgique représentée [Métriques Genius intégrées] [Métriques Genius intégrées] [Métriques Genius intégrées] [Métriques Genius intégrées]",
+        "source": "computed"
+      }
+    ]
+  },
+  "kery-james": {
+    "artistId": "kery-james",
+    "artistName": "Kery James",
+    "snapshots": [
+      {
+        "year": 1998,
+        "event": "Si c'était à refaire (Mafia K'1 Fry)",
+        "metrics": {
+          "physicalSales": 80000,
+          "certifications": 1,
+          "influenceScore": 50,
+          "peakAlbumScore": 70
+        },
+        "estimatedRank": 15,
+        "notes": "Début avec Mafia K'1 Fry, Orly",
+        "source": "estimated"
+      },
+      {
+        "year": 2001,
+        "event": "Savoir & Vivre Ensemble",
+        "metrics": {
+          "physicalSales": 150000,
+          "certifications": 3,
+          "influenceScore": 70,
+          "peakAlbumScore": 82
+        },
+        "estimatedRank": 8,
+        "notes": "Premier album solo, rap conscient",
+        "source": "estimated"
+      },
+      {
+        "year": 2005,
+        "event": "Ma Vérité",
+        "metrics": {
+          "physicalSales": 200000,
+          "certifications": 5,
+          "influenceScore": 80,
+          "peakAlbumScore": 85
+        },
+        "estimatedRank": 5,
+        "notes": "Confirmation du statut de rappeur engagé",
+        "source": "estimated"
+      },
+      {
+        "year": 2008,
+        "event": "À l'ombre du Show Business",
+        "metrics": {
+          "physicalSales": 120000,
+          "youtubeViews": 20000000,
+          "certifications": 7,
+          "influenceScore": 82,
+          "peakAlbumScore": 88
+        },
+        "estimatedRank": 6,
+        "notes": "Album critique du milieu musical",
+        "source": "estimated"
+      },
+      {
+        "year": 2013,
+        "event": "92.2012",
+        "metrics": {
+          "monthlyListeners": 500000,
+          "youtubeViews": 80000000,
+          "certifications": 10,
+          "influenceScore": 85,
+          "peakAlbumScore": 90
+        },
+        "estimatedRank": 7,
+        "notes": "Album politique majeur, Constat Amer",
+        "source": "estimated"
+      },
+      {
+        "year": 2016,
+        "event": "Mouhammad Alix",
+        "metrics": {
+          "monthlyListeners": 800000,
+          "youtubeViews": 150000000,
+          "certifications": 15,
+          "influenceScore": 85,
+          "peakAlbumScore": 88
+        },
+        "estimatedRank": 10,
+        "notes": "Album autobiographique",
+        "source": "estimated"
+      },
+      {
+        "year": 2020,
+        "event": "J'rap Encore",
+        "metrics": {
+          "monthlyListeners": 1000000,
+          "youtubeViews": 280000000,
+          "certifications": 25,
+          "influenceScore": 88,
+          "peakAlbumScore": 85
+        },
+        "estimatedRank": 12,
+        "notes": "Retour remarqué, toujours pertinent",
+        "source": "computed"
+      },
+      {
+        "year": 2024,
+        "metrics": {
+          "monthlyListeners": 1200000,
+          "youtubeViews": 380000000,
+          "certifications": 45,
+          "albumsCount": 8,
+          "influenceScore": 88,
+          "peakAlbumScore": 90,
+          "innovationScore": 78,
+          "artisticIntegrity": 98,
+          "uniqueWords": 3515,
+          "flowScore": 55,
+          "punchlineScore": 37,
+          "hookScore": 61
+        },
+        "estimatedRank": 0,
+        "notes": "Données calculées via Genius API + métriques actuelles [Métriques Genius intégrées] [Métriques Genius intégrées] [Métriques Genius intégrées]",
+        "source": "computed"
+      }
+    ]
+  },
+  "ninho": {
+    "artistId": "ninho",
+    "artistName": "Ninho",
+    "snapshots": [
+      {
+        "year": 2016,
+        "event": "M.I.L.S (Mixtape)",
+        "metrics": {
+          "monthlyListeners": 500000,
+          "youtubeViews": 50000000,
+          "certifications": 2,
+          "influenceScore": 40,
+          "peakAlbumScore": 70
+        },
+        "estimatedRank": 25,
+        "notes": "Révélation avec M.I.L.S",
+        "source": "estimated"
+      },
+      {
+        "year": 2017,
+        "event": "Comme prévu",
+        "metrics": {
+          "monthlyListeners": 2000000,
+          "youtubeViews": 300000000,
+          "certifications": 8,
+          "influenceScore": 55,
+          "peakAlbumScore": 75
+        },
+        "estimatedRank": 12,
+        "notes": "Explosion commerciale, Afro Trap",
+        "source": "estimated"
+      },
+      {
+        "year": 2018,
+        "event": "M.I.L.S 2",
+        "metrics": {
+          "monthlyListeners": 5000000,
+          "youtubeViews": 800000000,
+          "certifications": 20,
+          "influenceScore": 62,
+          "peakAlbumScore": 75
+        },
+        "estimatedRank": 6,
+        "notes": "Confirmation du phénomène",
+        "source": "computed"
+      },
+      {
+        "year": 2019,
+        "event": "Destin",
+        "metrics": {
+          "monthlyListeners": 8000000,
+          "youtubeViews": 1500000000,
+          "certifications": 40,
+          "influenceScore": 68,
+          "peakAlbumScore": 78
+        },
+        "estimatedRank": 3,
+        "notes": "Album record, domination charts",
+        "source": "computed"
+      },
+      {
+        "year": 2021,
+        "event": "M.I.L.S 3",
+        "metrics": {
+          "monthlyListeners": 11000000,
+          "youtubeViews": 2500000000,
+          "certifications": 70,
+          "influenceScore": 70,
+          "peakAlbumScore": 76
+        },
+        "estimatedRank": 2,
+        "notes": "Top 3 rappeurs FR en streams",
+        "source": "computed"
+      },
+      {
+        "year": 2024,
+        "metrics": {
+          "monthlyListeners": 12500000,
+          "youtubeViews": 3500000000,
+          "certifications": 95,
+          "albumsCount": 6,
+          "influenceScore": 70,
+          "peakAlbumScore": 78,
+          "innovationScore": 55,
+          "artisticIntegrity": 55,
+          "uniqueWords": 1773,
+          "flowScore": 45,
+          "punchlineScore": 44,
+          "hookScore": 58
+        },
+        "estimatedRank": 0,
+        "notes": "Données calculées via Genius API + métriques actuelles [Métriques Genius intégrées] [Métriques Genius intégrées] [Métriques Genius intégrées]",
+        "source": "computed"
+      }
+    ]
+  },
+  "freeze-corleone": {
+    "artistId": "freeze-corleone",
+    "artistName": "Freeze Corleone",
+    "snapshots": [
+      {
+        "year": 2018,
+        "event": "Projet Blue Beam",
+        "metrics": {
+          "monthlyListeners": 200000,
+          "youtubeViews": 30000000,
+          "certifications": 1,
+          "influenceScore": 55,
+          "peakAlbumScore": 78
+        },
+        "estimatedRank": 30,
+        "notes": "Underground, début du phénomène",
+        "source": "estimated"
+      },
+      {
+        "year": 2020,
+        "event": "La Menace Fantôme (LMF)",
+        "metrics": {
+          "monthlyListeners": 3000000,
+          "youtubeViews": 400000000,
+          "certifications": 12,
+          "influenceScore": 80,
+          "peakAlbumScore": 88
+        },
+        "estimatedRank": 8,
+        "notes": "Album culte, révolution drill FR",
+        "source": "computed"
+      },
+      {
+        "year": 2022,
+        "event": "Shavkat / ADC",
+        "metrics": {
+          "monthlyListeners": 5000000,
+          "youtubeViews": 700000000,
+          "certifications": 20,
+          "influenceScore": 85,
+          "peakAlbumScore": 85
+        },
+        "estimatedRank": 7,
+        "notes": "Influence maximale sur la nouvelle génération",
+        "source": "computed"
+      },
+      {
+        "year": 2024,
+        "metrics": {
+          "monthlyListeners": 5800000,
+          "youtubeViews": 950000000,
+          "certifications": 28,
+          "albumsCount": 3,
+          "influenceScore": 85,
+          "peakAlbumScore": 88,
+          "innovationScore": 88,
+          "artisticIntegrity": 90,
+          "uniqueWords": 2442,
+          "flowScore": 39,
+          "punchlineScore": 44,
+          "hookScore": 60
+        },
+        "estimatedRank": 0,
+        "notes": "Données calculées via Genius API + métriques actuelles [Métriques Genius intégrées] [Métriques Genius intégrées] [Métriques Genius intégrées]",
+        "source": "computed"
+      }
+    ]
+  },
+  "rimk": {
+    "artistId": "rimk",
+    "artistName": "Rim'K",
+    "snapshots": [
+      {
+        "year": 1996,
+        "event": "La Cosca (113)",
+        "metrics": {
+          "physicalSales": 50000,
+          "certifications": 1,
+          "influenceScore": 45,
+          "peakAlbumScore": 72
+        },
+        "estimatedRank": 18,
+        "notes": "Début avec 113 à Vitry",
+        "source": "estimated"
+      },
+      {
+        "year": 1999,
+        "event": "Les Princes de la Ville (113)",
+        "metrics": {
+          "physicalSales": 500000,
+          "certifications": 6,
+          "influenceScore": 70,
+          "peakAlbumScore": 85
+        },
+        "estimatedRank": 5,
+        "notes": "Album classique, Tonton du Bled",
+        "source": "estimated"
+      },
+      {
+        "year": 2005,
+        "event": "113 Degrés (113)",
+        "metrics": {
+          "physicalSales": 300000,
+          "certifications": 10,
+          "influenceScore": 72,
+          "peakAlbumScore": 80
+        },
+        "estimatedRank": 7,
+        "notes": "Confirmation 113",
+        "source": "estimated"
+      },
+      {
+        "year": 2009,
+        "event": "L'Enfant du Pays (Solo)",
+        "metrics": {
+          "physicalSales": 80000,
+          "youtubeViews": 30000000,
+          "certifications": 12,
+          "influenceScore": 65,
+          "peakAlbumScore": 75
+        },
+        "estimatedRank": 12,
+        "notes": "Carrière solo",
+        "source": "estimated"
+      },
+      {
+        "year": 2015,
+        "event": "Monster Tape",
+        "metrics": {
+          "monthlyListeners": 1000000,
+          "youtubeViews": 200000000,
+          "certifications": 18,
+          "influenceScore": 62,
+          "peakAlbumScore": 72
+        },
+        "estimatedRank": 15,
+        "notes": "Adaptation ère streaming",
+        "source": "computed"
+      },
+      {
+        "year": 2019,
+        "event": "Mutant",
+        "metrics": {
+          "monthlyListeners": 1800000,
+          "youtubeViews": 500000000,
+          "certifications": 30,
+          "influenceScore": 70,
+          "peakAlbumScore": 78
+        },
+        "estimatedRank": 12,
+        "notes": "Collaboration Jul, retour commercial",
+        "source": "computed"
+      },
+      {
+        "year": 2024,
+        "metrics": {
+          "monthlyListeners": 2100000,
+          "youtubeViews": 850000000,
+          "certifications": 42,
+          "albumsCount": 7,
+          "influenceScore": 75,
+          "peakAlbumScore": 78,
+          "innovationScore": 65,
+          "artisticIntegrity": 70,
+          "uniqueWords": 2513,
+          "flowScore": 49,
+          "punchlineScore": 37,
+          "hookScore": 63
+        },
+        "estimatedRank": 0,
+        "notes": "Données calculées via Genius API + métriques actuelles [Métriques Genius intégrées] [Métriques Genius intégrées] [Métriques Genius intégrées]",
+        "source": "computed"
+      }
+    ]
+  },
+  "lino": {
+    "artistId": "lino",
+    "artistName": "Lino",
+    "snapshots": [
+      {
+        "year": 1998,
+        "event": "Si c'était à refaire (Arsenik)",
+        "metrics": {
+          "physicalSales": 200000,
+          "certifications": 3,
+          "influenceScore": 75,
+          "peakAlbumScore": 88
+        },
+        "estimatedRank": 6,
+        "notes": "Arsenik, duo légendaire avec Calbo",
+        "source": "estimated"
+      },
+      {
+        "year": 2000,
+        "event": "Quelques gouttes suffisent (Arsenik)",
+        "metrics": {
+          "physicalSales": 100000,
+          "certifications": 4,
+          "influenceScore": 72,
+          "peakAlbumScore": 82
+        },
+        "estimatedRank": 10,
+        "notes": "Second album Arsenik",
+        "source": "estimated"
+      },
+      {
+        "year": 2011,
+        "event": "Requiem",
+        "metrics": {
+          "physicalSales": 30000,
+          "youtubeViews": 20000000,
+          "certifications": 5,
+          "influenceScore": 65,
+          "peakAlbumScore": 78
+        },
+        "estimatedRank": 18,
+        "notes": "Album solo mature",
+        "source": "estimated"
+      },
+      {
+        "year": 2015,
+        "event": "Paradis Assassiné",
+        "metrics": {
+          "monthlyListeners": 400000,
+          "youtubeViews": 50000000,
+          "certifications": 8,
+          "influenceScore": 70,
+          "peakAlbumScore": 82
+        },
+        "estimatedRank": 20,
+        "notes": "Technique reconnue",
+        "source": "estimated"
+      },
+      {
+        "year": 2019,
+        "event": "Requiem 2",
+        "metrics": {
+          "monthlyListeners": 600000,
+          "youtubeViews": 100000000,
+          "certifications": 15,
+          "influenceScore": 75,
+          "peakAlbumScore": 85
+        },
+        "estimatedRank": 18,
+        "notes": "Retour en force, plumes techniques",
+        "source": "computed"
+      },
+      {
+        "year": 2024,
+        "metrics": {
+          "monthlyListeners": 850000,
+          "youtubeViews": 180000000,
+          "certifications": 28,
+          "albumsCount": 5,
+          "influenceScore": 78,
+          "peakAlbumScore": 85,
+          "innovationScore": 72,
+          "artisticIntegrity": 92,
+          "uniqueWords": 5691,
+          "flowScore": 47,
+          "punchlineScore": 37,
+          "hookScore": 63
+        },
+        "estimatedRank": 0,
+        "notes": "Données calculées via Genius API + métriques actuelles [Métriques Genius intégrées] [Métriques Genius intégrées] [Métriques Genius intégrées]",
+        "source": "computed"
+      }
+    ]
+  },
+  "vald": {
+    "artistId": "vald",
+    "artistName": "Vald",
+    "snapshots": [
+      {
+        "year": 2015,
+        "event": "NQNT",
+        "metrics": {
+          "monthlyListeners": 800000,
+          "youtubeViews": 100000000,
+          "certifications": 3,
+          "influenceScore": 55,
+          "peakAlbumScore": 75
+        },
+        "estimatedRank": 18,
+        "notes": "Révélation avec NQNT, humour décalé",
+        "source": "estimated"
+      },
+      {
+        "year": 2017,
+        "event": "Agartha",
+        "metrics": {
+          "monthlyListeners": 3000000,
+          "youtubeViews": 400000000,
+          "certifications": 15,
+          "influenceScore": 68,
+          "peakAlbumScore": 82
+        },
+        "estimatedRank": 8,
+        "notes": "Album concept, succès critique",
+        "source": "computed"
+      },
+      {
+        "year": 2019,
+        "event": "Ce Monde Est Cruel",
+        "metrics": {
+          "monthlyListeners": 4500000,
+          "youtubeViews": 800000000,
+          "certifications": 30,
+          "influenceScore": 72,
+          "peakAlbumScore": 80
+        },
+        "estimatedRank": 6,
+        "notes": "Sommet commercial",
+        "source": "computed"
+      },
+      {
+        "year": 2021,
+        "event": "V",
+        "metrics": {
+          "monthlyListeners": 5000000,
+          "youtubeViews": 1000000000,
+          "certifications": 42,
+          "influenceScore": 72,
+          "peakAlbumScore": 78
+        },
+        "estimatedRank": 8,
+        "notes": "Maintien du niveau, style unique",
+        "source": "computed"
+      },
+      {
+        "year": 2024,
+        "metrics": {
+          "monthlyListeners": 5200000,
+          "youtubeViews": 1200000000,
+          "certifications": 48,
+          "albumsCount": 5,
+          "influenceScore": 72,
+          "peakAlbumScore": 82,
+          "innovationScore": 75,
+          "artisticIntegrity": 78,
+          "uniqueWords": 2315,
+          "flowScore": 44,
+          "punchlineScore": 38,
+          "hookScore": 61
+        },
+        "estimatedRank": 0,
+        "notes": "Données calculées via Genius API + métriques actuelles [Métriques Genius intégrées] [Métriques Genius intégrées] [Métriques Genius intégrées]",
+        "source": "computed"
+      }
+    ]
+  },
+  "youssoupha": {
+    "artistId": "youssoupha",
+    "artistName": "Youssoupha",
+    "snapshots": [
+      {
+        "year": 2007,
+        "event": "À Chaque Frère",
+        "metrics": {
+          "physicalSales": 80000,
+          "youtubeViews": 10000000,
+          "certifications": 2,
+          "influenceScore": 55,
+          "peakAlbumScore": 78
+        },
+        "estimatedRank": 15,
+        "notes": "Premier album, rappeur conscient",
+        "source": "estimated"
+      },
+      {
+        "year": 2009,
+        "event": "Sur les Chemins du Retour",
+        "metrics": {
+          "physicalSales": 100000,
+          "youtubeViews": 50000000,
+          "certifications": 5,
+          "influenceScore": 65,
+          "peakAlbumScore": 82
+        },
+        "estimatedRank": 10,
+        "notes": "Confirmation, Dreamin'",
+        "source": "estimated"
+      },
+      {
+        "year": 2012,
+        "event": "Noir Désir",
+        "metrics": {
+          "monthlyListeners": 600000,
+          "youtubeViews": 150000000,
+          "certifications": 12,
+          "influenceScore": 70,
+          "peakAlbumScore": 85
+        },
+        "estimatedRank": 8,
+        "notes": "Album mature, introspectif",
+        "source": "estimated"
+      },
+      {
+        "year": 2015,
+        "event": "NGRTD",
+        "metrics": {
+          "monthlyListeners": 1200000,
+          "youtubeViews": 250000000,
+          "certifications": 18,
+          "influenceScore": 70,
+          "peakAlbumScore": 80
+        },
+        "estimatedRank": 12,
+        "notes": "Album engagé",
+        "source": "computed"
+      },
+      {
+        "year": 2021,
+        "event": "Neptune Terminus",
+        "metrics": {
+          "monthlyListeners": 1500000,
+          "youtubeViews": 350000000,
+          "certifications": 25,
+          "influenceScore": 70,
+          "peakAlbumScore": 78
+        },
+        "estimatedRank": 15,
+        "notes": "Rappeur technique reconnu",
+        "source": "computed"
+      },
+      {
+        "year": 2024,
+        "metrics": {
+          "monthlyListeners": 1800000,
+          "youtubeViews": 420000000,
+          "certifications": 32,
+          "albumsCount": 6,
+          "influenceScore": 70,
+          "peakAlbumScore": 82,
+          "innovationScore": 62,
+          "artisticIntegrity": 88,
+          "uniqueWords": 3392,
+          "flowScore": 46,
+          "punchlineScore": 37,
+          "hookScore": 61
+        },
+        "estimatedRank": 0,
+        "notes": "Données calculées via Genius API + métriques actuelles [Métriques Genius intégrées] [Métriques Genius intégrées] [Métriques Genius intégrées]",
+        "source": "computed"
+      }
+    ]
+  },
+  "sofiane": {
+    "artistId": "sofiane",
+    "artistName": "Sofiane",
+    "snapshots": [
+      {
+        "year": 2024,
+        "metrics": {
+          "monthlyListeners": 2400000,
+          "youtubeViews": 850000000,
+          "certifications": 35,
+          "albumsCount": 5,
+          "influenceScore": 62,
+          "peakAlbumScore": 75,
+          "innovationScore": 55,
+          "artisticIntegrity": 68,
+          "uniqueWords": 2120,
+          "flowScore": 54,
+          "punchlineScore": 37,
+          "hookScore": 63
+        },
+        "estimatedRank": 0,
+        "notes": "Données calculées via Genius API + métriques actuelles [Métriques Genius intégrées] [Métriques Genius intégrées] [Métriques Genius intégrées]",
+        "source": "computed"
+      }
+    ]
+  },
+  "djadja-dinaz": {
+    "artistId": "djadja-dinaz",
+    "artistName": "Djadja & Dinaz",
+    "snapshots": [
+      {
+        "year": 2024,
+        "metrics": {
+          "monthlyListeners": 4200000,
+          "youtubeViews": 1800000000,
+          "certifications": 55,
+          "albumsCount": 5,
+          "influenceScore": 55,
+          "peakAlbumScore": 70,
+          "innovationScore": 42,
+          "artisticIntegrity": 55,
+          "uniqueWords": 727,
+          "flowScore": 56,
+          "punchlineScore": 34,
+          "hookScore": 66
+        },
+        "estimatedRank": 0,
+        "notes": "Données calculées via Genius API + métriques actuelles [Métriques Genius intégrées] [Métriques Genius intégrées] [Métriques Genius intégrées]",
+        "source": "computed"
+      }
+    ]
+  },
+  "dosseh": {
+    "artistId": "dosseh",
+    "artistName": "Dosseh",
+    "snapshots": [
+      {
+        "year": 2024,
+        "metrics": {
+          "monthlyListeners": 2800000,
+          "youtubeViews": 650000000,
+          "certifications": 25,
+          "albumsCount": 4,
+          "influenceScore": 58,
+          "peakAlbumScore": 72,
+          "innovationScore": 48,
+          "artisticIntegrity": 65,
+          "uniqueWords": 2212,
+          "flowScore": 53,
+          "punchlineScore": 38,
+          "hookScore": 63
+        },
+        "estimatedRank": 0,
+        "notes": "Données calculées via Genius API + métriques actuelles [Métriques Genius intégrées] [Métriques Genius intégrées] [Métriques Genius intégrées]",
+        "source": "computed"
+      }
+    ]
+  },
+  "flenn": {
+    "artistId": "flenn",
+    "artistName": "Flenn",
+    "snapshots": [
+      {
+        "year": 2024,
+        "metrics": {
+          "monthlyListeners": 3500000,
+          "youtubeViews": 850000000,
+          "certifications": 8,
+          "albumsCount": 2,
+          "influenceScore": 45,
+          "peakAlbumScore": 68,
+          "innovationScore": 52,
+          "artisticIntegrity": 70,
+          "uniqueWords": 4756,
+          "flowScore": 32,
+          "punchlineScore": 36,
+          "hookScore": 61
+        },
+        "estimatedRank": 0,
+        "notes": "Données calculées via Genius API + métriques actuelles [Métriques Genius intégrées] [Métriques Genius intégrées] [Métriques Genius intégrées]",
+        "source": "computed"
+      }
+    ]
+  },
+  "ziak": {
+    "artistId": "ziak",
+    "artistName": "Ziak",
+    "snapshots": [
+      {
+        "year": 2024,
+        "metrics": {
+          "monthlyListeners": 6800000,
+          "youtubeViews": 580000000,
+          "certifications": 22,
+          "albumsCount": 2,
+          "influenceScore": 72,
+          "peakAlbumScore": 80,
+          "innovationScore": 82,
+          "artisticIntegrity": 82,
+          "uniqueWords": 2209,
+          "flowScore": 46,
+          "punchlineScore": 43,
+          "hookScore": 59
+        },
+        "estimatedRank": 0,
+        "notes": "Données calculées via Genius API + métriques actuelles [Métriques Genius intégrées] [Métriques Genius intégrées] [Métriques Genius intégrées]",
+        "source": "computed"
+      }
+    ]
+  },
+  "hayce-lemsi": {
+    "artistId": "hayce-lemsi",
+    "artistName": "Hayce Lemsi",
+    "snapshots": [
+      {
+        "year": 2024,
+        "metrics": {
+          "monthlyListeners": 980000,
+          "youtubeViews": 280000000,
+          "certifications": 12,
+          "albumsCount": 4,
+          "influenceScore": 48,
+          "peakAlbumScore": 72,
+          "innovationScore": 45,
+          "artisticIntegrity": 78,
+          "uniqueWords": 4678,
+          "flowScore": 45,
+          "punchlineScore": 38,
+          "hookScore": 59
+        },
+        "estimatedRank": 0,
+        "notes": "Données calculées via Genius API + métriques actuelles [Métriques Genius intégrées] [Métriques Genius intégrées] [Métriques Genius intégrées]",
+        "source": "computed"
+      }
+    ]
+  },
+  "sinik": {
+    "artistId": "sinik",
+    "artistName": "Sinik",
+    "snapshots": [
+      {
+        "year": 2004,
+        "event": "Le Sang Froid",
+        "metrics": {
+          "physicalSales": 80000,
+          "certifications": 2,
+          "influenceScore": 50,
+          "peakAlbumScore": 72
+        },
+        "estimatedRank": 15,
+        "notes": "Premier album solo",
+        "source": "estimated"
+      },
+      {
+        "year": 2006,
+        "event": "Sang Froid 2 / En Attendant",
+        "metrics": {
+          "physicalSales": 150000,
+          "youtubeViews": 30000000,
+          "certifications": 5,
+          "influenceScore": 62,
+          "peakAlbumScore": 75
+        },
+        "estimatedRank": 10,
+        "notes": "Montée en puissance, Une époque formidable",
+        "source": "estimated"
+      },
+      {
+        "year": 2008,
+        "event": "Le Toit du Monde",
+        "metrics": {
+          "physicalSales": 100000,
+          "youtubeViews": 80000000,
+          "certifications": 8,
+          "influenceScore": 58,
+          "peakAlbumScore": 72
+        },
+        "estimatedRank": 12,
+        "notes": "Album personnel",
+        "source": "estimated"
+      },
+      {
+        "year": 2010,
+        "event": "Ballon d'Or",
+        "metrics": {
+          "physicalSales": 50000,
+          "youtubeViews": 120000000,
+          "certifications": 12,
+          "influenceScore": 55,
+          "peakAlbumScore": 70
+        },
+        "estimatedRank": 18,
+        "notes": "Déclin commercial",
+        "source": "estimated"
+      },
+      {
+        "year": 2015,
+        "metrics": {
+          "monthlyListeners": 500000,
+          "youtubeViews": 150000000,
+          "certifications": 18,
+          "influenceScore": 55,
+          "peakAlbumScore": 70
+        },
+        "estimatedRank": 25,
+        "notes": "Présence nostalgique",
+        "source": "estimated"
+      },
+      {
+        "year": 2024,
+        "metrics": {
+          "monthlyListeners": 680000,
+          "youtubeViews": 180000000,
+          "certifications": 22,
+          "albumsCount": 6,
+          "influenceScore": 55,
+          "peakAlbumScore": 70,
+          "innovationScore": 45,
+          "artisticIntegrity": 65,
+          "uniqueWords": 4041,
+          "flowScore": 51,
+          "punchlineScore": 37,
+          "hookScore": 59
+        },
+        "estimatedRank": 0,
+        "notes": "Données calculées via Genius API + métriques actuelles [Métriques Genius intégrées] [Métriques Genius intégrées] [Métriques Genius intégrées]",
+        "source": "computed"
+      }
+    ]
+  },
+  "guizmo": {
+    "artistId": "guizmo",
+    "artistName": "Guizmo",
+    "snapshots": [
+      {
+        "year": 2024,
+        "metrics": {
+          "monthlyListeners": 1100000,
+          "youtubeViews": 320000000,
+          "certifications": 18,
+          "albumsCount": 5,
+          "influenceScore": 55,
+          "peakAlbumScore": 78,
+          "innovationScore": 55,
+          "artisticIntegrity": 82,
+          "uniqueWords": 3497,
+          "flowScore": 46,
+          "punchlineScore": 36,
+          "hookScore": 63
+        },
+        "estimatedRank": 0,
+        "notes": "Données calculées via Genius API + métriques actuelles [Métriques Genius intégrées] [Métriques Genius intégrées] [Métriques Genius intégrées]",
+        "source": "computed"
+      }
+    ]
+  },
+  "sadek": {
+    "artistId": "sadek",
+    "artistName": "Sadek",
+    "snapshots": [
+      {
+        "year": 2024,
+        "metrics": {
+          "monthlyListeners": 1500000,
+          "youtubeViews": 420000000,
+          "certifications": 22,
+          "albumsCount": 5,
+          "influenceScore": 52,
+          "peakAlbumScore": 72,
+          "innovationScore": 48,
+          "artisticIntegrity": 62,
+          "uniqueWords": 2171,
+          "flowScore": 55,
+          "punchlineScore": 37,
+          "hookScore": 63
+        },
+        "estimatedRank": 0,
+        "notes": "Données calculées via Genius API + métriques actuelles [Métriques Genius intégrées] [Métriques Genius intégrées] [Métriques Genius intégrées]",
+        "source": "computed"
+      }
+    ]
+  },
+  "bouss": {
+    "artistId": "bouss",
+    "artistName": "Bouss",
+    "snapshots": [
+      {
+        "year": 2024,
+        "metrics": {
+          "monthlyListeners": 1800000,
+          "youtubeViews": 280000000,
+          "certifications": 8,
+          "albumsCount": 2,
+          "influenceScore": 35,
+          "peakAlbumScore": 65,
+          "innovationScore": 38,
+          "artisticIntegrity": 62,
+          "uniqueWords": 3272,
+          "flowScore": 58,
+          "punchlineScore": 38,
+          "hookScore": 57
+        },
+        "estimatedRank": 0,
+        "notes": "Données calculées via Genius API + métriques actuelles [Métriques Genius intégrées] [Métriques Genius intégrées] [Métriques Genius intégrées]",
+        "source": "computed"
+      }
+    ]
+  },
+  "oxmo-puccino": {
+    "artistId": "oxmo-puccino",
+    "artistName": "Oxmo Puccino",
+    "snapshots": [
+      {
+        "year": 1996,
+        "event": "Time Bomb (collectif)",
+        "metrics": {
+          "physicalSales": 50000,
+          "certifications": 1,
+          "influenceScore": 55,
+          "peakAlbumScore": 75,
+          "innovationScore": 70
+        },
+        "estimatedRank": 20,
+        "notes": "Début avec Time Bomb, poésie urbaine",
+        "source": "estimated"
+      },
+      {
+        "year": 1998,
+        "event": "Opéra Puccino",
+        "metrics": {
+          "physicalSales": 200000,
+          "certifications": 3,
+          "influenceScore": 80,
+          "peakAlbumScore": 92,
+          "innovationScore": 90
+        },
+        "estimatedRank": 5,
+        "notes": "Album culte, Black Jacques Dutronc",
+        "source": "estimated"
+      },
+      {
+        "year": 2001,
+        "event": "L'Amour est Mort",
+        "metrics": {
+          "physicalSales": 150000,
+          "certifications": 5,
+          "influenceScore": 82,
+          "peakAlbumScore": 90,
+          "innovationScore": 85
+        },
+        "estimatedRank": 6,
+        "notes": "Confirmation du génie lyrique",
+        "source": "estimated"
+      },
+      {
+        "year": 2006,
+        "event": "Lipopette Bar",
+        "metrics": {
+          "physicalSales": 80000,
+          "youtubeViews": 15000000,
+          "certifications": 8,
+          "influenceScore": 78,
+          "peakAlbumScore": 85,
+          "innovationScore": 75
+        },
+        "estimatedRank": 10,
+        "notes": "Album personnel et mature",
+        "source": "estimated"
+      },
+      {
+        "year": 2012,
+        "event": "Roi Sans Carrosse",
+        "metrics": {
+          "monthlyListeners": 400000,
+          "youtubeViews": 50000000,
+          "certifications": 12,
+          "influenceScore": 80,
+          "peakAlbumScore": 82,
+          "innovationScore": 70
+        },
+        "estimatedRank": 15,
+        "notes": "Légende du rap conscient",
+        "source": "estimated"
+      },
+      {
+        "year": 2019,
+        "event": "La Voix Lactée",
+        "metrics": {
+          "monthlyListeners": 700000,
+          "youtubeViews": 80000000,
+          "certifications": 18,
+          "influenceScore": 85,
+          "peakAlbumScore": 85,
+          "innovationScore": 75
+        },
+        "estimatedRank": 18,
+        "notes": "Artiste respecté, influence durable",
+        "source": "computed"
+      },
+      {
+        "year": 2024,
+        "metrics": {
+          "monthlyListeners": 850000,
+          "youtubeViews": 120000000,
+          "certifications": 35,
+          "albumsCount": 9,
+          "influenceScore": 92,
+          "peakAlbumScore": 95,
+          "innovationScore": 90,
+          "artisticIntegrity": 98,
+          "uniqueWords": 2567,
+          "flowScore": 53,
+          "punchlineScore": 30,
+          "hookScore": 66
+        },
+        "estimatedRank": 0,
+        "notes": "Données calculées via Genius API + métriques actuelles [Métriques Genius intégrées]",
+        "source": "computed"
+      }
+    ]
+  },
+  "mc-solaar": {
+    "artistId": "mc-solaar",
+    "artistName": "MC Solaar",
+    "snapshots": [
+      {
+        "year": 1991,
+        "event": "Qui Sème le Vent Récolte le Tempo",
+        "metrics": {
+          "physicalSales": 400000,
+          "certifications": 4,
+          "influenceScore": 85,
+          "peakAlbumScore": 88,
+          "innovationScore": 98
+        },
+        "estimatedRank": 2,
+        "notes": "Premier album, révolution rap FR",
+        "source": "estimated"
+      },
+      {
+        "year": 1994,
+        "event": "Prose Combat",
+        "metrics": {
+          "physicalSales": 1000000,
+          "certifications": 10,
+          "influenceScore": 95,
+          "peakAlbumScore": 95,
+          "innovationScore": 95
+        },
+        "estimatedRank": 1,
+        "notes": "Album légendaire, sommet artistique",
+        "source": "estimated"
+      },
+      {
+        "year": 1997,
+        "event": "Paradisiaque",
+        "metrics": {
+          "physicalSales": 600000,
+          "certifications": 12,
+          "influenceScore": 88,
+          "peakAlbumScore": 85,
+          "innovationScore": 80
+        },
+        "estimatedRank": 2,
+        "notes": "Maintien du niveau",
+        "source": "estimated"
+      },
+      {
+        "year": 2001,
+        "event": "Cinquième As",
+        "metrics": {
+          "physicalSales": 400000,
+          "certifications": 15,
+          "influenceScore": 80,
+          "peakAlbumScore": 78,
+          "innovationScore": 70
+        },
+        "estimatedRank": 5,
+        "notes": "Nouvelle génération émerge",
+        "source": "estimated"
+      },
+      {
+        "year": 2007,
+        "event": "Chapitre 7",
+        "metrics": {
+          "physicalSales": 200000,
+          "youtubeViews": 30000000,
+          "certifications": 18,
+          "influenceScore": 72,
+          "peakAlbumScore": 75,
+          "innovationScore": 60
+        },
+        "estimatedRank": 10,
+        "notes": "Transition difficile vers digital",
+        "source": "estimated"
+      },
+      {
+        "year": 2017,
+        "event": "Géopoétique",
+        "metrics": {
+          "monthlyListeners": 1200000,
+          "youtubeViews": 150000000,
+          "certifications": 25,
+          "influenceScore": 75,
+          "peakAlbumScore": 78,
+          "innovationScore": 65
+        },
+        "estimatedRank": 15,
+        "notes": "Retour après 10 ans d'absence",
+        "source": "computed"
+      },
+      {
+        "year": 2024,
+        "metrics": {
+          "monthlyListeners": 1800000,
+          "youtubeViews": 280000000,
+          "certifications": 80,
+          "albumsCount": 8,
+          "influenceScore": 95,
+          "peakAlbumScore": 92,
+          "innovationScore": 95,
+          "artisticIntegrity": 90,
+          "uniqueWords": 3272,
+          "flowScore": 48,
+          "punchlineScore": 36,
+          "hookScore": 61
+        },
+        "estimatedRank": 0,
+        "notes": "Données calculées via Genius API + métriques actuelles [Métriques Genius intégrées]",
+        "source": "computed"
+      }
+    ]
+  },
+  "la-fouine": {
+    "artistId": "la-fouine",
+    "artistName": "La Fouine",
+    "snapshots": [
+      {
+        "year": 2005,
+        "event": "Bourré au Son",
+        "metrics": {
+          "physicalSales": 80000,
+          "certifications": 2,
+          "influenceScore": 50,
+          "peakAlbumScore": 70,
+          "innovationScore": 55
+        },
+        "estimatedRank": 18,
+        "notes": "Premier album, Trappes représente",
+        "source": "estimated"
+      },
+      {
+        "year": 2007,
+        "event": "Aller-Retour",
+        "metrics": {
+          "physicalSales": 150000,
+          "youtubeViews": 30000000,
+          "certifications": 5,
+          "influenceScore": 60,
+          "peakAlbumScore": 75,
+          "innovationScore": 58
+        },
+        "estimatedRank": 10,
+        "notes": "Montée en puissance",
+        "source": "estimated"
+      },
+      {
+        "year": 2009,
+        "event": "Mes Repères",
+        "metrics": {
+          "physicalSales": 250000,
+          "youtubeViews": 200000000,
+          "certifications": 12,
+          "influenceScore": 70,
+          "peakAlbumScore": 78,
+          "innovationScore": 60
+        },
+        "estimatedRank": 5,
+        "notes": "Album du peuple, Ça Fait Mal",
+        "source": "estimated"
+      },
+      {
+        "year": 2011,
+        "event": "La Fouine vs Laouni",
+        "metrics": {
+          "monthlyListeners": 1500000,
+          "youtubeViews": 600000000,
+          "certifications": 25,
+          "influenceScore": 72,
+          "peakAlbumScore": 76,
+          "innovationScore": 55
+        },
+        "estimatedRank": 4,
+        "notes": "Sommet commercial, Capitale du Crime",
+        "source": "computed"
+      },
+      {
+        "year": 2013,
+        "event": "Drôle de Parcours",
+        "metrics": {
+          "monthlyListeners": 2000000,
+          "youtubeViews": 900000000,
+          "certifications": 38,
+          "influenceScore": 70,
+          "peakAlbumScore": 74,
+          "innovationScore": 50
+        },
+        "estimatedRank": 5,
+        "notes": "Maintien du succès",
+        "source": "computed"
+      },
+      {
+        "year": 2016,
+        "event": "Nouveau Monde",
+        "metrics": {
+          "monthlyListeners": 1800000,
+          "youtubeViews": 1000000000,
+          "certifications": 48,
+          "influenceScore": 65,
+          "peakAlbumScore": 70,
+          "innovationScore": 45
+        },
+        "estimatedRank": 10,
+        "notes": "Déclin relatif, nouvelle génération",
+        "source": "computed"
+      },
+      {
+        "year": 2024,
+        "metrics": {
+          "monthlyListeners": 2200000,
+          "youtubeViews": 1200000000,
+          "certifications": 55,
+          "albumsCount": 8,
+          "influenceScore": 72,
+          "peakAlbumScore": 78,
+          "innovationScore": 55,
+          "artisticIntegrity": 62,
+          "uniqueWords": 2200,
+          "flowScore": 58,
+          "punchlineScore": 38,
+          "hookScore": 63
+        },
+        "estimatedRank": 0,
+        "notes": "Données calculées via Genius API + métriques actuelles [Métriques Genius intégrées]",
+        "source": "computed"
+      }
+    ]
+  },
+  "lacrim": {
+    "artistId": "lacrim",
+    "artistName": "Lacrim",
+    "snapshots": [
+      {
+        "year": 2024,
+        "metrics": {
+          "monthlyListeners": 3800000,
+          "youtubeViews": 1800000000,
+          "certifications": 48,
+          "albumsCount": 7,
+          "influenceScore": 68,
+          "peakAlbumScore": 75,
+          "innovationScore": 52,
+          "artisticIntegrity": 65,
+          "uniqueWords": 2409,
+          "flowScore": 45,
+          "punchlineScore": 35,
+          "hookScore": 64
+        },
+        "estimatedRank": 0,
+        "notes": "Données calculées via Genius API + métriques actuelles [Métriques Genius intégrées]",
+        "source": "computed"
+      }
+    ]
+  },
+  "maes": {
+    "artistId": "maes",
+    "artistName": "Maes",
+    "snapshots": [
+      {
+        "year": 2024,
+        "metrics": {
+          "monthlyListeners": 8500000,
+          "youtubeViews": 2200000000,
+          "certifications": 65,
+          "albumsCount": 4,
+          "influenceScore": 62,
+          "peakAlbumScore": 75,
+          "innovationScore": 48,
+          "artisticIntegrity": 58,
+          "uniqueWords": 1290,
+          "flowScore": 56,
+          "punchlineScore": 38,
+          "hookScore": 58
+        },
+        "estimatedRank": 0,
+        "notes": "Données calculées via Genius API + métriques actuelles [Métriques Genius intégrées]",
+        "source": "computed"
+      }
+    ]
+  },
+  "gazo": {
+    "artistId": "gazo",
+    "artistName": "Gazo",
+    "snapshots": [
+      {
+        "year": 2024,
+        "metrics": {
+          "monthlyListeners": 9200000,
+          "youtubeViews": 1500000000,
+          "certifications": 42,
+          "albumsCount": 3,
+          "influenceScore": 75,
+          "peakAlbumScore": 78,
+          "innovationScore": 82,
+          "artisticIntegrity": 70,
+          "uniqueWords": 1478,
+          "flowScore": 39,
+          "punchlineScore": 45,
+          "hookScore": 60
+        },
+        "estimatedRank": 0,
+        "notes": "Données calculées via Genius API + métriques actuelles [Métriques Genius intégrées]",
+        "source": "computed"
+      }
+    ]
+  },
+  "soprano": {
+    "artistId": "soprano",
+    "artistName": "Soprano",
+    "snapshots": [
+      {
+        "year": 1995,
+        "event": "Débuts Psy4 de la Rime",
+        "metrics": {
+          "physicalSales": 30000,
+          "certifications": 0,
+          "influenceScore": 40,
+          "peakAlbumScore": 65,
+          "innovationScore": 55
+        },
+        "estimatedRank": 30,
+        "notes": "Début avec Psy4 de la Rime à Marseille",
+        "source": "estimated"
+      },
+      {
+        "year": 2002,
+        "event": "Block Party (Psy4)",
+        "metrics": {
+          "physicalSales": 150000,
+          "certifications": 2,
+          "influenceScore": 55,
+          "peakAlbumScore": 72,
+          "innovationScore": 60
+        },
+        "estimatedRank": 12,
+        "notes": "Succès avec Psy4 de la Rime",
+        "source": "estimated"
+      },
+      {
+        "year": 2007,
+        "event": "Puisqu'il Faut Vivre (Solo)",
+        "metrics": {
+          "physicalSales": 200000,
+          "youtubeViews": 50000000,
+          "certifications": 5,
+          "influenceScore": 58,
+          "peakAlbumScore": 72,
+          "innovationScore": 55
+        },
+        "estimatedRank": 10,
+        "notes": "Carrière solo lancée",
+        "source": "estimated"
+      },
+      {
+        "year": 2013,
+        "event": "Cosmopolitanie",
+        "metrics": {
+          "monthlyListeners": 2000000,
+          "youtubeViews": 800000000,
+          "certifications": 25,
+          "influenceScore": 62,
+          "peakAlbumScore": 75,
+          "innovationScore": 55
+        },
+        "estimatedRank": 6,
+        "notes": "Succès populaire massif, Mon Précieux",
+        "source": "computed"
+      },
+      {
+        "year": 2016,
+        "event": "L'Everest",
+        "metrics": {
+          "monthlyListeners": 4000000,
+          "youtubeViews": 1500000000,
+          "certifications": 45,
+          "influenceScore": 65,
+          "peakAlbumScore": 76,
+          "innovationScore": 52
+        },
+        "estimatedRank": 5,
+        "notes": "Album familial, Fresh Prince",
+        "source": "computed"
+      },
+      {
+        "year": 2020,
+        "event": "Chasseur d'Étoiles",
+        "metrics": {
+          "monthlyListeners": 5000000,
+          "youtubeViews": 2500000000,
+          "certifications": 70,
+          "influenceScore": 68,
+          "peakAlbumScore": 75,
+          "innovationScore": 50
+        },
+        "estimatedRank": 6,
+        "notes": "Artiste populaire établi",
+        "source": "computed"
+      },
+      {
+        "year": 2024,
+        "metrics": {
+          "monthlyListeners": 5500000,
+          "youtubeViews": 2800000000,
+          "certifications": 85,
+          "albumsCount": 8,
+          "influenceScore": 70,
+          "peakAlbumScore": 78,
+          "innovationScore": 60,
+          "artisticIntegrity": 68,
+          "uniqueWords": 1479,
+          "flowScore": 71,
+          "punchlineScore": 37,
+          "hookScore": 69
+        },
+        "estimatedRank": 0,
+        "notes": "Données calculées via Genius API + métriques actuelles [Métriques Genius intégrées]",
+        "source": "computed"
+      }
+    ]
+  },
+  "medine": {
+    "artistId": "medine",
+    "artistName": "Médine",
+    "snapshots": [
+      {
+        "year": 2024,
+        "metrics": {
+          "monthlyListeners": 950000,
+          "youtubeViews": 180000000,
+          "certifications": 18,
+          "albumsCount": 8,
+          "influenceScore": 72,
+          "peakAlbumScore": 85,
+          "innovationScore": 78,
+          "artisticIntegrity": 95,
+          "uniqueWords": 4856,
+          "flowScore": 43,
+          "punchlineScore": 38,
+          "hookScore": 61
+        },
+        "estimatedRank": 0,
+        "notes": "Données calculées via Genius API + métriques actuelles [Métriques Genius intégrées]",
+        "source": "computed"
+      }
+    ]
+  },
+  "kalash-criminel": {
+    "artistId": "kalash-criminel",
+    "artistName": "Kalash Criminel",
+    "snapshots": [
+      {
+        "year": 2024,
+        "metrics": {
+          "monthlyListeners": 4200000,
+          "youtubeViews": 1100000000,
+          "certifications": 32,
+          "albumsCount": 4,
+          "influenceScore": 72,
+          "peakAlbumScore": 80,
+          "innovationScore": 70,
+          "artisticIntegrity": 75,
+          "uniqueWords": 1587,
+          "flowScore": 50,
+          "punchlineScore": 38,
+          "hookScore": 60
+        },
+        "estimatedRank": 0,
+        "notes": "Données calculées via Genius API + métriques actuelles [Métriques Genius intégrées]",
+        "source": "computed"
+      }
+    ]
+  },
+  "seth-gueko": {
+    "artistId": "seth-gueko",
+    "artistName": "Seth Gueko",
+    "snapshots": [
+      {
+        "year": 2024,
+        "metrics": {
+          "monthlyListeners": 1200000,
+          "youtubeViews": 350000000,
+          "certifications": 22,
+          "albumsCount": 7,
+          "influenceScore": 65,
+          "peakAlbumScore": 78,
+          "innovationScore": 62,
+          "artisticIntegrity": 78,
+          "uniqueWords": 701,
+          "flowScore": 54,
+          "punchlineScore": 31,
+          "hookScore": 67
+        },
+        "estimatedRank": 0,
+        "notes": "Données calculées via Genius API + métriques actuelles [Métriques Genius intégrées]",
+        "source": "computed"
+      }
+    ]
+  },
+  "alkpote": {
+    "artistId": "alkpote",
+    "artistName": "Alkpote",
+    "snapshots": [
+      {
+        "year": 2024,
+        "metrics": {
+          "monthlyListeners": 1800000,
+          "youtubeViews": 420000000,
+          "certifications": 15,
+          "albumsCount": 8,
+          "influenceScore": 68,
+          "peakAlbumScore": 82,
+          "innovationScore": 75,
+          "artisticIntegrity": 88,
+          "uniqueWords": 3411,
+          "flowScore": 42,
+          "punchlineScore": 36,
+          "hookScore": 61
+        },
+        "estimatedRank": 0,
+        "notes": "Données calculées via Genius API + métriques actuelles [Métriques Genius intégrées]",
+        "source": "computed"
+      }
+    ]
+  }
+}
