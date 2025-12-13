@@ -45,7 +45,7 @@ function App() {
             }}
             className="text-2xl font-black bg-gradient-to-r from-purple-400 via-pink-500 to-blue-500 text-transparent bg-clip-text"
           >
-            FR RAP CLASSEMENT
+            RAP FR OPENDATA
           </button>
           <div className="flex gap-2">
             <button
@@ -142,7 +142,7 @@ function App() {
             {/* Header */}
             <div className="text-center mb-12">
               <h1 className="text-5xl font-black mb-4 bg-gradient-to-r from-purple-400 via-pink-500 to-blue-500 text-transparent bg-clip-text">
-                FR RAP CLASSEMENT
+                RAP FR OPENDATA
               </h1>
               <p className="text-xl text-gray-400">
                 Qui est le meilleur rappeur ? L'algorithme tranche.

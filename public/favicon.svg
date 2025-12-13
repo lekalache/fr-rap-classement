@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#a855f7"/>
+      <stop offset="50%" style="stop-color:#ec4899"/>
+      <stop offset="100%" style="stop-color:#3b82f6"/>
+    </linearGradient>
+  </defs>
+  <!-- Background circle -->
+  <circle cx="50" cy="50" r="48" fill="url(#grad)"/>
+  <!-- Microphone icon -->
+  <path d="M50 20 C40 20 32 28 32 38 L32 50 C32 60 40 68 50 68 C60 68 68 60 68 50 L68 38 C68 28 60 20 50 20 Z" fill="white"/>
+  <rect x="46" y="65" width="8" height="15" fill="white"/>
+  <path d="M35 75 L65 75" stroke="white" stroke-width="6" stroke-linecap="round"/>
+  <!-- Crown on top -->
+  <path d="M35 18 L40 8 L50 15 L60 8 L65 18 Z" fill="#fbbf24"/>
+</svg>
