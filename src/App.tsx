@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useComparison } from './hooks/useComparison';
 import { SearchBar } from './components/SearchBar';
 import { ComparisonView } from './components/ComparisonView';
@@ -7,11 +8,13 @@ import { RankingPage } from './components/RankingPage';
 import { EvolutionPage } from './components/EvolutionPage';
 import { PunchlineDetectorPage } from './components/PunchlineDetectorPage';
 import { DataPage } from './components/DataPage';
+import { LanguageSwitcher } from './components/LanguageSwitcher';
 import type { Artist } from './types';
 
 type Page = 'duel' | 'ranking' | 'algorithm' | 'evolution' | 'detector' | 'data';
 
 function App() {
+  const { t } = useTranslation();
   const [currentPage, setCurrentPage] = useState<Page>('duel');
   const {
     artists,
@@ -59,7 +62,7 @@ function App() {
                   : 'bg-white/5 text-gray-400 hover:bg-white/10'
               }`}
             >
-              Duel
+              {t('nav.duel')}
             </button>
             <button
               onClick={() => setCurrentPage('ranking')}
@@ -69,7 +72,7 @@ function App() {
                   : 'bg-white/5 text-gray-400 hover:bg-white/10'
               }`}
             >
-              Classement
+              {t('nav.ranking')}
             </button>
             <button
               onClick={() => setCurrentPage('evolution')}
@@ -79,7 +82,7 @@ function App() {
                   : 'bg-white/5 text-gray-400 hover:bg-white/10'
               }`}
             >
-              Évolution
+              {t('nav.evolution')}
             </button>
             <button
               onClick={() => setCurrentPage('algorithm')}
@@ -89,7 +92,7 @@ function App() {
                   : 'bg-white/5 text-gray-400 hover:bg-white/10'
               }`}
             >
-              Algorithme
+              {t('nav.algorithm')}
             </button>
             <button
               onClick={() => setCurrentPage('detector')}
@@ -99,7 +102,7 @@ function App() {
                   : 'bg-white/5 text-gray-400 hover:bg-white/10'
               }`}
             >
-              Punchline
+              {t('nav.punchlineDetector')}
             </button>
             <button
               onClick={() => setCurrentPage('data')}
@@ -109,8 +112,9 @@ function App() {
                   : 'bg-white/5 text-gray-400 hover:bg-white/10'
               }`}
             >
-              Data
+              {t('nav.openData')}
             </button>
+            <LanguageSwitcher />
           </div>
         </div>
       </nav>
@@ -142,13 +146,13 @@ function App() {
             {/* Header */}
             <div className="text-center mb-12">
               <h1 className="text-5xl font-black mb-4 bg-gradient-to-r from-purple-400 via-pink-500 to-blue-500 text-transparent bg-clip-text">
-                RAP FR OPENDATA
+                {t('hero.title')}
               </h1>
               <p className="text-xl text-gray-400">
-                Qui est le meilleur rappeur ? L'algorithme tranche.
+                {t('hero.subtitle')}
               </p>
               <p className="text-sm text-gray-600 mt-2">
-                {artists.length} rappeurs dans la base
+                {t('hero.artistCount', { count: artists.length })}
               </p>
             </div>
 
@@ -158,25 +162,25 @@ function App() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
                   <div>
                     <label className="block text-sm font-semibold text-purple-400 mb-2">
-                      RAPPEUR 1
+                      {t('duel.rapper1')}
                     </label>
                     <SearchBar
                       artists={artists.filter((a) => a.id !== artist2?.id)}
                       selectedArtist={artist1}
                       onSelect={setArtist1}
-                      placeholder="Rechercher un rappeur..."
+                      placeholder={t('duel.searchPlaceholder')}
                       color="purple"
                     />
                   </div>
                   <div>
                     <label className="block text-sm font-semibold text-blue-400 mb-2">
-                      RAPPEUR 2
+                      {t('duel.rapper2')}
                     </label>
                     <SearchBar
                       artists={artists.filter((a) => a.id !== artist1?.id)}
                       selectedArtist={artist2}
                       onSelect={setArtist2}
-                      placeholder="Rechercher un rappeur..."
+                      placeholder={t('duel.searchPlaceholder')}
                       color="blue"
                     />
                   </div>
@@ -194,18 +198,18 @@ function App() {
                       }
                     `}
                   >
-                    LANCER LE DUEL
+                    {t('duel.launchDuel')}
                   </button>
                   {artist1 && artist2 && artist1.id === artist2.id && (
                     <p className="mt-2 text-red-400 text-sm">
-                      Sélectionnez deux rappeurs différents
+                      {t('duel.selectDifferent')}
                     </p>
                   )}
                 </div>
 
                 {/* Liste rapide */}
                 <div className="mt-12">
-                  <h3 className="text-lg font-semibold text-gray-400 mb-4">Duels populaires</h3>
+                  <h3 className="text-lg font-semibold text-gray-400 mb-4">{t('duel.popularDuels')}</h3>
                   <div className="flex flex-wrap gap-3">
                     {[
                       ['Rim\'K', 'Jul'],
@@ -248,7 +252,7 @@ function App() {
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
                   </svg>
-                  Nouveau duel
+                  {t('duel.newDuel')}
                 </button>
                 <ComparisonView comparison={comparison} />
               </div>
@@ -258,8 +262,8 @@ function App() {
 
         {/* Footer */}
         <div className="mt-16 text-center text-gray-600 text-sm">
-          <p>Algorithme V2 : 8 piliers - Commercial, Longévité, Technique, Mémorabilité, Influence, Vision, Excellence, Innovation</p>
-          <p className="mt-1">Données estimatives - pour le divertissement uniquement</p>
+          <p>{t('footer.algorithm')}</p>
+          <p className="mt-1">{t('footer.disclaimer')}</p>
         </div>
       </div>
     </div>

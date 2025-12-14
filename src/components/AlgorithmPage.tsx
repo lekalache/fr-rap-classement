@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { MermaidChart } from './MermaidChart';
 
 const algorithmFlowchart = `
@@ -242,63 +243,65 @@ const dataFreshness = {
 };
 
 export function AlgorithmPage() {
+  const { t } = useTranslation();
+
   return (
     <div className="max-w-6xl mx-auto">
       {/* Header */}
       <div className="text-center mb-12">
-        <h1 className="text-4xl font-black mb-4">L'Algorithme</h1>
+        <h1 className="text-4xl font-black mb-4">{t('algorithm.title')}</h1>
         <p className="text-xl text-gray-400">
-          Comment nous classons les rappeurs français
+          {t('algorithm.subtitle')}
         </p>
       </div>
 
       {/* Philosophie */}
       <section className="mb-16">
         <div className="bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-2xl p-8">
-          <h2 className="text-2xl font-bold mb-6">Notre Philosophie</h2>
+          <h2 className="text-2xl font-bold mb-6">{t('algorithm.philosophy')}</h2>
 
           <div className="grid md:grid-cols-3 gap-6 mb-8">
             <div className="bg-white/5 rounded-xl p-5">
               <div className="text-3xl mb-3">🎯</div>
-              <h3 className="font-bold text-lg mb-2">Impact &gt; Quantité</h3>
+              <h3 className="font-bold text-lg mb-2">{t('algorithm.impactOverQuantity')}</h3>
               <p className="text-sm text-gray-400">
-                Sortir 20 albums moyens ne vaut pas un chef-d'oeuvre. Nous mesurons l'excellence, pas la prolificité.
+                {t('algorithm.impactDesc')}
               </p>
             </div>
             <div className="bg-white/5 rounded-xl p-5">
               <div className="text-3xl mb-3">⚖️</div>
-              <h3 className="font-bold text-lg mb-2">Équilibre Art/Commerce</h3>
+              <h3 className="font-bold text-lg mb-2">{t('algorithm.balance')}</h3>
               <p className="text-sm text-gray-400">
-                40% artistique (technique, vision, innovation) et 40% commercial/influence. Les deux comptent.
+                {t('algorithm.balanceDesc')}
               </p>
             </div>
             <div className="bg-white/5 rounded-xl p-5">
               <div className="text-3xl mb-3">🔬</div>
-              <h3 className="font-bold text-lg mb-2">Données Réelles</h3>
+              <h3 className="font-bold text-lg mb-2">{t('algorithm.realData')}</h3>
               <p className="text-sm text-gray-400">
-                Pas d'opinions : nous analysons les vraies paroles via NLP et les vrais chiffres de streaming.
+                {t('algorithm.realDataDesc')}
               </p>
             </div>
           </div>
 
           <div className="bg-white/5 rounded-xl p-5">
-            <h3 className="font-bold text-lg mb-3">Ce que nous ne faisons PAS</h3>
+            <h3 className="font-bold text-lg mb-3">{t('algorithm.whatWeDoNot')}</h3>
             <div className="grid md:grid-cols-2 gap-4 text-sm">
               <div className="flex items-start gap-2">
                 <span className="text-red-400">✗</span>
-                <span className="text-gray-300">Pénaliser les artistes qui font peu de features (ex: PNL)</span>
+                <span className="text-gray-300">{t('algorithm.notPenalizeFeatures')}</span>
               </div>
               <div className="flex items-start gap-2">
                 <span className="text-red-400">✗</span>
-                <span className="text-gray-300">Favoriser la quantité d'albums sur la qualité</span>
+                <span className="text-gray-300">{t('algorithm.notFavorQuantity')}</span>
               </div>
               <div className="flex items-start gap-2">
                 <span className="text-red-400">✗</span>
-                <span className="text-gray-300">Compter deux fois la même métrique (double comptage)</span>
+                <span className="text-gray-300">{t('algorithm.notDoubleCount')}</span>
               </div>
               <div className="flex items-start gap-2">
                 <span className="text-red-400">✗</span>
-                <span className="text-gray-300">Ignorer les légendes moins présentes sur streaming</span>
+                <span className="text-gray-300">{t('algorithm.notIgnoreLegends')}</span>
               </div>
             </div>
           </div>
@@ -307,36 +310,34 @@ export function AlgorithmPage() {
 
       {/* Vue d'ensemble */}
       <section className="mb-16">
-        <h2 className="text-2xl font-bold mb-6">Vue d'ensemble</h2>
+        <h2 className="text-2xl font-bold mb-6">{t('algorithm.overview')}</h2>
         <MermaidChart chart={algorithmFlowchart} id="main-flow" />
       </section>
 
       {/* Sources de données */}
       <section className="mb-16">
-        <h2 className="text-2xl font-bold mb-6">Sources de Données</h2>
+        <h2 className="text-2xl font-bold mb-6">{t('algorithm.dataSources')}</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="bg-gradient-to-br from-yellow-500/20 to-orange-500/20 rounded-2xl p-6 border border-yellow-500/30">
             <div className="flex items-center gap-3 mb-4">
               <span className="text-3xl">🎵</span>
               <div>
-                <h3 className="font-bold text-lg">Genius API</h3>
-                <span className="text-xs text-yellow-400">Données calculées</span>
+                <h3 className="font-bold text-lg">{t('algorithm.geniusApi')}</h3>
+                <span className="text-xs text-yellow-400">{t('algorithm.computedData')}</span>
               </div>
             </div>
-            <p className="text-sm text-gray-300 mb-4">
-              Paroles de <strong>50 chansons par artiste</strong> analysées via un pipeline NLP français.
-            </p>
+            <p className="text-sm text-gray-300 mb-4" dangerouslySetInnerHTML={{ __html: t('algorithm.geniusDesc') }} />
             <div className="bg-black/20 rounded-lg p-3 text-xs">
               <div className="flex justify-between mb-1">
-                <span className="text-gray-400">Dernière collecte</span>
+                <span className="text-gray-400">{t('algorithm.lastCollection')}</span>
                 <span className="text-white">{dataFreshness.genius.date}</span>
               </div>
               <div className="flex justify-between mb-1">
-                <span className="text-gray-400">Artistes analysés</span>
+                <span className="text-gray-400">{t('algorithm.analyzedArtists')}</span>
                 <span className="text-white">{dataFreshness.genius.artists}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-gray-400">Songs/artiste</span>
+                <span className="text-gray-400">{t('algorithm.songsPerArtist')}</span>
                 <span className="text-white">{dataFreshness.genius.songs}</span>
               </div>
             </div>
@@ -349,20 +350,20 @@ export function AlgorithmPage() {
             <div className="flex items-center gap-3 mb-4">
               <span className="text-3xl">📊</span>
               <div>
-                <h3 className="font-bold text-lg">Streaming & Charts</h3>
-                <span className="text-xs text-blue-400">Données estimées</span>
+                <h3 className="font-bold text-lg">{t('algorithm.streamingCharts')}</h3>
+                <span className="text-xs text-blue-400">{t('algorithm.estimatedData')}</span>
               </div>
             </div>
             <p className="text-sm text-gray-300 mb-4">
-              Auditeurs Spotify, vues YouTube, certifications SNEP basés sur sources publiques.
+              {t('algorithm.streamingDesc')}
             </p>
             <div className="bg-black/20 rounded-lg p-3 text-xs">
               <div className="flex justify-between mb-1">
-                <span className="text-gray-400">Dernière mise à jour</span>
+                <span className="text-gray-400">{t('algorithm.lastUpdate')}</span>
                 <span className="text-white">{dataFreshness.commercial.date}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-gray-400">Méthode</span>
+                <span className="text-gray-400">{t('algorithm.method')}</span>
                 <span className="text-white">{dataFreshness.commercial.source}</span>
               </div>
             </div>
@@ -375,20 +376,20 @@ export function AlgorithmPage() {
             <div className="flex items-center gap-3 mb-4">
               <span className="text-3xl">📚</span>
               <div>
-                <h3 className="font-bold text-lg">Analyse Éditoriale</h3>
-                <span className="text-xs text-purple-400">Données expertes</span>
+                <h3 className="font-bold text-lg">{t('algorithm.editorialAnalysis')}</h3>
+                <span className="text-xs text-purple-400">{t('algorithm.expertData')}</span>
               </div>
             </div>
             <p className="text-sm text-gray-300 mb-4">
-              Scores d'influence, innovation, vision artistique établis par analyse experte calibrée.
+              {t('algorithm.editorialDesc')}
             </p>
             <div className="bg-black/20 rounded-lg p-3 text-xs">
               <div className="flex justify-between mb-1">
-                <span className="text-gray-400">Dernière révision</span>
+                <span className="text-gray-400">{t('algorithm.lastRevision')}</span>
                 <span className="text-white">{dataFreshness.editorial.date}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-gray-400">Méthode</span>
+                <span className="text-gray-400">{t('algorithm.method')}</span>
                 <span className="text-white">{dataFreshness.editorial.method}</span>
               </div>
             </div>
@@ -401,8 +402,8 @@ export function AlgorithmPage() {
 
       {/* Les 8 Piliers */}
       <section className="mb-16">
-        <h2 className="text-2xl font-bold mb-2">Les 8 Piliers d'Évaluation</h2>
-        <p className="text-gray-400 mb-6">Chaque artiste est évalué sur 8 dimensions complémentaires</p>
+        <h2 className="text-2xl font-bold mb-2">{t('algorithm.pillarsTitle')}</h2>
+        <p className="text-gray-400 mb-6">{t('algorithm.pillarsSubtitle')}</p>
 
         <div className="space-y-6">
           {pillars.map((pillar) => (
@@ -415,12 +416,12 @@ export function AlgorithmPage() {
                   <span className="text-2xl">{pillar.icon}</span>
                   <div>
                     <h3 className="text-xl font-bold">{pillar.name}</h3>
-                    <span className="text-sm opacity-80">Poids : {pillar.weight}</span>
+                    <span className="text-sm opacity-80">{t('algorithm.weight')} : {pillar.weight}</span>
                   </div>
                 </div>
                 {pillar.computed && (
                   <span className="bg-white/20 text-xs px-2 py-1 rounded-full">
-                    Calculé par NLP
+                    {t('algorithm.calculatedByNLP')}
                   </span>
                 )}
               </div>
@@ -430,7 +431,7 @@ export function AlgorithmPage() {
 
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
-                    <h4 className="text-sm font-semibold text-gray-400 mb-3">Composition :</h4>
+                    <h4 className="text-sm font-semibold text-gray-400 mb-3">{t('algorithm.composition')}</h4>
                     <div className="space-y-2">
                       {pillar.metrics.map((metric) => (
                         <div key={metric.name} className="bg-gray-800/50 rounded-lg p-3">
@@ -448,7 +449,7 @@ export function AlgorithmPage() {
 
                   <div className="flex flex-col justify-between">
                     <div>
-                      <h4 className="text-sm font-semibold text-gray-400 mb-2">Source des données :</h4>
+                      <h4 className="text-sm font-semibold text-gray-400 mb-2">{t('algorithm.dataSource')}</h4>
                       <p className="text-sm text-gray-300 bg-gray-800/30 rounded-lg p-3">
                         {pillar.source}
                       </p>
@@ -463,9 +464,9 @@ export function AlgorithmPage() {
 
       {/* Pipeline NLP */}
       <section className="mb-16">
-        <h2 className="text-2xl font-bold mb-2">Pipeline NLP Français</h2>
+        <h2 className="text-2xl font-bold mb-2">{t('algorithm.nlpPipeline')}</h2>
         <p className="text-gray-400 mb-6">
-          Traitement Automatique du Langage Naturel appliqué aux paroles de rap
+          {t('algorithm.nlpSubtitle')}
         </p>
 
         {/* Introduction NLP */}
@@ -473,12 +474,8 @@ export function AlgorithmPage() {
           <div className="flex items-start gap-4">
             <div className="text-4xl">🧠</div>
             <div>
-              <h3 className="text-xl font-bold text-green-400 mb-2">Qu'est-ce que le NLP ?</h3>
-              <p className="text-gray-300 text-sm mb-4">
-                Le <strong>Natural Language Processing</strong> (Traitement Automatique du Langage) permet à un ordinateur
-                de comprendre et analyser du texte humain. Pour les paroles de rap, nous utilisons le NLP pour
-                mesurer objectivement la richesse du vocabulaire, la qualité des rimes, et la structure des textes.
-              </p>
+              <h3 className="text-xl font-bold text-green-400 mb-2">{t('algorithm.whatIsNLP')}</h3>
+              <p className="text-gray-300 text-sm mb-4" dangerouslySetInnerHTML={{ __html: t('algorithm.nlpExplanation') }} />
               <div className="flex flex-wrap gap-3 text-xs">
                 <a
                   href="https://spacy.io"
@@ -516,7 +513,7 @@ export function AlgorithmPage() {
 
         {/* Exemple pas à pas */}
         <div className="mb-8">
-          <h3 className="text-xl font-bold mb-4">Exemple Concret : Traitement d'une Ligne</h3>
+          <h3 className="text-xl font-bold mb-4">{t('algorithm.concreteExample')}</h3>
           <div className="space-y-3">
             {nlpExampleSteps.map((step, index) => (
               <div
@@ -530,18 +527,18 @@ export function AlgorithmPage() {
                 <div className="flex items-center gap-3 mb-2">
                   <span className="text-2xl">{step.icon}</span>
                   <div>
-                    <span className="text-xs text-gray-500">Étape {step.step}</span>
+                    <span className="text-xs text-gray-500">{t('algorithm.step')} {step.step}</span>
                     <h4 className="font-bold text-white">{step.name}</h4>
                   </div>
                 </div>
                 <div className="ml-11 space-y-2">
                   <div className="flex items-center gap-2 text-sm">
-                    <span className="text-gray-500 w-14">Entrée:</span>
+                    <span className="text-gray-500 w-14">{t('algorithm.input')}</span>
                     <code className="bg-gray-800 px-2 py-1 rounded text-yellow-300">{step.input}</code>
                   </div>
                   {step.output && (
                     <div className="flex items-center gap-2 text-sm">
-                      <span className="text-gray-500 w-14">Sortie:</span>
+                      <span className="text-gray-500 w-14">{t('algorithm.output')}</span>
                       <code className="bg-gray-800 px-2 py-1 rounded text-green-300">{step.output}</code>
                     </div>
                   )}
@@ -554,7 +551,7 @@ export function AlgorithmPage() {
 
         {/* Technologies utilisées */}
         <div className="bg-white/5 rounded-2xl p-6 mb-8">
-          <h3 className="text-lg font-bold mb-4">Technologies Utilisées</h3>
+          <h3 className="text-lg font-bold mb-4">{t('algorithm.technologiesUsed')}</h3>
           <div className="grid md:grid-cols-3 gap-4">
             <div className="bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-xl p-4 border border-blue-500/30">
               <div className="flex items-center gap-2 mb-2">
@@ -598,7 +595,7 @@ export function AlgorithmPage() {
         </div>
 
         {/* Les 4 métriques */}
-        <h3 className="text-xl font-bold mb-4">Les 4 Métriques Calculées</h3>
+        <h3 className="text-xl font-bold mb-4">{t('algorithm.metricsCalculated')}</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* uniqueWords */}
           <div className="bg-white/5 rounded-2xl p-6">
@@ -608,7 +605,7 @@ export function AlgorithmPage() {
               </div>
               <div>
                 <h4 className="font-bold text-green-400 text-lg">uniqueWords</h4>
-                <p className="text-xs text-gray-500">Richesse du vocabulaire</p>
+                <p className="text-xs text-gray-500">{t('algorithm.uniqueWords')}</p>
               </div>
             </div>
             <div className="space-y-3">
@@ -617,7 +614,7 @@ export function AlgorithmPage() {
                 Plus un artiste utilise de mots différents, plus ce score est élevé.
               </p>
               <div className="bg-gray-800/50 rounded-lg p-3 text-xs space-y-2">
-                <div className="font-semibold text-gray-400 mb-1">Pipeline :</div>
+                <div className="font-semibold text-gray-400 mb-1">{t('algorithm.pipeline')}</div>
                 <div className="flex items-center gap-2">
                   <span className="text-green-400">1.</span>
                   <span>Filtrage caractères non-latins (supprime arabe, cyrillique...)</span>
@@ -636,7 +633,7 @@ export function AlgorithmPage() {
                 </div>
               </div>
               <div className="flex justify-between text-sm bg-green-900/20 rounded-lg p-2">
-                <span className="text-gray-400">Top artiste :</span>
+                <span className="text-gray-400">{t('algorithm.topArtist')}</span>
                 <span className="text-white font-bold">IAM (7,125 mots)</span>
               </div>
             </div>
@@ -650,7 +647,7 @@ export function AlgorithmPage() {
               </div>
               <div>
                 <h4 className="font-bold text-blue-400 text-lg">flowScore</h4>
-                <p className="text-xs text-gray-500">Maîtrise du flow et des rimes</p>
+                <p className="text-xs text-gray-500">{t('algorithm.flowScore')}</p>
               </div>
             </div>
             <div className="space-y-3">
@@ -680,7 +677,7 @@ export function AlgorithmPage() {
               </div>
               <div>
                 <h4 className="font-bold text-yellow-400 text-lg">punchlineScore</h4>
-                <p className="text-xs text-gray-500">Impact et densité des punchlines</p>
+                <p className="text-xs text-gray-500">{t('algorithm.punchlineScore')}</p>
               </div>
             </div>
             <div className="space-y-3">
@@ -710,7 +707,7 @@ export function AlgorithmPage() {
               </div>
               <div>
                 <h4 className="font-bold text-purple-400 text-lg">hookScore</h4>
-                <p className="text-xs text-gray-500">Qualité et mémorabilité des refrains</p>
+                <p className="text-xs text-gray-500">{t('algorithm.hookScore')}</p>
               </div>
             </div>
             <div className="space-y-3">
@@ -738,19 +735,15 @@ export function AlgorithmPage() {
           <div className="flex items-center gap-3 mb-4">
             <span className="text-3xl">🗣️</span>
             <div>
-              <h3 className="font-bold text-orange-400 text-lg">Dictionnaire Verlan & Argot</h3>
-              <p className="text-xs text-gray-400">Normalisation du vocabulaire rap français</p>
+              <h3 className="font-bold text-orange-400 text-lg">{t('algorithm.slangDictionary')}</h3>
+              <p className="text-xs text-gray-400">{t('algorithm.slangSubtitle')}</p>
             </div>
           </div>
-          <p className="text-sm text-gray-300 mb-4">
-            Le rap français utilise massivement le <strong>verlan</strong> (inversion syllabique) et
-            l'<strong>argot urbain</strong>. Notre pipeline normalise ces termes pour un comptage précis
-            du vocabulaire unique.
-          </p>
+          <p className="text-sm text-gray-300 mb-4" dangerouslySetInnerHTML={{ __html: t('algorithm.slangDesc') }} />
 
           <div className="grid md:grid-cols-3 gap-4 mb-4">
             <div className="bg-gray-800/50 rounded-lg p-3">
-              <h4 className="text-sm font-bold text-orange-300 mb-2">Verlan Classique</h4>
+              <h4 className="text-sm font-bold text-orange-300 mb-2">{t('algorithm.classicVerlan')}</h4>
               <div className="space-y-1 text-xs">
                 <div className="flex justify-between"><span className="text-gray-400">meuf</span><span>→ femme</span></div>
                 <div className="flex justify-between"><span className="text-gray-400">keuf</span><span>→ flic</span></div>
@@ -761,7 +754,7 @@ export function AlgorithmPage() {
             </div>
 
             <div className="bg-gray-800/50 rounded-lg p-3">
-              <h4 className="text-sm font-bold text-orange-300 mb-2">Argot Urbain</h4>
+              <h4 className="text-sm font-bold text-orange-300 mb-2">{t('algorithm.urbanSlang')}</h4>
               <div className="space-y-1 text-xs">
                 <div className="flex justify-between"><span className="text-gray-400">thune</span><span>→ argent</span></div>
                 <div className="flex justify-between"><span className="text-gray-400">daronne</span><span>→ mère</span></div>
@@ -772,7 +765,7 @@ export function AlgorithmPage() {
             </div>
 
             <div className="bg-gray-800/50 rounded-lg p-3">
-              <h4 className="text-sm font-bold text-orange-300 mb-2">Emprunts Arabes</h4>
+              <h4 className="text-sm font-bold text-orange-300 mb-2">{t('algorithm.arabicLoans')}</h4>
               <div className="space-y-1 text-xs">
                 <div className="flex justify-between"><span className="text-gray-400">wallah</span><span>→ je jure</span></div>
                 <div className="flex justify-between"><span className="text-gray-400">khouya</span><span>→ frère</span></div>
@@ -792,8 +785,8 @@ export function AlgorithmPage() {
 
       {/* Benchmarks */}
       <section className="mb-16">
-        <h2 className="text-2xl font-bold mb-2">Benchmarks de Normalisation</h2>
-        <p className="text-gray-400 mb-6">Chaque métrique est normalisée (0-100) par rapport à ces références</p>
+        <h2 className="text-2xl font-bold mb-2">{t('algorithm.benchmarks')}</h2>
+        <p className="text-gray-400 mb-6">{t('algorithm.benchmarksSubtitle')}</p>
 
         <div className="bg-white/5 rounded-2xl p-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -840,25 +833,25 @@ export function AlgorithmPage() {
 
       {/* Score final */}
       <section className="mb-16">
-        <h2 className="text-2xl font-bold mb-6">Calcul du Score Final</h2>
+        <h2 className="text-2xl font-bold mb-6">{t('algorithm.finalScore')}</h2>
         <div className="bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-2xl p-8">
           <div className="text-center">
-            <div className="text-lg text-gray-300 mb-4">Formule :</div>
+            <div className="text-lg text-gray-300 mb-4">{t('algorithm.formula')}</div>
             <code className="text-xl font-mono text-white bg-gray-800 px-6 py-3 rounded-xl inline-block">
               SCORE = Somme(score_pilier × poids_pilier)
             </code>
             <div className="mt-6 grid grid-cols-4 gap-2 text-xs">
-              <div className="bg-purple-500/30 rounded p-2">Commercial 20%</div>
-              <div className="bg-blue-500/30 rounded p-2">Longévité 8%</div>
-              <div className="bg-green-500/30 rounded p-2">Technique 12%</div>
-              <div className="bg-yellow-500/30 rounded p-2">Mémorabilité 8%</div>
-              <div className="bg-red-500/30 rounded p-2">Influence 20%</div>
-              <div className="bg-pink-500/30 rounded p-2">Vision 12%</div>
-              <div className="bg-cyan-500/30 rounded p-2">Excellence 12%</div>
-              <div className="bg-lime-500/30 rounded p-2">Innovation 8%</div>
+              <div className="bg-purple-500/30 rounded p-2">{t('pillars.commercial')} 20%</div>
+              <div className="bg-blue-500/30 rounded p-2">{t('pillars.longevity')} 8%</div>
+              <div className="bg-green-500/30 rounded p-2">{t('pillars.technique')} 12%</div>
+              <div className="bg-yellow-500/30 rounded p-2">{t('pillars.quotability')} 8%</div>
+              <div className="bg-red-500/30 rounded p-2">{t('pillars.influence')} 20%</div>
+              <div className="bg-pink-500/30 rounded p-2">{t('pillars.vision')} 12%</div>
+              <div className="bg-cyan-500/30 rounded p-2">{t('pillars.excellence')} 12%</div>
+              <div className="bg-lime-500/30 rounded p-2">{t('pillars.innovation')} 8%</div>
             </div>
             <div className="mt-4 text-gray-400 text-sm">
-              Total : 20 + 8 + 12 + 8 + 20 + 12 + 12 + 8 = <strong className="text-white">100%</strong>
+              {t('algorithm.total')} : 20 + 8 + 12 + 8 + 20 + 12 + 12 + 8 = <strong className="text-white">100%</strong>
             </div>
           </div>
         </div>
@@ -866,10 +859,10 @@ export function AlgorithmPage() {
 
       {/* Transparence */}
       <section>
-        <h2 className="text-2xl font-bold mb-6">Limites & Transparence</h2>
+        <h2 className="text-2xl font-bold mb-6">{t('algorithm.limitations')}</h2>
         <div className="grid md:grid-cols-2 gap-6">
           <div className="bg-yellow-500/10 border border-yellow-500/30 rounded-2xl p-6">
-            <h3 className="font-bold text-yellow-400 mb-4">Points d'attention</h3>
+            <h3 className="font-bold text-yellow-400 mb-4">{t('algorithm.attentionPoints')}</h3>
             <ul className="space-y-3 text-sm text-gray-300">
               <li className="flex items-start gap-2">
                 <span className="text-yellow-500 mt-0.5">!</span>
@@ -891,7 +884,7 @@ export function AlgorithmPage() {
           </div>
 
           <div className="bg-green-500/10 border border-green-500/30 rounded-2xl p-6">
-            <h3 className="font-bold text-green-400 mb-4">Nos garanties</h3>
+            <h3 className="font-bold text-green-400 mb-4">{t('algorithm.ourGuarantees')}</h3>
             <ul className="space-y-3 text-sm text-gray-300">
               <li className="flex items-start gap-2">
                 <span className="text-green-500 mt-0.5">✓</span>

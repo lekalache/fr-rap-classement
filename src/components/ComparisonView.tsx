@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import type { Comparison } from '../types';
 import { RadarChart } from './RadarChart';
 import { ScoreBreakdown } from './ScoreBreakdown';
@@ -7,6 +8,7 @@ interface Props {
 }
 
 export function ComparisonView({ comparison }: Props) {
+  const { t } = useTranslation();
   const { artist1, artist2, winner, margin } = comparison;
 
   const isArtist1Winner = winner.id === artist1.artist.id;
@@ -24,19 +26,19 @@ export function ComparisonView({ comparison }: Props) {
           <div className="text-5xl font-black text-white">
             {artist1.totalScore}
           </div>
-          <div className="text-sm text-gray-400 mt-1">points</div>
+          <div className="text-sm text-gray-400 mt-1">{t('ranking.points')}</div>
           {isArtist1Winner && (
             <div className="mt-3 inline-block px-4 py-1 bg-green-500 rounded-full text-sm font-semibold">
-              VAINQUEUR
+              {t('comparison.winner')}
             </div>
           )}
         </div>
 
         {/* VS */}
         <div className="flex flex-col items-center justify-center">
-          <div className="text-6xl font-black text-gray-600">VS</div>
+          <div className="text-6xl font-black text-gray-600">{t('comparison.vs')}</div>
           <div className="mt-4 text-sm text-gray-500">
-            Écart: <span className="text-white font-semibold">{margin} pts</span>
+            <span className="text-white font-semibold">{margin}</span> {t('comparison.margin')}
           </div>
         </div>
 
@@ -49,10 +51,10 @@ export function ComparisonView({ comparison }: Props) {
           <div className="text-5xl font-black text-white">
             {artist2.totalScore}
           </div>
-          <div className="text-sm text-gray-400 mt-1">points</div>
+          <div className="text-sm text-gray-400 mt-1">{t('ranking.points')}</div>
           {!isArtist1Winner && (
             <div className="mt-3 inline-block px-4 py-1 bg-green-500 rounded-full text-sm font-semibold">
-              VAINQUEUR
+              {t('comparison.winner')}
             </div>
           )}
         </div>
@@ -74,7 +76,7 @@ export function ComparisonView({ comparison }: Props) {
 
       {/* Comparaison pilier par pilier */}
       <div className="mt-8 bg-white/5 rounded-2xl p-6">
-        <h3 className="text-xl font-bold mb-4">Duel Pilier par Pilier</h3>
+        <h3 className="text-xl font-bold mb-4">{t('comparison.breakdown')}</h3>
         <div className="space-y-3">
           {comparison.breakdown.map((item) => (
             <div key={item.pillar} className="flex items-center gap-4">

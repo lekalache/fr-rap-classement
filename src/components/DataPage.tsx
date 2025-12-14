@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import artistsData from '../data/artists.json';
 
 interface DownloadFormat {
@@ -81,6 +82,7 @@ function downloadFile(content: string, filename: string, mimeType: string) {
 }
 
 export function DataPage() {
+  const { t } = useTranslation();
   const [downloadCount, setDownloadCount] = useState(0);
 
   const handleDownload = (format: DownloadFormat) => {
@@ -112,10 +114,10 @@ export function DataPage() {
     <div className="max-w-4xl mx-auto">
       <div className="text-center mb-8">
         <h1 className="text-4xl font-black mb-4 bg-gradient-to-r from-green-400 via-emerald-500 to-teal-500 text-transparent bg-clip-text">
-          TÉLÉCHARGER LES DONNÉES
+          {t('data.title').toUpperCase()}
         </h1>
         <p className="text-gray-400">
-          Accède aux données brutes utilisées par l'algorithme
+          {t('data.subtitle')}
         </p>
       </div>
 
@@ -142,7 +144,7 @@ export function DataPage() {
       {/* Download buttons */}
       <div className="bg-white/5 rounded-xl p-6 mb-6">
         <h2 className="text-lg font-bold text-green-400 mb-4">
-          FORMATS DISPONIBLES
+          {t('data.downloadJson')} / {t('data.downloadCsv')}
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

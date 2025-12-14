@@ -14,9 +14,12 @@
     "pipeline:export": "cd data-pipeline && python scripts/export_metrics.py"
   },
   "dependencies": {
+    "i18next": "^25.7.2",
+    "i18next-browser-languagedetector": "^8.2.0",
     "mermaid": "^11.12.2",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
+    "react-i18next": "^16.5.0",
     "recharts": "^3.5.1",
     "zustand": "^5.0.9"
   },

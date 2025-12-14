@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import type { Artist, PillarName } from '../types';
-import { PILLAR_LABELS } from '../types';
 import { rankArtists } from '../services/scoring';
 
 interface Props {
@@ -11,8 +11,20 @@ interface Props {
 type SortBy = 'total' | PillarName;
 
 export function RankingPage({ artists, onSelectDuel }: Props) {
+  const { t } = useTranslation();
   const [sortBy, setSortBy] = useState<SortBy>('total');
   const [selectedArtists, setSelectedArtists] = useState<Artist[]>([]);
+
+  const pillarLabels: Record<PillarName, string> = {
+    commercialPower: t('pillars.commercial'),
+    careerLongevity: t('pillars.longevity'),
+    lyricalCraft: t('pillars.technique'),
+    quotability: t('pillars.quotability'),
+    culturalInfluence: t('pillars.influence'),
+    artisticVision: t('pillars.vision'),
+    peakExcellence: t('pillars.excellence'),
+    innovationScore: t('pillars.innovation'),
+  };
 
   const rankedArtists = useMemo(() => {
     const ranked = rankArtists(artists);
@@ -82,9 +94,9 @@ export function RankingPage({ artists, onSelectDuel }: Props) {
     <div className="max-w-7xl mx-auto">
       {/* Header */}
       <div className="text-center mb-8">
-        <h1 className="text-4xl font-black mb-4">Classement Général</h1>
+        <h1 className="text-4xl font-black mb-4">{t('ranking.title')}</h1>
         <p className="text-xl text-gray-400">
-          {artists.length} rappeurs classés par l'algorithme
+          {t('ranking.subtitle', { count: artists.length })}
         </p>
       </div>
 
@@ -93,7 +105,7 @@ export function RankingPage({ artists, onSelectDuel }: Props) {
         <div className="sticky top-4 z-20 mb-6">
           <div className="bg-gray-800/95 backdrop-blur-sm rounded-xl p-4 flex items-center justify-between">
             <div className="flex items-center gap-4">
-              <span className="text-gray-400">Sélection :</span>
+              <span className="text-gray-400">{t('ranking.selection')}</span>
               {selectedArtists.map((artist) => (
                 <div
                   key={artist.id}
@@ -109,7 +121,7 @@ export function RankingPage({ artists, onSelectDuel }: Props) {
                 </div>
               ))}
               {selectedArtists.length === 1 && (
-                <span className="text-gray-500 text-sm">Sélectionnez un 2ème rappeur</span>
+                <span className="text-gray-500 text-sm">{t('ranking.selectSecond')}</span>
               )}
             </div>
             {selectedArtists.length === 2 && (
@@ -117,7 +129,7 @@ export function RankingPage({ artists, onSelectDuel }: Props) {
                 onClick={handleLaunchDuel}
                 className="px-6 py-2 bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg font-bold hover:from-purple-600 hover:to-blue-600 transition-colors"
               >
-                Lancer le duel
+                {t('ranking.launchDuel')}
               </button>
             )}
           </div>
@@ -126,7 +138,7 @@ export function RankingPage({ artists, onSelectDuel }: Props) {
 
       {/* Filtres */}
       <div className="mb-6 flex flex-wrap gap-2">
-        <span className="text-gray-400 py-2">Trier par :</span>
+        <span className="text-gray-400 py-2">{t('ranking.sortBy')}</span>
         <button
           onClick={() => setSortBy('total')}
           className={`px-4 py-2 rounded-lg font-semibold transition-colors ${
@@ -135,7 +147,7 @@ export function RankingPage({ artists, onSelectDuel }: Props) {
               : 'bg-white/5 text-gray-400 hover:bg-white/10'
           }`}
         >
-          Score Total
+          {t('ranking.totalScore')}
         </button>
         {pillarKeys.map((pillar) => (
           <button
@@ -147,7 +159,7 @@ export function RankingPage({ artists, onSelectDuel }: Props) {
                 : 'bg-white/5 text-gray-400 hover:bg-white/10'
             }`}
           >
-            {PILLAR_LABELS[pillar]}
+            {pillarLabels[pillar]}
           </button>
         ))}
       </div>
@@ -185,7 +197,7 @@ export function RankingPage({ artists, onSelectDuel }: Props) {
               <div className={`text-3xl font-black ${getScoreColor(artist.totalScore)}`}>
                 {artist.totalScore}
               </div>
-              <div className="text-sm text-gray-500">points</div>
+              <div className="text-sm text-gray-500">{t('ranking.points')}</div>
             </div>
           );
         })}
@@ -198,8 +210,8 @@ export function RankingPage({ artists, onSelectDuel }: Props) {
             <thead>
               <tr className="border-b border-gray-700">
                 <th className="text-left p-4 text-gray-400 font-semibold">#</th>
-                <th className="text-left p-4 text-gray-400 font-semibold">Rappeur</th>
-                <th className="text-center p-4 text-gray-400 font-semibold">Score</th>
+                <th className="text-left p-4 text-gray-400 font-semibold">{t('ranking.rapper')}</th>
+                <th className="text-center p-4 text-gray-400 font-semibold">{t('ranking.score')}</th>
                 {pillarKeys.map((pillar) => (
                   <th
                     key={pillar}
@@ -208,10 +220,10 @@ export function RankingPage({ artists, onSelectDuel }: Props) {
                     }`}
                     onClick={() => setSortBy(pillar)}
                   >
-                    {PILLAR_LABELS[pillar].split(' ')[0]}
+                    {pillarLabels[pillar].split(' ')[0]}
                   </th>
                 ))}
-                <th className="text-center p-4 text-gray-400 font-semibold">Début</th>
+                <th className="text-center p-4 text-gray-400 font-semibold">{t('ranking.debut')}</th>
               </tr>
             </thead>
             <tbody>
@@ -241,7 +253,7 @@ export function RankingPage({ artists, onSelectDuel }: Props) {
                         <div>
                           <div className="font-semibold">{artist.artist.name}</div>
                           <div className="text-xs text-gray-500">
-                            {new Date().getFullYear() - artist.artist.debutYear} ans de carrière
+                            {new Date().getFullYear() - artist.artist.debutYear} {t('ranking.yearsCareer')}
                           </div>
                         </div>
                       </div>
@@ -287,25 +299,25 @@ export function RankingPage({ artists, onSelectDuel }: Props) {
           <div className="text-3xl font-black text-purple-400">
             {Math.round(rankedArtists.reduce((sum, a) => sum + a.totalScore, 0) / rankedArtists.length)}
           </div>
-          <div className="text-sm text-gray-400">Score Moyen</div>
+          <div className="text-sm text-gray-400">{t('ranking.averageScore')}</div>
         </div>
         <div className="bg-white/5 rounded-xl p-4 text-center">
           <div className="text-3xl font-black text-green-400">
             {rankedArtists[0]?.totalScore || 0}
           </div>
-          <div className="text-sm text-gray-400">Score Max</div>
+          <div className="text-sm text-gray-400">{t('ranking.maxScore')}</div>
         </div>
         <div className="bg-white/5 rounded-xl p-4 text-center">
           <div className="text-3xl font-black text-yellow-400">
             {Math.round(rankedArtists.reduce((sum, a) => sum + (new Date().getFullYear() - a.artist.debutYear), 0) / rankedArtists.length)}
           </div>
-          <div className="text-sm text-gray-400">Années Carrière Moy.</div>
+          <div className="text-sm text-gray-400">{t('ranking.avgCareerYears')}</div>
         </div>
         <div className="bg-white/5 rounded-xl p-4 text-center">
           <div className="text-3xl font-black text-blue-400">
             {rankedArtists.length}
           </div>
-          <div className="text-sm text-gray-400">Rappeurs</div>
+          <div className="text-sm text-gray-400">{t('ranking.rappers')}</div>
         </div>
       </div>
     </div>

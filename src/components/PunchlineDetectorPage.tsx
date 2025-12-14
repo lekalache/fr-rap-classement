@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 /**
  * Punchline Detector - Analyze if a text is a punchline
@@ -319,6 +320,7 @@ function analyzePunchline(text: string): AnalysisResult {
 }
 
 export function PunchlineDetectorPage() {
+  const { t } = useTranslation();
   const [text, setText] = useState('');
   const [result, setResult] = useState<AnalysisResult | null>(null);
   const [isAnalyzing, setIsAnalyzing] = useState(false);
@@ -345,22 +347,22 @@ export function PunchlineDetectorPage() {
     <div className="max-w-4xl mx-auto">
       <div className="text-center mb-8">
         <h1 className="text-4xl font-black mb-4 bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 text-transparent bg-clip-text">
-          DÉTECTEUR DE PUNCHLINE
+          {t('detector.title').toUpperCase()}
         </h1>
         <p className="text-gray-400">
-          Colle ta punchline et découvre si elle a du potentiel selon notre algorithme
+          {t('detector.subtitle')}
         </p>
       </div>
 
       {/* Input area */}
       <div className="bg-white/5 rounded-xl p-6 mb-6">
         <label className="block text-sm font-semibold text-purple-400 mb-3">
-          ENTRE TA PUNCHLINE
+          {t('detector.title').toUpperCase()}
         </label>
         <textarea
           value={text}
           onChange={(e) => setText(e.target.value)}
-          placeholder="Ex: J'suis parti de rien comme un orphelin dans un ascenseur..."
+          placeholder={t('detector.placeholder')}
           className="w-full bg-black/30 rounded-lg p-4 text-white placeholder-gray-500 border border-white/10 focus:border-purple-500 focus:outline-none resize-none"
           rows={3}
         />
@@ -390,7 +392,7 @@ export function PunchlineDetectorPage() {
             }
           `}
         >
-          {isAnalyzing ? 'ANALYSE EN COURS...' : 'ANALYSER LA PUNCHLINE'}
+          {isAnalyzing ? t('detector.analyzing') : t('detector.analyze').toUpperCase()}
         </button>
       </div>
 
@@ -411,14 +413,14 @@ export function PunchlineDetectorPage() {
               {result.verdict}
             </div>
             <div className="text-4xl font-black mt-4">
-              Score: {result.totalScore.toFixed(0)}/100
+              {t('detector.score')}: {result.totalScore.toFixed(0)}/100
             </div>
           </div>
 
           {/* Pattern breakdown */}
           <div className="bg-white/5 rounded-xl p-6">
             <h3 className="text-lg font-bold text-purple-400 mb-4">
-              ANALYSE DES PATTERNS
+              {t('detector.breakdown').toUpperCase()}
             </h3>
 
             <div className="space-y-4">
@@ -473,7 +475,7 @@ export function PunchlineDetectorPage() {
           {/* Tips */}
           <div className="bg-gradient-to-r from-purple-500/10 to-blue-500/10 rounded-xl p-6 border border-purple-500/20">
             <h3 className="text-lg font-bold text-purple-400 mb-3">
-              COMMENT AMÉLIORER
+              {t('detector.tips').toUpperCase()}
             </h3>
             <ul className="text-gray-300 space-y-2 text-sm">
               <li>• Ajoute une <span className="text-yellow-400">comparaison inattendue</span> avec "comme"</li>
@@ -490,7 +492,7 @@ export function PunchlineDetectorPage() {
       {!result && (
         <div className="bg-white/5 rounded-xl p-6">
           <h3 className="text-lg font-bold text-purple-400 mb-4">
-            QU'EST-CE QU'UNE PUNCHLINE ?
+            {t('detector.howItWorks').toUpperCase()}
           </h3>
           <p className="text-gray-400 mb-4">
             Une punchline compresse le maximum de <span className="text-purple-400">tension sémantique</span>
