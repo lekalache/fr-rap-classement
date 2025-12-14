@@ -187,12 +187,27 @@ class GeniusCollector:
                     lyrics = self._scrape_lyrics(song_url)
 
                     if lyrics:
+                        # Extract metadata for innovation/influence analysis
+                        release_date = song_data.get("release_date_for_display")
+                        featured_artists = [
+                            fa.get("name") for fa in song_data.get("featured_artists", [])
+                        ]
+                        pageviews = song_data.get("stats", {}).get("pageviews", 0)
+                        annotation_count = song_data.get("annotation_count", 0)
+                        album_name = song_data.get("album", {}).get("name") if song_data.get("album") else None
+
                         songs.append({
                             "id": song_data.get("id"),
                             "title": title,
                             "lyrics": lyrics,
                             "url": song_url,
                             "artist_name": artist_info["name"],
+                            # New metadata fields for objective scoring
+                            "release_date": release_date,
+                            "featured_artists": featured_artists,
+                            "pageviews": pageviews,
+                            "annotation_count": annotation_count,
+                            "album_name": album_name,
                         })
 
                 page += 1

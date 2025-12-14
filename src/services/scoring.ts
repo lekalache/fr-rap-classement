@@ -2,7 +2,20 @@ import type { Artist, ArtistScore, PillarScore, Comparison } from '../types';
 
 const CURRENT_YEAR = new Date().getFullYear();
 
-// Benchmarks V3 - recalibrés sur les données réelles collectées
+// ═══════════════════════════════════════════════════════════════
+// SCORING SYSTEM V4 - FULLY OBJECTIVE
+// ═══════════════════════════════════════════════════════════════
+// All metrics are now computed by the Python pipeline:
+// - innovationScore: TF-IDF style fingerprinting + first-mover analysis
+// - artisticIntegrity: Consistency + independence + trend resistance
+// - influenceScore: Wikipedia + awards + citation network
+// - thematicCoherence: Topic modeling coherence
+// - peakAlbumScore: Best album certification efficiency
+//
+// Run `python scripts/migrate_to_objective.py` to update artists.json
+// ═══════════════════════════════════════════════════════════════
+
+// Benchmarks V4 - all metrics now computed objectively
 const BENCHMARKS = {
   // Commercial (basé sur Jul = référence max)
   monthlyListeners: 15_000_000,

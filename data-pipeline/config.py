@@ -25,10 +25,39 @@ REQUEST_DELAY_SECONDS = 1.0
 
 # Benchmarks (matching scoring.ts)
 BENCHMARKS = {
+    # Lyrical (automated)
     "uniqueWords": 8000,      # Nekfeu reference
     "flowScore": 100,
     "punchlineScore": 100,
     "hookScore": 100,
+
+    # Innovation (automated)
+    "innovationScore": 100,
+    "styleCreation": 100,
+    "lyricalUniqueness": 100,
+    "firstMover": 100,
+    "genreFusion": 100,
+
+    # Integrity (automated)
+    "artisticIntegrity": 100,
+    "consistency": 100,
+    "independence": 100,
+    "trendResistance": 100,
+    "featureSelectivity": 100,
+
+    # Influence (automated)
+    "influenceScore": 100,
+    "wikipediaMentions": 650,
+    "awardsCount": 20,
+    "citationNetwork": 100,
+    "chartsEfficiency": 100,
+
+    # Thematic (automated)
+    "thematicCoherence": 100,
+
+    # Peak (automated)
+    "peakAlbumScore": 100,
+    "classicTracksCount": 30,
 }
 
 # Metric weights (for internal scoring)
@@ -51,4 +80,31 @@ HOOK_WEIGHTS = {
     "catchiness": 0.30,
     "rhythm": 0.20,
     "brevity": 0.15,
+}
+
+# New objective scoring weights
+INNOVATION_WEIGHTS = {
+    "style_creation": 0.40,
+    "lyrical_uniqueness": 0.30,
+    "first_mover": 0.20,
+    "genre_fusion": 0.10,
+}
+
+INTEGRITY_WEIGHTS = {
+    "consistency": 0.35,
+    "independence": 0.30,
+    "trend_resistance": 0.20,
+    "feature_selectivity": 0.15,
+}
+
+INFLUENCE_WEIGHTS = {
+    "wikipedia_presence": 0.25,
+    "awards_certifications": 0.25,
+    "citation_network": 0.25,
+    "charts_efficiency": 0.25,
+}
+
+PEAK_WEIGHTS = {
+    "peak_album": 0.60,
+    "classic_tracks": 0.40,
 }

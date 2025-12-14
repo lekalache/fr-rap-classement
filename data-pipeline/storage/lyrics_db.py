@@ -60,6 +60,108 @@ class LyricsDatabase:
 
                 CREATE INDEX IF NOT EXISTS idx_songs_artist ON songs(artist_id);
                 CREATE INDEX IF NOT EXISTS idx_songs_genius_id ON songs(genius_song_id);
+
+                -- New tables for objective scoring (Phase 2 refactor)
+
+                -- Extended song metadata for innovation/influence analysis
+                CREATE TABLE IF NOT EXISTS songs_metadata (
+                    song_id INTEGER PRIMARY KEY,
+                    release_date TEXT,
+                    album_name TEXT,
+                    featured_artists TEXT,  -- JSON array
+                    genius_pageviews INTEGER DEFAULT 0,
+                    annotation_count INTEGER DEFAULT 0,
+                    certification_level TEXT,  -- gold/platinum/diamond
+                    FOREIGN KEY (song_id) REFERENCES songs(id)
+                );
+
+                -- Innovation metrics (computed by innovation analyzer)
+                CREATE TABLE IF NOT EXISTS artist_innovation (
+                    artist_id TEXT PRIMARY KEY,
+                    style_uniqueness REAL DEFAULT 0,
+                    vocabulary_distinctiveness REAL DEFAULT 0,
+                    first_mover_score REAL DEFAULT 0,
+                    genre_fusion_score REAL DEFAULT 0,
+                    total_innovation_score REAL DEFAULT 0,
+                    computed_at TIMESTAMP,
+                    FOREIGN KEY (artist_id) REFERENCES artists(id)
+                );
+
+                -- Integrity metrics (computed by integrity analyzer)
+                CREATE TABLE IF NOT EXISTS artist_integrity (
+                    artist_id TEXT PRIMARY KEY,
+                    consistency_score REAL DEFAULT 0,
+                    independence_score REAL DEFAULT 0,
+                    trend_resistance REAL DEFAULT 0,
+                    feature_selectivity REAL DEFAULT 0,
+                    total_integrity_score REAL DEFAULT 0,
+                    computed_at TIMESTAMP,
+                    FOREIGN KEY (artist_id) REFERENCES artists(id)
+                );
+
+                -- Influence metrics (computed by influence analyzer)
+                CREATE TABLE IF NOT EXISTS artist_influence (
+                    artist_id TEXT PRIMARY KEY,
+                    wikipedia_backlinks INTEGER DEFAULT 0,
+                    wikipedia_pageviews INTEGER DEFAULT 0,
+                    wikipedia_languages INTEGER DEFAULT 0,
+                    awards_weighted_score REAL DEFAULT 0,
+                    citation_mentions INTEGER DEFAULT 0,
+                    style_adoption_score REAL DEFAULT 0,
+                    total_influence_score REAL DEFAULT 0,
+                    computed_at TIMESTAMP,
+                    FOREIGN KEY (artist_id) REFERENCES artists(id)
+                );
+
+                -- Thematic coherence (computed by thematic analyzer)
+                CREATE TABLE IF NOT EXISTS artist_themes (
+                    artist_id TEXT PRIMARY KEY,
+                    dominant_themes TEXT,  -- JSON array of top themes
+                    theme_concentration REAL DEFAULT 0,
+                    theme_entropy REAL DEFAULT 0,
+                    coherence_score REAL DEFAULT 0,
+                    computed_at TIMESTAMP,
+                    FOREIGN KEY (artist_id) REFERENCES artists(id)
+                );
+
+                -- Peak excellence metrics
+                CREATE TABLE IF NOT EXISTS artist_peak (
+                    artist_id TEXT PRIMARY KEY,
+                    peak_album_score REAL DEFAULT 0,
+                    classic_tracks_count INTEGER DEFAULT 0,
+                    total_peak_score REAL DEFAULT 0,
+                    computed_at TIMESTAMP,
+                    FOREIGN KEY (artist_id) REFERENCES artists(id)
+                );
+
+                -- Wikipedia data cache
+                CREATE TABLE IF NOT EXISTS wikipedia_cache (
+                    artist_id TEXT PRIMARY KEY,
+                    page_title TEXT,
+                    page_id INTEGER,
+                    page_length INTEGER DEFAULT 0,
+                    backlinks_count INTEGER DEFAULT 0,
+                    languages_count INTEGER DEFAULT 0,
+                    pageviews_monthly INTEGER DEFAULT 0,
+                    references_count INTEGER DEFAULT 0,
+                    creation_date TEXT,
+                    fetched_at TIMESTAMP,
+                    FOREIGN KEY (artist_id) REFERENCES artists(id)
+                );
+
+                -- Awards and certifications cache
+                CREATE TABLE IF NOT EXISTS awards_cache (
+                    artist_id TEXT PRIMARY KEY,
+                    total_awards INTEGER DEFAULT 0,
+                    total_certifications INTEGER DEFAULT 0,
+                    diamond_count INTEGER DEFAULT 0,
+                    platinum_count INTEGER DEFAULT 0,
+                    gold_count INTEGER DEFAULT 0,
+                    weighted_awards_score REAL DEFAULT 0,
+                    weighted_certs_score REAL DEFAULT 0,
+                    fetched_at TIMESTAMP,
+                    FOREIGN KEY (artist_id) REFERENCES artists(id)
+                );
             """)
 
     def save_artist(self, artist_id: str, name: str, genius_id: Optional[int] = None):
@@ -251,6 +353,248 @@ class LyricsDatabase:
             conn.execute("DELETE FROM songs WHERE artist_id = ?", (artist_id,))
             conn.execute("DELETE FROM analysis_cache WHERE artist_id = ?", (artist_id,))
             conn.execute("DELETE FROM artists WHERE id = ?", (artist_id,))
+
+    # ═══════════════════════════════════════════════════════════════
+    # NEW METHODS FOR OBJECTIVE SCORING
+    # ═══════════════════════════════════════════════════════════════
+
+    def save_innovation_metrics(
+        self,
+        artist_id: str,
+        style_uniqueness: float,
+        vocabulary_distinctiveness: float,
+        first_mover_score: float,
+        genre_fusion_score: float,
+        total_score: float
+    ):
+        """Save innovation metrics for an artist."""
+        with sqlite3.connect(self.db_path) as conn:
+            conn.execute("""
+                INSERT OR REPLACE INTO artist_innovation
+                (artist_id, style_uniqueness, vocabulary_distinctiveness,
+                 first_mover_score, genre_fusion_score, total_innovation_score, computed_at)
+                VALUES (?, ?, ?, ?, ?, ?, ?)
+            """, (artist_id, style_uniqueness, vocabulary_distinctiveness,
+                  first_mover_score, genre_fusion_score, total_score, datetime.now()))
+
+    def get_innovation_metrics(self, artist_id: str) -> Optional[dict]:
+        """Get cached innovation metrics."""
+        with sqlite3.connect(self.db_path) as conn:
+            conn.row_factory = sqlite3.Row
+            cursor = conn.execute(
+                "SELECT * FROM artist_innovation WHERE artist_id = ?", (artist_id,)
+            )
+            row = cursor.fetchone()
+            return dict(row) if row else None
+
+    def save_integrity_metrics(
+        self,
+        artist_id: str,
+        consistency_score: float,
+        independence_score: float,
+        trend_resistance: float,
+        feature_selectivity: float,
+        total_score: float
+    ):
+        """Save integrity metrics for an artist."""
+        with sqlite3.connect(self.db_path) as conn:
+            conn.execute("""
+                INSERT OR REPLACE INTO artist_integrity
+                (artist_id, consistency_score, independence_score,
+                 trend_resistance, feature_selectivity, total_integrity_score, computed_at)
+                VALUES (?, ?, ?, ?, ?, ?, ?)
+            """, (artist_id, consistency_score, independence_score,
+                  trend_resistance, feature_selectivity, total_score, datetime.now()))
+
+    def get_integrity_metrics(self, artist_id: str) -> Optional[dict]:
+        """Get cached integrity metrics."""
+        with sqlite3.connect(self.db_path) as conn:
+            conn.row_factory = sqlite3.Row
+            cursor = conn.execute(
+                "SELECT * FROM artist_integrity WHERE artist_id = ?", (artist_id,)
+            )
+            row = cursor.fetchone()
+            return dict(row) if row else None
+
+    def save_influence_metrics(
+        self,
+        artist_id: str,
+        wikipedia_backlinks: int,
+        wikipedia_pageviews: int,
+        wikipedia_languages: int,
+        awards_weighted_score: float,
+        citation_mentions: int,
+        style_adoption_score: float,
+        total_score: float
+    ):
+        """Save influence metrics for an artist."""
+        with sqlite3.connect(self.db_path) as conn:
+            conn.execute("""
+                INSERT OR REPLACE INTO artist_influence
+                (artist_id, wikipedia_backlinks, wikipedia_pageviews, wikipedia_languages,
+                 awards_weighted_score, citation_mentions, style_adoption_score,
+                 total_influence_score, computed_at)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+            """, (artist_id, wikipedia_backlinks, wikipedia_pageviews, wikipedia_languages,
+                  awards_weighted_score, citation_mentions, style_adoption_score,
+                  total_score, datetime.now()))
+
+    def get_influence_metrics(self, artist_id: str) -> Optional[dict]:
+        """Get cached influence metrics."""
+        with sqlite3.connect(self.db_path) as conn:
+            conn.row_factory = sqlite3.Row
+            cursor = conn.execute(
+                "SELECT * FROM artist_influence WHERE artist_id = ?", (artist_id,)
+            )
+            row = cursor.fetchone()
+            return dict(row) if row else None
+
+    def save_thematic_metrics(
+        self,
+        artist_id: str,
+        dominant_themes: str,  # JSON string
+        theme_concentration: float,
+        theme_entropy: float,
+        coherence_score: float
+    ):
+        """Save thematic coherence metrics for an artist."""
+        with sqlite3.connect(self.db_path) as conn:
+            conn.execute("""
+                INSERT OR REPLACE INTO artist_themes
+                (artist_id, dominant_themes, theme_concentration,
+                 theme_entropy, coherence_score, computed_at)
+                VALUES (?, ?, ?, ?, ?, ?)
+            """, (artist_id, dominant_themes, theme_concentration,
+                  theme_entropy, coherence_score, datetime.now()))
+
+    def get_thematic_metrics(self, artist_id: str) -> Optional[dict]:
+        """Get cached thematic metrics."""
+        with sqlite3.connect(self.db_path) as conn:
+            conn.row_factory = sqlite3.Row
+            cursor = conn.execute(
+                "SELECT * FROM artist_themes WHERE artist_id = ?", (artist_id,)
+            )
+            row = cursor.fetchone()
+            return dict(row) if row else None
+
+    def save_peak_metrics(
+        self,
+        artist_id: str,
+        peak_album_score: float,
+        classic_tracks_count: int,
+        total_score: float
+    ):
+        """Save peak excellence metrics for an artist."""
+        with sqlite3.connect(self.db_path) as conn:
+            conn.execute("""
+                INSERT OR REPLACE INTO artist_peak
+                (artist_id, peak_album_score, classic_tracks_count,
+                 total_peak_score, computed_at)
+                VALUES (?, ?, ?, ?, ?)
+            """, (artist_id, peak_album_score, classic_tracks_count,
+                  total_score, datetime.now()))
+
+    def get_peak_metrics(self, artist_id: str) -> Optional[dict]:
+        """Get cached peak excellence metrics."""
+        with sqlite3.connect(self.db_path) as conn:
+            conn.row_factory = sqlite3.Row
+            cursor = conn.execute(
+                "SELECT * FROM artist_peak WHERE artist_id = ?", (artist_id,)
+            )
+            row = cursor.fetchone()
+            return dict(row) if row else None
+
+    def save_wikipedia_cache(self, artist_id: str, data: dict):
+        """Cache Wikipedia data for an artist."""
+        with sqlite3.connect(self.db_path) as conn:
+            conn.execute("""
+                INSERT OR REPLACE INTO wikipedia_cache
+                (artist_id, page_title, page_id, page_length, backlinks_count,
+                 languages_count, pageviews_monthly, references_count, creation_date, fetched_at)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            """, (
+                artist_id, data.get("page_title"), data.get("page_id"),
+                data.get("page_length", 0), data.get("backlinks_count", 0),
+                data.get("languages_count", 0), data.get("pageviews_monthly", 0),
+                data.get("references_count", 0), data.get("creation_date"),
+                datetime.now()
+            ))
+
+    def get_wikipedia_cache(self, artist_id: str) -> Optional[dict]:
+        """Get cached Wikipedia data."""
+        with sqlite3.connect(self.db_path) as conn:
+            conn.row_factory = sqlite3.Row
+            cursor = conn.execute(
+                "SELECT * FROM wikipedia_cache WHERE artist_id = ?", (artist_id,)
+            )
+            row = cursor.fetchone()
+            return dict(row) if row else None
+
+    def save_awards_cache(self, artist_id: str, data: dict):
+        """Cache awards data for an artist."""
+        with sqlite3.connect(self.db_path) as conn:
+            conn.execute("""
+                INSERT OR REPLACE INTO awards_cache
+                (artist_id, total_awards, total_certifications, diamond_count,
+                 platinum_count, gold_count, weighted_awards_score, weighted_certs_score, fetched_at)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+            """, (
+                artist_id, data.get("total_awards", 0), data.get("total_certifications", 0),
+                data.get("diamond_count", 0), data.get("platinum_count", 0),
+                data.get("gold_count", 0), data.get("weighted_awards_score", 0),
+                data.get("weighted_certs_score", 0), datetime.now()
+            ))
+
+    def get_awards_cache(self, artist_id: str) -> Optional[dict]:
+        """Get cached awards data."""
+        with sqlite3.connect(self.db_path) as conn:
+            conn.row_factory = sqlite3.Row
+            cursor = conn.execute(
+                "SELECT * FROM awards_cache WHERE artist_id = ?", (artist_id,)
+            )
+            row = cursor.fetchone()
+            return dict(row) if row else None
+
+    def get_all_artists_lyrics(self) -> dict[str, str]:
+        """Get combined lyrics for all artists.
+
+        Returns:
+            Dict mapping artist_id to combined lyrics.
+        """
+        with sqlite3.connect(self.db_path) as conn:
+            cursor = conn.execute("""
+                SELECT artist_id, GROUP_CONCAT(lyrics, '\n\n') as combined
+                FROM songs
+                WHERE lyrics IS NOT NULL
+                GROUP BY artist_id
+            """)
+            return {row[0]: row[1] for row in cursor.fetchall()}
+
+    def get_all_computed_metrics(self) -> dict[str, dict]:
+        """Get all computed metrics for all artists.
+
+        Returns:
+            Dict mapping artist_id to all their computed metrics.
+        """
+        results = {}
+        with sqlite3.connect(self.db_path) as conn:
+            conn.row_factory = sqlite3.Row
+
+            # Get all artists
+            cursor = conn.execute("SELECT id FROM artists")
+            artist_ids = [row[0] for row in cursor.fetchall()]
+
+            for artist_id in artist_ids:
+                results[artist_id] = {
+                    "innovation": self.get_innovation_metrics(artist_id),
+                    "integrity": self.get_integrity_metrics(artist_id),
+                    "influence": self.get_influence_metrics(artist_id),
+                    "thematic": self.get_thematic_metrics(artist_id),
+                    "peak": self.get_peak_metrics(artist_id),
+                    "analysis": self.get_cached_analysis(artist_id),
+                }
+
+        return results
 
 
 if __name__ == "__main__":
