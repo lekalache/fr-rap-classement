@@ -81,6 +81,9 @@ def get_nlp(model: Optional[str] = None) -> Language:
             _nlp = spacy.load(model_name)
             print(f"✓ Downloaded and loaded: {model_name}")
 
+        # Increase max_length for artists with large discographies (300+ songs)
+        _nlp.max_length = 2_000_000  # 2M chars (default is 1M)
+
     return _nlp
 
 

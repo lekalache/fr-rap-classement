@@ -88,8 +88,8 @@ function calculateCommercialPower(artist: Artist): PillarScore {
 function calculateCareerLongevity(artist: Artist): PillarScore {
   const careerYears = CURRENT_YEAR - artist.debutYear;
 
-  // Décennies d'activité réelles (1-10 ans = 1, 11-20 ans = 2, etc.)
-  const decadesActive = Math.ceil(careerYears / 10);
+  // Décennies complètes (10-19 ans = 1, 20-29 ans = 2, etc.)
+  const decadesActive = Math.floor(careerYears / 10);
   const decadeBonus = Math.min(100, decadesActive * 25);
 
   const yearsScore = normalize(careerYears, BENCHMARKS.careerYears);

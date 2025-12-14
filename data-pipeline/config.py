@@ -20,7 +20,7 @@ GENIUS_CLIENT_ID = os.getenv("GENIUS_CLIENT_ID")
 GENIUS_CLIENT_SECRET = os.getenv("GENIUS_CLIENT_SECRET")
 
 # Collection settings
-MAX_SONGS_PER_ARTIST = 50
+MAX_SONGS_PER_ARTIST = 300  # Increased from 50 to capture full discographies
 REQUEST_DELAY_SECONDS = 1.0
 
 # Benchmarks (matching scoring.ts)
