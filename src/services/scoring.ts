@@ -1,6 +1,34 @@
 import type { Artist, ArtistScore, PillarScore, Comparison } from '../types';
+import { getEra, type Era } from '../types/history';
 
 const CURRENT_YEAR = new Date().getFullYear();
+
+// ═══════════════════════════════════════════════════════════════
+// ERA DIFFICULTY COEFFICIENTS
+// ═══════════════════════════════════════════════════════════════
+// Getting platinum in 1995 was exponentially harder than in 2023:
+// - 1995: Rap = 2% of market, no streaming, radio boycott, physical only
+// - 2023: Rap = 50%+ of market, playlists, TikTok, instant global distribution
+//
+// These coefficients BOOST pre-streaming success, never penalize modern artists
+// ═══════════════════════════════════════════════════════════════
+const ERA_DIFFICULTY_COEFFICIENT: Record<Era, number> = {
+  physical: 1.50,        // 1990-2005: Hardest era - physical only, no radio
+  transition: 1.25,      // 2006-2014: YouTube emerges but still difficult
+  streamingEarly: 1.10,  // 2015-2017: Early streaming adopters
+  streamingMature: 1.00, // 2018-2021: Baseline
+  current: 1.00,         // 2022+: Baseline (never penalize)
+};
+
+// Legacy amplification for sustained influence
+// An artist influential for 30 years has more TOTAL impact than one for 5 years
+const LEGACY_INFLUENCE_BONUS: Record<Era, number> = {
+  physical: 1.40,        // 30+ years of influence
+  transition: 1.20,      // 15-20 years of influence
+  streamingEarly: 1.10,  // 10 years of influence
+  streamingMature: 1.00, // Recent
+  current: 1.00,         // Baseline
+};
 
 // ═══════════════════════════════════════════════════════════════
 // SCORING SYSTEM V4 - FULLY OBJECTIVE
@@ -54,9 +82,12 @@ function normalize(value: number, max: number): number {
 // PILIER 1: COMMERCIAL POWER (20%)
 // Popularité actuelle + certifications + efficacité
 // CORRIGÉ: Fusion listeners+youtube pour éviter double comptage
+// V5: Era coefficient boosts pre-streaming success (never penalizes)
 // ═══════════════════════════════════════════════════════════════
 function calculateCommercialPower(artist: Artist): PillarScore {
   const { monthlyListeners, youtubeViews, certifications, albumsCount } = artist.metrics;
+  const era = getEra(artist.debutYear);
+  const eraCoefficient = ERA_DIFFICULTY_COEFFICIENT[era];
 
   // FUSION: Popularité actuelle = moyenne pondérée listeners + youtube
   // (évite le double comptage de la popularité)
@@ -64,20 +95,25 @@ function calculateCommercialPower(artist: Artist): PillarScore {
   const viewsScore = normalize(youtubeViews, BENCHMARKS.youtubeViews);
   const popularityScore = listenersScore * 0.6 + viewsScore * 0.4;  // Spotify pèse plus
 
+  // Certifications get the era boost - going platinum in 1995 was MUCH harder
   const certsScore = normalize(certifications, BENCHMARKS.certifications);
+  const adjustedCertsScore = Math.min(100, certsScore * eraCoefficient);
 
   // Efficacité = certifications par album (récompense qualité > quantité)
   const efficiency = albumsCount > 0 ? certifications / albumsCount : 0;
   const efficiencyScore = normalize(efficiency, BENCHMARKS.certificationEfficiency);
 
-  // Nouveaux poids: 50% popularité fusionnée, 30% certifs, 20% efficacité
-  const score = popularityScore * 0.50 + certsScore * 0.30 + efficiencyScore * 0.20;
+  // Nouveaux poids: 45% popularité fusionnée, 35% certifs (era-boosted), 20% efficacité
+  const score = popularityScore * 0.45 + adjustedCertsScore * 0.35 + efficiencyScore * 0.20;
+
+  const eraLabel = era === 'physical' ? ' [×1.5 ère physique]' :
+                   era === 'transition' ? ' [×1.25 ère transition]' : '';
 
   return {
     name: 'Commercial',
     score: Math.round(score),
     weight: 0.20,
-    details: `${(monthlyListeners / 1_000_000).toFixed(1)}M listeners, ${certifications} certifs`,
+    details: `${(monthlyListeners / 1_000_000).toFixed(1)}M listeners, ${certifications} certifs${eraLabel}`,
   };
 }
 
@@ -149,22 +185,30 @@ function calculateQuotability(artist: Artist): PillarScore {
 // PILIER 5: CULTURAL INFLUENCE (20%)
 // Impact réel - SANS features (choix artistique)
 // CORRIGÉ: Retiré chartsLongevity (corrélation 0.94 avec certifications)
+// V5: Legacy amplification - 30 years of influence > 5 years
 // ═══════════════════════════════════════════════════════════════
 function calculateCulturalInfluence(artist: Artist): PillarScore {
   const { influenceScore, wikipediaMentions, awardsCount } = artist.metrics;
+  const era = getEra(artist.debutYear);
+  const legacyBonus = LEGACY_INFLUENCE_BONUS[era];
 
   const influenceNorm = normalize(influenceScore, BENCHMARKS.influenceScore);
   const wikiNorm = normalize(wikipediaMentions, BENCHMARKS.wikipediaMentions);
   const awardsNorm = normalize(awardsCount, BENCHMARKS.awardsCount);
 
-  // Nouveaux poids sans chartsLongevity: 45% influence, 30% wiki, 25% awards
-  const score = influenceNorm * 0.45 + wikiNorm * 0.30 + awardsNorm * 0.25;
+  // Base score: 45% influence, 30% wiki, 25% awards
+  const baseScore = influenceNorm * 0.45 + wikiNorm * 0.30 + awardsNorm * 0.25;
+
+  // Apply legacy bonus - sustained influence over decades is more impactful
+  const adjustedScore = Math.min(100, baseScore * legacyBonus);
+
+  const legacyLabel = legacyBonus > 1.0 ? ` [×${legacyBonus} legacy]` : '';
 
   return {
     name: 'Influence',
-    score: Math.round(score),
+    score: Math.round(adjustedScore),
     weight: 0.20,
-    details: `Influence ${influenceScore}/100, ${awardsCount} awards`,
+    details: `Influence ${influenceScore}/100, ${awardsCount} awards${legacyLabel}`,
   };
 }
 
@@ -230,16 +274,39 @@ function calculateInnovationScore(artist: Artist): PillarScore {
 // ═══════════════════════════════════════════════════════════════
 // CALCUL DU SCORE TOTAL
 // ═══════════════════════════════════════════════════════════════
-export function calculateArtistScore(artist: Artist): ArtistScore {
+
+// Default weights - exported for UI customization
+export const DEFAULT_WEIGHTS = {
+  commercialPower: 0.20,
+  careerLongevity: 0.08,
+  lyricalCraft: 0.12,
+  quotability: 0.08,
+  culturalInfluence: 0.20,
+  artisticVision: 0.12,
+  peakExcellence: 0.12,
+  innovationScore: 0.08,
+};
+
+export type CustomWeights = typeof DEFAULT_WEIGHTS;
+
+export function calculateArtistScore(artist: Artist, customWeights?: CustomWeights): ArtistScore {
+  const weights = customWeights || DEFAULT_WEIGHTS;
+
+  // Normalize weights to sum to 1.0
+  const totalWeight = Object.values(weights).reduce((sum, w) => sum + w, 0);
+  const normalizedWeights = Object.fromEntries(
+    Object.entries(weights).map(([k, v]) => [k, v / totalWeight])
+  ) as CustomWeights;
+
   const pillars = {
-    commercialPower: calculateCommercialPower(artist),
-    careerLongevity: calculateCareerLongevity(artist),
-    lyricalCraft: calculateLyricalCraft(artist),
-    quotability: calculateQuotability(artist),
-    culturalInfluence: calculateCulturalInfluence(artist),
-    artisticVision: calculateArtisticVision(artist),
-    peakExcellence: calculatePeakExcellence(artist),
-    innovationScore: calculateInnovationScore(artist),
+    commercialPower: { ...calculateCommercialPower(artist), weight: normalizedWeights.commercialPower },
+    careerLongevity: { ...calculateCareerLongevity(artist), weight: normalizedWeights.careerLongevity },
+    lyricalCraft: { ...calculateLyricalCraft(artist), weight: normalizedWeights.lyricalCraft },
+    quotability: { ...calculateQuotability(artist), weight: normalizedWeights.quotability },
+    culturalInfluence: { ...calculateCulturalInfluence(artist), weight: normalizedWeights.culturalInfluence },
+    artisticVision: { ...calculateArtisticVision(artist), weight: normalizedWeights.artisticVision },
+    peakExcellence: { ...calculatePeakExcellence(artist), weight: normalizedWeights.peakExcellence },
+    innovationScore: { ...calculateInnovationScore(artist), weight: normalizedWeights.innovationScore },
   };
 
   const totalScore = Object.values(pillars).reduce(
@@ -285,8 +352,8 @@ export function compareArtists(artist1: Artist, artist2: Artist): Comparison {
   };
 }
 
-export function rankArtists(artists: Artist[]): ArtistScore[] {
-  const scores = artists.map(calculateArtistScore);
+export function rankArtists(artists: Artist[], customWeights?: CustomWeights): ArtistScore[] {
+  const scores = artists.map(artist => calculateArtistScore(artist, customWeights));
   scores.sort((a, b) => b.totalScore - a.totalScore);
 
   return scores.map((score, index) => ({

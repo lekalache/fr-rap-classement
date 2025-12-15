@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import type { Artist, PillarName } from '../types';
-import { rankArtists } from '../services/scoring';
+import { rankArtists, DEFAULT_WEIGHTS, type CustomWeights } from '../services/scoring';
 
 interface Props {
   artists: Artist[];
@@ -10,10 +10,20 @@ interface Props {
 
 type SortBy = 'total' | PillarName;
 
+// Convert weights (0-1) to slider values (0-100) and back
+const weightsToSliders = (weights: CustomWeights) =>
+  Object.fromEntries(Object.entries(weights).map(([k, v]) => [k, Math.round(v * 100)])) as Record<keyof CustomWeights, number>;
+
+const slidersToWeights = (sliders: Record<keyof CustomWeights, number>) =>
+  Object.fromEntries(Object.entries(sliders).map(([k, v]) => [k, v / 100])) as CustomWeights;
+
 export function RankingPage({ artists, onSelectDuel }: Props) {
   const { t } = useTranslation();
   const [sortBy, setSortBy] = useState<SortBy>('total');
   const [selectedArtists, setSelectedArtists] = useState<Artist[]>([]);
+  const [showWeightSliders, setShowWeightSliders] = useState(false);
+  const [sliderValues, setSliderValues] = useState(weightsToSliders(DEFAULT_WEIGHTS));
+  const [isCustomMode, setIsCustomMode] = useState(false);
 
   const pillarLabels: Record<PillarName, string> = {
     commercialPower: t('pillars.commercial'),
@@ -26,8 +36,12 @@ export function RankingPage({ artists, onSelectDuel }: Props) {
     innovationScore: t('pillars.innovation'),
   };
 
+  // Convert slider values to weights
+  const customWeights = useMemo(() => slidersToWeights(sliderValues), [sliderValues]);
+
   const rankedArtists = useMemo(() => {
-    const ranked = rankArtists(artists);
+    const weights = isCustomMode ? customWeights : undefined;
+    const ranked = rankArtists(artists, weights);
 
     if (sortBy === 'total') {
       return ranked;
@@ -38,7 +52,17 @@ export function RankingPage({ artists, onSelectDuel }: Props) {
       const scoreB = b.pillars[sortBy].score;
       return scoreB - scoreA;
     });
-  }, [artists, sortBy]);
+  }, [artists, sortBy, isCustomMode, customWeights]);
+
+  const handleSliderChange = (pillar: keyof CustomWeights, value: number) => {
+    setSliderValues(prev => ({ ...prev, [pillar]: value }));
+    setIsCustomMode(true);
+  };
+
+  const resetWeights = () => {
+    setSliderValues(weightsToSliders(DEFAULT_WEIGHTS));
+    setIsCustomMode(false);
+  };
 
   const toggleArtistSelection = (artist: Artist) => {
     if (selectedArtists.find((a) => a.id === artist.id)) {
@@ -162,6 +186,77 @@ export function RankingPage({ artists, onSelectDuel }: Props) {
             {pillarLabels[pillar]}
           </button>
         ))}
+      </div>
+
+      {/* Custom Weight Sliders */}
+      <div className="mb-6">
+        <button
+          onClick={() => setShowWeightSliders(!showWeightSliders)}
+          className={`flex items-center gap-2 px-4 py-2 rounded-lg font-semibold transition-colors ${
+            isCustomMode
+              ? 'bg-gradient-to-r from-purple-500 to-blue-500 text-white'
+              : 'bg-white/5 text-gray-400 hover:bg-white/10'
+          }`}
+        >
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+          </svg>
+          {t('ranking.customWeights')}
+          {isCustomMode && <span className="text-xs opacity-75">({t('ranking.customMode')})</span>}
+          <svg className={`w-4 h-4 transition-transform ${showWeightSliders ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+
+        {showWeightSliders && (
+          <div className="mt-4 bg-white/5 rounded-xl p-6">
+            <div className="flex justify-between items-center mb-4">
+              <h3 className="text-lg font-semibold text-gray-300">{t('ranking.customWeights')}</h3>
+              {isCustomMode && (
+                <button
+                  onClick={resetWeights}
+                  className="px-3 py-1 text-sm bg-red-500/20 text-red-400 rounded-lg hover:bg-red-500/30 transition-colors"
+                >
+                  {t('ranking.resetWeights')}
+                </button>
+              )}
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+              {pillarKeys.map((pillar) => {
+                const defaultValue = Math.round(DEFAULT_WEIGHTS[pillar] * 100);
+                const currentValue = sliderValues[pillar];
+                const isModified = currentValue !== defaultValue;
+
+                return (
+                  <div key={pillar} className="bg-black/30 rounded-lg p-4">
+                    <div className="flex justify-between items-center mb-2">
+                      <label className="text-sm font-medium text-gray-300">
+                        {pillarLabels[pillar]}
+                      </label>
+                      <span className={`text-sm font-bold ${isModified ? 'text-purple-400' : 'text-gray-500'}`}>
+                        {currentValue}%
+                        {isModified && <span className="text-xs text-gray-600 ml-1">({defaultValue}%)</span>}
+                      </span>
+                    </div>
+                    <input
+                      type="range"
+                      min="0"
+                      max="100"
+                      value={currentValue}
+                      onChange={(e) => handleSliderChange(pillar, parseInt(e.target.value))}
+                      className="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer accent-purple-500"
+                    />
+                  </div>
+                );
+              })}
+            </div>
+
+            <p className="mt-4 text-xs text-gray-500 text-center">
+              Les poids sont automatiquement normalisés pour totaliser 100%
+            </p>
+          </div>
+        )}
       </div>
 
       {/* Podium */}

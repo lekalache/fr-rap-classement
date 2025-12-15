@@ -77,7 +77,7 @@ class WikipediaCollector:
         "rim'k": "Rim'K",
         "rohff": "Rohff",
         "lino": "Lino_(rappeur)",
-        "vald": "Vald_(rappeur)",
+        "vald": "Vald",
         "youssoupha": "Youssoupha",
         "sofiane": "Sofiane_(rappeur)",
         "djadja & dinaz": "Djadja_&_Dinaz",

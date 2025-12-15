@@ -38,7 +38,10 @@
     "averageScore": "Average Score",
     "maxScore": "Max Score",
     "avgCareerYears": "Avg. Career Years",
-    "rappers": "Rappers"
+    "rappers": "Rappers",
+    "customWeights": "Customize weights",
+    "resetWeights": "Reset",
+    "customMode": "Custom mode active"
   },
   "pillars": {
     "commercial": "Commercial",
@@ -49,6 +52,16 @@
     "vision": "Artistic Vision",
     "excellence": "Excellence",
     "innovation": "Innovation"
+  },
+  "tooltips": {
+    "commercial": "Spotify listeners + YouTube views + SNEP certifications. Pre-2010 artists get a ×1.5 bonus (physical era was harder).",
+    "longevity": "Career duration since first album. Bonus for each complete decade of activity.",
+    "technique": "Unique vocabulary (via NLP) + Flow score. Analyzed on 50 songs per artist via Genius API.",
+    "quotability": "Punchline score + Hook quality. Detected by NLP patterns and repetitions.",
+    "influence": "Influence score + Wikipedia mentions + Awards. Legends get a ×1.4 legacy bonus.",
+    "vision": "Thematic coherence + Artistic integrity. Measures the consistency of the creative universe.",
+    "excellence": "Best album score + Number of classics. Rewards peaks of excellence, not averages.",
+    "innovation": "Creation of new sound/genre. Measures originality and contribution to French rap."
   },
   "algorithm": {
     "title": "The Algorithm",

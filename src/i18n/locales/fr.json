@@ -38,7 +38,10 @@
     "averageScore": "Score Moyen",
     "maxScore": "Score Max",
     "avgCareerYears": "Années Carrière Moy.",
-    "rappers": "Rappeurs"
+    "rappers": "Rappeurs",
+    "customWeights": "Personnaliser les poids",
+    "resetWeights": "Réinitialiser",
+    "customMode": "Mode personnalisé actif"
   },
   "pillars": {
     "commercial": "Commercial",
@@ -49,6 +52,16 @@
     "vision": "Vision Artistique",
     "excellence": "Excellence",
     "innovation": "Innovation"
+  },
+  "tooltips": {
+    "commercial": "Auditeurs Spotify + Vues YouTube + Certifications SNEP. Les artistes d'avant 2010 bénéficient d'un bonus ×1.5 (ère physique difficile).",
+    "longevity": "Durée de carrière depuis le premier album. Bonus pour chaque décennie complète d'activité.",
+    "technique": "Vocabulaire unique (via NLP) + Score de flow. Analysé sur 50 chansons par artiste via Genius API.",
+    "quotability": "Score de punchlines + Qualité des refrains. Détecté par patterns NLP et répétitions.",
+    "influence": "Score d'influence + Mentions Wikipedia + Prix. Les légendes bénéficient d'un bonus legacy ×1.4.",
+    "vision": "Cohérence thématique + Intégrité artistique. Mesure la constance de l'univers créatif.",
+    "excellence": "Score du meilleur album + Nombre de classiques. Récompense les pics d'excellence, pas la moyenne.",
+    "innovation": "Création de nouveau son/genre. Mesure l'originalité et l'apport au rap français."
   },
   "algorithm": {
     "title": "L'Algorithme",
