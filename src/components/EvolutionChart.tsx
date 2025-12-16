@@ -6,9 +6,9 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
-  Legend,
   ResponsiveContainer,
   ReferenceLine,
+  ReferenceArea,
 } from 'recharts';
 import type { EvolutionChartProps, AlbumEntry } from '../types/history';
 import { ARTIST_COLORS, ERAS } from '../types/history';
@@ -28,45 +28,48 @@ interface CustomTooltipProps {
   albums: AlbumEntry[];
 }
 
-// Custom tooltip pour afficher les albums
-function CustomTooltip({ active, payload, label, albums }: CustomTooltipProps) {
+// 90s Style Tooltip - Bold, blocky, uppercase
+function RetroTooltip({ active, payload, label, albums }: CustomTooltipProps) {
   if (!active || !payload || !label) return null;
 
   const yearAlbums = albums.filter((a) => a.year === label);
 
   return (
-    <div className="bg-gray-900 border border-gray-700 rounded-lg p-3 shadow-xl">
-      <p className="font-bold text-white mb-2">{label}</p>
+    <div className="bg-black border-4 border-yellow-400 p-4 font-black uppercase">
+      <div className="text-2xl text-yellow-400 mb-3 text-center">{label}</div>
 
-      {/* Rangs des artistes */}
-      <div className="space-y-1">
-        {payload.map((entry) => (
-          <div key={entry.name} className="flex items-center gap-2">
-            <div
-              className="w-3 h-3 rounded-full"
-              style={{ backgroundColor: entry.color }}
-            />
-            <span className="text-gray-300">{entry.name}:</span>
-            <span className="text-white font-semibold">#{entry.value}</span>
-          </div>
-        ))}
+      <div className="border-t-4 border-yellow-400 pt-3 space-y-2">
+        {payload
+          .filter((entry) => entry.value != null)
+          .sort((a, b) => a.value - b.value)
+          .map((entry) => (
+            <div key={entry.name} className="flex justify-between gap-6 items-center">
+              <span className="flex items-center gap-2">
+                <span
+                  className="w-4 h-4 border-2 border-white"
+                  style={{ backgroundColor: entry.color }}
+                />
+                <span style={{ color: entry.color }}>{entry.name}</span>
+              </span>
+              <span className="text-white text-lg">#{entry.value}</span>
+            </div>
+          ))}
       </div>
 
-      {/* Albums de l'année */}
       {yearAlbums.length > 0 && (
-        <div className="mt-3 pt-3 border-t border-gray-700">
-          <p className="text-xs text-gray-400 mb-1">Albums cette année:</p>
+        <div className="mt-4 pt-3 border-t-2 border-gray-600">
+          <div className="text-green-400 text-xs mb-2">★ ALBUMS:</div>
           {yearAlbums.map((album) => (
-            <div key={`${album.artistId}-${album.albumName}`} className="text-xs">
-              <span
-                className="font-medium"
-                style={{ color: ARTIST_COLORS[album.artistId] || '#888' }}
-              >
+            <div
+              key={`${album.artistId}-${album.albumName}`}
+              className="text-xs normal-case"
+            >
+              <span style={{ color: ARTIST_COLORS[album.artistId] || '#888' }}>
                 {album.artistName}
               </span>
               <span className="text-gray-400"> - {album.albumName}</span>
               {album.impact === 'legendary' && (
-                <span className="ml-1 text-yellow-500">*</span>
+                <span className="ml-1 text-yellow-400">★</span>
               )}
             </div>
           ))}
@@ -75,6 +78,80 @@ function CustomTooltip({ active, payload, label, albums }: CustomTooltipProps) {
     </div>
   );
 }
+
+// 90s Style Legend - Chip buttons
+function RetroLegend({
+  artistIds,
+  artistNames
+}: {
+  artistIds: string[];
+  artistNames: Record<string, string>;
+}) {
+  return (
+    <div className="flex flex-wrap gap-2 justify-center mt-6">
+      {artistIds.map((id) => (
+        <div
+          key={id}
+          className="px-4 py-2 bg-black border-4 border-white font-black uppercase text-sm flex items-center gap-2"
+        >
+          <span
+            className="w-4 h-4 border-2 border-white"
+            style={{ backgroundColor: ARTIST_COLORS[id] || '#888' }}
+          />
+          <span style={{ color: ARTIST_COLORS[id] || '#888' }}>
+            {artistNames[id]}
+          </span>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+// Era header component
+function EraHeader({ startYear, endYear }: { startYear: number; endYear: number }) {
+  const visibleEras = Object.entries(ERAS).filter(
+    ([, era]) => era.startYear <= endYear && era.endYear >= startYear
+  );
+
+  const eraColors: Record<string, string> = {
+    physical: 'text-yellow-400 border-yellow-400',
+    transition: 'text-green-400 border-green-400',
+    streamingEarly: 'text-cyan-400 border-cyan-400',
+    streamingMature: 'text-purple-400 border-purple-400',
+    current: 'text-red-400 border-red-400',
+  };
+
+  return (
+    <div className="flex flex-wrap gap-2 justify-center mb-4">
+      {visibleEras.map(([key, era]) => (
+        <div
+          key={key}
+          className={`px-3 py-1 bg-black border-2 text-xs font-black uppercase ${eraColors[key]}`}
+        >
+          [{era.startYear}-{era.endYear}] {era.name}
+        </div>
+      ))}
+    </div>
+  );
+}
+
+// Custom square dot for lines
+const SquareDot = (props: { cx?: number; cy?: number; stroke?: string; fill?: string }) => {
+  const { cx, cy, fill } = props;
+  if (cx === undefined || cy === undefined) return null;
+
+  return (
+    <rect
+      x={cx - 5}
+      y={cy - 5}
+      width={10}
+      height={10}
+      fill={fill}
+      stroke="#FFFFFF"
+      strokeWidth={2}
+    />
+  );
+};
 
 export function EvolutionChart({
   artistIds,
@@ -113,121 +190,194 @@ export function EvolutionChart({
     return names;
   }, [artistIds, artistsHistory]);
 
+  // Era background colors (very subtle)
+  const eraBackgrounds: Record<string, string> = {
+    physical: 'rgba(250, 204, 21, 0.08)',      // Yellow
+    transition: 'rgba(34, 197, 94, 0.08)',      // Green
+    streamingEarly: 'rgba(6, 182, 212, 0.08)', // Cyan
+    streamingMature: 'rgba(168, 85, 247, 0.08)', // Purple
+    current: 'rgba(239, 68, 68, 0.08)',         // Red
+  };
+
   if (chartData.length === 0) {
     return (
-      <div className="h-[400px] flex items-center justify-center text-gray-500">
-        Pas de données disponibles pour les artistes sélectionnés
+      <div className="h-[400px] flex items-center justify-center bg-black border-4 border-yellow-400">
+        <span className="text-yellow-400 font-black uppercase">
+          Pas de données disponibles
+        </span>
       </div>
     );
   }
 
   return (
     <div className="w-full">
-      <ResponsiveContainer width="100%" height={500}>
-        <LineChart
-          data={chartData}
-          margin={{ top: 20, right: 30, left: 20, bottom: 20 }}
-        >
-          <CartesianGrid strokeDasharray="3 3" stroke="#374151" />
+      {/* Era Header */}
+      <EraHeader startYear={startYear} endYear={endYear} />
 
-          <XAxis
-            dataKey="year"
-            stroke="#9CA3AF"
-            tick={{ fill: '#9CA3AF' }}
-            tickLine={{ stroke: '#4B5563' }}
-            domain={[startYear, endYear]}
-          />
+      {/* Chart */}
+      <div className="border-4 border-yellow-400 bg-black p-2">
+        <ResponsiveContainer width="100%" height={500}>
+          <LineChart
+            data={chartData}
+            margin={{ top: 30, right: 40, left: 60, bottom: 20 }}
+          >
+            {/* Era background zones */}
+            {Object.entries(ERAS).map(([key, era]) => {
+              const areaStart = Math.max(era.startYear, startYear);
+              const areaEnd = Math.min(era.endYear, endYear);
+              if (areaStart >= areaEnd) return null;
 
-          <YAxis
-            stroke="#9CA3AF"
-            tick={{ fill: '#9CA3AF' }}
-            tickLine={{ stroke: '#4B5563' }}
-            reversed // Rang 1 en haut
-            domain={[1, 25]}
-            label={{
-              value: 'Rang',
-              angle: -90,
-              position: 'insideLeft',
-              fill: '#9CA3AF',
-            }}
-          />
+              return (
+                <ReferenceArea
+                  key={key}
+                  x1={areaStart}
+                  x2={areaEnd}
+                  fill={eraBackgrounds[key]}
+                  fillOpacity={1}
+                />
+              );
+            })}
 
-          <Tooltip
-            content={<CustomTooltip albums={albumsTimeline} />}
-          />
+            {/* Bold grid */}
+            <CartesianGrid
+              stroke="#374151"
+              strokeWidth={1}
+              strokeDasharray="0"
+            />
 
-          <Legend
-            wrapperStyle={{ paddingTop: 20 }}
-            formatter={(value) => (
-              <span className="text-gray-300">{value}</span>
-            )}
-          />
+            {/* X-Axis - Years */}
+            <XAxis
+              dataKey="year"
+              stroke="#FFD700"
+              strokeWidth={3}
+              tick={{ fill: '#FFD700', fontWeight: 'bold', fontSize: 14 }}
+              tickLine={{ stroke: '#FFD700', strokeWidth: 2 }}
+              axisLine={{ stroke: '#FFD700', strokeWidth: 3 }}
+              domain={[startYear, endYear]}
+              type="number"
+              tickCount={Math.min(8, endYear - startYear + 1)}
+            />
 
-          {/* Lignes de séparation des ères */}
-          {Object.entries(ERAS).map(([key, era]) => (
-            <ReferenceLine
-              key={key}
-              x={era.startYear}
-              stroke="#4B5563"
-              strokeDasharray="5 5"
+            {/* Y-Axis - Ranks */}
+            <YAxis
+              stroke="#FFD700"
+              strokeWidth={3}
+              tick={{ fill: '#FFD700', fontWeight: 'bold', fontSize: 12 }}
+              tickLine={{ stroke: '#FFD700', strokeWidth: 2 }}
+              axisLine={{ stroke: '#FFD700', strokeWidth: 3 }}
+              reversed
+              domain={[1, 30]}
+              ticks={[1, 5, 10, 15, 20, 25, 30]}
+              tickFormatter={(value) => `#${value}`}
               label={{
-                value: era.name,
-                position: 'top',
-                fill: '#6B7280',
-                fontSize: 10,
+                value: 'RANG',
+                angle: -90,
+                position: 'insideLeft',
+                fill: '#FFD700',
+                fontWeight: 'bold',
+                fontSize: 14,
+                offset: -10,
               }}
             />
-          ))}
 
-          {/* Ligne pour chaque artiste */}
-          {artistIds.map((artistId) => (
-            <Line
-              key={artistId}
-              type="monotone"
-              dataKey={artistId}
-              name={artistNames[artistId]}
-              stroke={ARTIST_COLORS[artistId] || '#888888'}
-              strokeWidth={2}
-              dot={{ r: 4, fill: ARTIST_COLORS[artistId] || '#888888' }}
-              activeDot={{ r: 6 }}
-              connectNulls
+            {/* Tooltip */}
+            <Tooltip
+              content={<RetroTooltip albums={albumsTimeline} />}
+              cursor={{ stroke: '#FFD700', strokeWidth: 2, strokeDasharray: '5 5' }}
             />
-          ))}
 
-          {/* Marqueurs pour albums légendaires */}
-          {showAlbums &&
-            legendaryAlbums.map((album) => (
-              <ReferenceLine
-                key={`${album.artistId}-${album.albumName}`}
-                x={album.year}
-                stroke={ARTIST_COLORS[album.artistId] || '#888'}
-                strokeWidth={1}
-                strokeDasharray="2 2"
+            {/* Era separator lines */}
+            {Object.entries(ERAS).map(([key, era]) => {
+              if (era.startYear < startYear || era.startYear > endYear) return null;
+              return (
+                <ReferenceLine
+                  key={key}
+                  x={era.startYear}
+                  stroke="#FFFFFF"
+                  strokeWidth={2}
+                  strokeDasharray="8 4"
+                />
+              );
+            })}
+
+            {/* Artist lines - Step type for angular 90s look */}
+            {artistIds.map((artistId) => (
+              <Line
+                key={artistId}
+                type="stepAfter"
+                dataKey={artistId}
+                name={artistNames[artistId]}
+                stroke={ARTIST_COLORS[artistId] || '#888888'}
+                strokeWidth={3}
+                dot={<SquareDot fill={ARTIST_COLORS[artistId] || '#888888'} />}
+                activeDot={{
+                  r: 8,
+                  fill: ARTIST_COLORS[artistId] || '#888888',
+                  stroke: '#FFFFFF',
+                  strokeWidth: 3,
+                }}
+                connectNulls
               />
             ))}
-        </LineChart>
-      </ResponsiveContainer>
 
-      {/* Légende des albums légendaires */}
+            {/* Legendary album markers */}
+            {showAlbums &&
+              legendaryAlbums.map((album) => (
+                <ReferenceLine
+                  key={`${album.artistId}-${album.albumName}`}
+                  x={album.year}
+                  stroke={ARTIST_COLORS[album.artistId] || '#888'}
+                  strokeWidth={3}
+                  strokeDasharray="0"
+                  label={{
+                    value: '★',
+                    position: 'top',
+                    fill: ARTIST_COLORS[album.artistId] || '#888',
+                    fontSize: 18,
+                    fontWeight: 'bold',
+                  }}
+                />
+              ))}
+          </LineChart>
+        </ResponsiveContainer>
+      </div>
+
+      {/* Custom 90s Legend */}
+      <RetroLegend artistIds={artistIds} artistNames={artistNames} />
+
+      {/* Legendary albums list - 90s style */}
       {showAlbums && legendaryAlbums.length > 0 && (
-        <div className="mt-4 p-4 bg-gray-800/50 rounded-lg">
-          <h4 className="text-sm font-semibold text-gray-400 mb-2">
-            Albums Légendaires
+        <div className="mt-6 bg-black border-4 border-green-400 p-4">
+          <h4 className="text-green-400 font-black uppercase text-lg mb-4 flex items-center gap-2">
+            <span>★</span> ALBUMS LÉGENDAIRES <span>★</span>
           </h4>
-          <div className="flex flex-wrap gap-3">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
             {legendaryAlbums.map((album) => (
               <div
                 key={`${album.artistId}-${album.albumName}`}
-                className="flex items-center gap-2 text-sm"
+                className="bg-gray-900 border-2 p-3 flex items-start gap-3"
+                style={{ borderColor: ARTIST_COLORS[album.artistId] || '#888' }}
               >
-                <div
-                  className="w-2 h-2 rounded-full"
-                  style={{ backgroundColor: ARTIST_COLORS[album.artistId] }}
-                />
-                <span className="text-gray-300">
-                  {album.year} - {album.artistName}:{' '}
-                  <span className="text-white font-medium">{album.albumName}</span>
+                <span
+                  className="w-6 h-6 border-2 border-white flex items-center justify-center font-black text-sm"
+                  style={{ backgroundColor: ARTIST_COLORS[album.artistId] || '#888' }}
+                >
+                  {album.year.toString().slice(-2)}
                 </span>
+                <div>
+                  <div
+                    className="font-black uppercase text-sm"
+                    style={{ color: ARTIST_COLORS[album.artistId] || '#888' }}
+                  >
+                    {album.artistName}
+                  </div>
+                  <div className="text-white text-sm font-bold">
+                    {album.albumName}
+                  </div>
+                  <div className="text-yellow-400 text-xs mt-1">
+                    {album.certifications} certifs
+                  </div>
+                </div>
               </div>
             ))}
           </div>

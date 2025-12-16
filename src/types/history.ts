@@ -197,52 +197,53 @@ export function convertPhysicalToStreamEquivalent(
 }
 
 // Couleurs pour les artistes dans le graphique
+// Optimisées pour contraste sur fond noir (90s aesthetic)
 export const ARTIST_COLORS: Record<string, string> = {
   // Légendes
-  booba: '#8B5CF6',           // Violet
-  iam: '#10B981',             // Vert
-  ntm: '#6366F1',             // Indigo
-  'mc-solaar': '#14B8A6',     // Teal
-  'oxmo-puccino': '#A855F7',  // Purple
-  rohff: '#F97316',           // Orange foncé
+  booba: '#A78BFA',           // Violet clair (was #8B5CF6)
+  iam: '#34D399',             // Vert clair (was #10B981)
+  ntm: '#818CF8',             // Indigo clair (was #6366F1)
+  'mc-solaar': '#2DD4BF',     // Teal clair (was #14B8A6)
+  'oxmo-puccino': '#C084FC',  // Purple clair (was #A855F7)
+  rohff: '#FB923C',           // Orange (was #F97316)
 
   // Nouvelle génération
-  pnl: '#3B82F6',             // Bleu
-  nekfeu: '#EF4444',          // Rouge
-  jul: '#EC4899',             // Rose
-  sch: '#06B6D4',             // Cyan
-  damso: '#84CC16',           // Lime
-  ninho: '#22D3EE',           // Cyan clair
-  'freeze-corleone': '#1E293B', // Slate foncé
+  pnl: '#60A5FA',             // Bleu clair (was #3B82F6)
+  nekfeu: '#F87171',          // Rouge clair (was #EF4444)
+  jul: '#F472B6',             // Rose
+  sch: '#22D3EE',             // Cyan clair (was #06B6D4)
+  damso: '#A3E635',           // Lime clair (was #84CC16)
+  ninho: '#67E8F9',           // Cyan très clair (was #22D3EE)
+  'freeze-corleone': '#94A3B8', // Slate clair (was #1E293B - trop sombre!)
 
   // Trap/Street
-  kaaris: '#F59E0B',          // Orange
-  lacrim: '#78716C',          // Stone
-  maes: '#0EA5E9',            // Sky
-  gazo: '#A3E635',            // Lime clair
-  'kalash-criminel': '#DC2626', // Rouge foncé
-  'seth-gueko': '#92400E',    // Amber foncé
-  alkpote: '#7C3AED',         // Violet vif
+  kaaris: '#FBBF24',          // Amber (was #F59E0B)
+  lacrim: '#A8A29E',          // Stone clair (was #78716C)
+  maes: '#38BDF8',            // Sky clair (was #0EA5E9)
+  gazo: '#BEF264',            // Lime très clair (was #A3E635)
+  'kalash-criminel': '#F87171', // Rouge clair (was #DC2626)
+  'seth-gueko': '#F59E0B',    // Amber vif (was #92400E - trop sombre!)
+  alkpote: '#A78BFA',         // Violet (was #7C3AED)
 
   // Classiques
-  'la-fouine': '#FACC15',     // Jaune
-  soprano: '#F472B6',         // Pink
-  medine: '#059669',          // Emerald
-  'kery-james': '#2563EB',    // Bleu roi
-  'rim-k': '#DC2626',         // Rouge
-  lino: '#4F46E5',            // Indigo
-  youssoupha: '#0891B2',      // Cyan foncé
+  'la-fouine': '#FDE047',     // Jaune vif (was #FACC15)
+  soprano: '#F9A8D4',         // Pink clair (was #F472B6)
+  medine: '#34D399',          // Emerald clair (was #059669)
+  'kery-james': '#60A5FA',    // Bleu clair (was #2563EB)
+  'rim-k': '#FB7185',         // Rouge rosé (was #DC2626)
+  lino: '#818CF8',            // Indigo clair (was #4F46E5)
+  youssoupha: '#22D3EE',      // Cyan (was #0891B2)
 
   // Autres
-  vald: '#F43F5E',            // Rose vif
-  sofiane: '#65A30D',         // Lime foncé
-  'djadja-dinaz': '#FB923C',  // Orange clair
-  dosseh: '#818CF8',          // Indigo clair
-  flenn: '#34D399',           // Emerald clair
-  ziak: '#F87171',            // Rouge clair
-  'hayce-lemsi': '#60A5FA',   // Bleu clair
-  sinik: '#C084FC',           // Purple clair
-  guizmo: '#4ADE80',          // Vert clair
-  sadek: '#FBBF24',           // Amber
-  bouss: '#38BDF8',           // Sky clair
+  vald: '#FB7185',            // Rose vif
+  sofiane: '#A3E635',         // Lime (was #65A30D)
+  'djadja-dinaz': '#FDBA74',  // Orange clair (was #FB923C)
+  dosseh: '#A5B4FC',          // Indigo très clair (was #818CF8)
+  flenn: '#6EE7B7',           // Emerald clair (was #34D399)
+  ziak: '#FCA5A5',            // Rouge très clair (was #F87171)
+  'hayce-lemsi': '#93C5FD',   // Bleu très clair (was #60A5FA)
+  sinik: '#D8B4FE',           // Purple très clair (was #C084FC)
+  guizmo: '#86EFAC',          // Vert très clair (was #4ADE80)
+  sadek: '#FCD34D',           // Amber clair (was #FBBF24)
+  bouss: '#7DD3FC',           // Sky très clair (was #38BDF8)
 };
