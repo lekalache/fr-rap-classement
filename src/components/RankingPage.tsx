@@ -36,11 +36,9 @@ export function RankingPage({ artists, onSelectDuel }: Props) {
     innovationScore: t('pillars.innovation'),
   };
 
-  // Convert slider values to weights
-  const customWeights = useMemo(() => slidersToWeights(sliderValues), [sliderValues]);
-
+  // Compute ranked artists - use sliderValues directly in deps to ensure re-sort on weight changes
   const rankedArtists = useMemo(() => {
-    const weights = isCustomMode ? customWeights : undefined;
+    const weights = isCustomMode ? slidersToWeights(sliderValues) : undefined;
     const ranked = rankArtists(artists, weights);
 
     if (sortBy === 'total') {
@@ -52,7 +50,7 @@ export function RankingPage({ artists, onSelectDuel }: Props) {
       const scoreB = b.pillars[sortBy].score;
       return scoreB - scoreA;
     });
-  }, [artists, sortBy, isCustomMode, customWeights]);
+  }, [artists, sortBy, isCustomMode, sliderValues]);
 
   const handleSliderChange = (pillar: keyof CustomWeights, value: number) => {
     setSliderValues(prev => ({ ...prev, [pillar]: value }));
