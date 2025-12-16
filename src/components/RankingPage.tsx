@@ -55,6 +55,9 @@ export function RankingPage({ artists, onSelectDuel }: Props) {
   const handleSliderChange = (pillar: keyof CustomWeights, value: number) => {
     setSliderValues(prev => ({ ...prev, [pillar]: value }));
     setIsCustomMode(true);
+    // Auto-switch to total score sorting when weights are customized
+    // (pillar sorting is unaffected by weight changes)
+    setSortBy('total');
   };
 
   const resetWeights = () => {
