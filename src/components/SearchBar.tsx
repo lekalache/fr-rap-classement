@@ -21,14 +21,14 @@ export function SearchBar({ artists, selectedArtist, onSelect, placeholder, colo
 
   const colorClasses = {
     purple: {
-      ring: 'focus:ring-purple-500',
-      bg: 'bg-purple-500',
-      hover: 'hover:bg-purple-500/20',
+      ring: 'focus:border-yellow-400',
+      bg: 'bg-purple-600',
+      hover: 'hover:bg-gray-700',
     },
     blue: {
-      ring: 'focus:ring-blue-500',
-      bg: 'bg-blue-500',
-      hover: 'hover:bg-blue-500/20',
+      ring: 'focus:border-yellow-400',
+      bg: 'bg-blue-600',
+      hover: 'hover:bg-gray-700',
     },
   };
 
@@ -57,17 +57,17 @@ export function SearchBar({ artists, selectedArtist, onSelect, placeholder, colo
     <div className="relative">
       {selectedArtist ? (
         <div
-          className={`flex items-center gap-3 p-4 bg-white/10 rounded-xl cursor-pointer ${colorClasses[color].hover}`}
+          className={`flex items-center gap-3 p-4 bg-gray-900 border-2 border-gray-600 cursor-pointer ${colorClasses[color].hover}`}
           onClick={() => {
             onSelect(null as unknown as Artist);
             setTimeout(() => inputRef.current?.focus(), 0);
           }}
         >
-          <div className={`w-12 h-12 rounded-full ${colorClasses[color].bg} flex items-center justify-center text-xl font-bold`}>
+          <div className={`w-12 h-12 ${colorClasses[color].bg} border-2 border-white flex items-center justify-center text-xl font-black`}>
             {selectedArtist.name.charAt(0)}
           </div>
           <div>
-            <div className="font-bold text-lg">{selectedArtist.name}</div>
+            <div className="font-black text-lg uppercase">{selectedArtist.name}</div>
             <div className="text-sm text-gray-400">Depuis {selectedArtist.debutYear}</div>
           </div>
           <button className="ml-auto text-gray-400 hover:text-white">
@@ -88,24 +88,24 @@ export function SearchBar({ artists, selectedArtist, onSelect, placeholder, colo
             }}
             onFocus={() => setIsOpen(true)}
             placeholder={placeholder}
-            className={`w-full p-4 bg-white/10 rounded-xl outline-none ring-2 ring-transparent ${colorClasses[color].ring} transition-all placeholder:text-gray-500`}
+            className={`w-full p-4 bg-gray-900 border-2 border-gray-600 outline-none ${colorClasses[color].ring} transition-all placeholder:text-gray-500 font-bold`}
           />
           {isOpen && filtered.length > 0 && (
             <div
               ref={dropdownRef}
-              className="absolute z-10 w-full mt-2 bg-gray-800 rounded-xl shadow-xl overflow-hidden"
+              className="absolute z-10 w-full mt-2 bg-gray-900 border-2 border-gray-600 max-h-72 overflow-y-auto"
             >
               {filtered.map((artist) => (
                 <button
                   key={artist.id}
                   onClick={() => handleSelect(artist)}
-                  className={`w-full flex items-center gap-3 p-3 ${colorClasses[color].hover} transition-colors text-left`}
+                  className={`w-full flex items-center gap-3 p-3 border-b border-gray-700 ${colorClasses[color].hover} transition-colors text-left`}
                 >
-                  <div className={`w-10 h-10 rounded-full ${colorClasses[color].bg} flex items-center justify-center font-bold`}>
+                  <div className={`w-10 h-10 ${colorClasses[color].bg} border-2 border-white flex items-center justify-center font-black`}>
                     {artist.name.charAt(0)}
                   </div>
                   <div>
-                    <div className="font-semibold">{artist.name}</div>
+                    <div className="font-bold">{artist.name}</div>
                     <div className="text-xs text-gray-400">Depuis {artist.debutYear}</div>
                   </div>
                 </button>

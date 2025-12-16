@@ -46,7 +46,7 @@ function App() {
               setCurrentPage('duel');
               reset();
             }}
-            className="text-2xl font-black bg-gradient-to-r from-purple-400 via-pink-500 to-blue-500 text-transparent bg-clip-text"
+            className="text-2xl font-black text-yellow-400 uppercase tracking-wider"
           >
             RAP FR OPENDATA
           </button>
@@ -56,60 +56,60 @@ function App() {
                 setCurrentPage('duel');
                 reset();
               }}
-              className={`px-4 py-2 rounded-lg font-semibold transition-colors ${
+              className={`px-4 py-2 font-bold uppercase text-sm transition-colors ${
                 currentPage === 'duel'
-                  ? 'bg-purple-500 text-white'
-                  : 'bg-white/5 text-gray-400 hover:bg-white/10'
+                  ? 'bg-yellow-400 text-black border-2 border-white'
+                  : 'bg-gray-900 text-gray-300 border-2 border-gray-700 hover:border-yellow-400'
               }`}
             >
               {t('nav.duel')}
             </button>
             <button
               onClick={() => setCurrentPage('ranking')}
-              className={`px-4 py-2 rounded-lg font-semibold transition-colors ${
+              className={`px-4 py-2 font-bold uppercase text-sm transition-colors ${
                 currentPage === 'ranking'
-                  ? 'bg-purple-500 text-white'
-                  : 'bg-white/5 text-gray-400 hover:bg-white/10'
+                  ? 'bg-yellow-400 text-black border-2 border-white'
+                  : 'bg-gray-900 text-gray-300 border-2 border-gray-700 hover:border-yellow-400'
               }`}
             >
               {t('nav.ranking')}
             </button>
             <button
               onClick={() => setCurrentPage('evolution')}
-              className={`px-4 py-2 rounded-lg font-semibold transition-colors ${
+              className={`px-4 py-2 font-bold uppercase text-sm transition-colors ${
                 currentPage === 'evolution'
-                  ? 'bg-purple-500 text-white'
-                  : 'bg-white/5 text-gray-400 hover:bg-white/10'
+                  ? 'bg-yellow-400 text-black border-2 border-white'
+                  : 'bg-gray-900 text-gray-300 border-2 border-gray-700 hover:border-yellow-400'
               }`}
             >
               {t('nav.evolution')}
             </button>
             <button
               onClick={() => setCurrentPage('algorithm')}
-              className={`px-4 py-2 rounded-lg font-semibold transition-colors ${
+              className={`px-4 py-2 font-bold uppercase text-sm transition-colors ${
                 currentPage === 'algorithm'
-                  ? 'bg-purple-500 text-white'
-                  : 'bg-white/5 text-gray-400 hover:bg-white/10'
+                  ? 'bg-yellow-400 text-black border-2 border-white'
+                  : 'bg-gray-900 text-gray-300 border-2 border-gray-700 hover:border-yellow-400'
               }`}
             >
               {t('nav.algorithm')}
             </button>
             <button
               onClick={() => setCurrentPage('detector')}
-              className={`px-4 py-2 rounded-lg font-semibold transition-colors ${
+              className={`px-4 py-2 font-bold uppercase text-sm transition-colors ${
                 currentPage === 'detector'
-                  ? 'bg-gradient-to-r from-yellow-500 to-orange-500 text-white'
-                  : 'bg-white/5 text-gray-400 hover:bg-white/10'
+                  ? 'bg-orange-500 text-black border-2 border-white'
+                  : 'bg-gray-900 text-gray-300 border-2 border-gray-700 hover:border-orange-500'
               }`}
             >
               {t('nav.punchlineDetector')}
             </button>
             <button
               onClick={() => setCurrentPage('data')}
-              className={`px-4 py-2 rounded-lg font-semibold transition-colors ${
+              className={`px-4 py-2 font-bold uppercase text-sm transition-colors ${
                 currentPage === 'data'
-                  ? 'bg-gradient-to-r from-green-500 to-emerald-500 text-white'
-                  : 'bg-white/5 text-gray-400 hover:bg-white/10'
+                  ? 'bg-green-500 text-black border-2 border-white'
+                  : 'bg-gray-900 text-gray-300 border-2 border-gray-700 hover:border-green-500'
               }`}
             >
               {t('nav.openData')}
@@ -145,7 +145,7 @@ function App() {
           <>
             {/* Header */}
             <div className="text-center mb-12">
-              <h1 className="text-5xl font-black mb-4 bg-gradient-to-r from-purple-400 via-pink-500 to-blue-500 text-transparent bg-clip-text">
+              <h1 className="text-5xl font-black mb-4 text-yellow-400 uppercase tracking-wider">
                 {t('hero.title')}
               </h1>
               <p className="text-xl text-gray-400">
@@ -161,7 +161,7 @@ function App() {
               <div className="max-w-4xl mx-auto">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
                   <div>
-                    <label className="block text-sm font-semibold text-purple-400 mb-2">
+                    <label className="block text-sm font-bold text-yellow-400 uppercase mb-2">
                       {t('duel.rapper1')}
                     </label>
                     <SearchBar
@@ -173,7 +173,7 @@ function App() {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-semibold text-blue-400 mb-2">
+                    <label className="block text-sm font-bold text-yellow-400 uppercase mb-2">
                       {t('duel.rapper2')}
                     </label>
                     <SearchBar
@@ -191,10 +191,10 @@ function App() {
                     onClick={compare}
                     disabled={!canCompare}
                     className={`
-                      px-12 py-4 rounded-xl font-bold text-lg transition-all
+                      px-12 py-4 font-black text-lg uppercase tracking-wider transition-all
                       ${canCompare
-                        ? 'bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 cursor-pointer'
-                        : 'bg-gray-700 text-gray-500 cursor-not-allowed'
+                        ? 'bg-yellow-400 text-black border-4 border-white hover:bg-yellow-300 cursor-pointer'
+                        : 'bg-gray-800 text-gray-600 border-4 border-gray-700 cursor-not-allowed'
                       }
                     `}
                   >
@@ -209,7 +209,7 @@ function App() {
 
                 {/* Liste rapide */}
                 <div className="mt-12">
-                  <h3 className="text-lg font-semibold text-gray-400 mb-4">{t('duel.popularDuels')}</h3>
+                  <h3 className="text-lg font-bold text-gray-300 uppercase mb-4">{t('duel.popularDuels')}</h3>
                   <div className="flex flex-wrap gap-3">
                     {[
                       ['Rim\'K', 'Jul'],
@@ -231,7 +231,7 @@ function App() {
                             setArtist1(a1);
                             setArtist2(a2);
                           }}
-                          className="px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg text-sm transition-colors"
+                          className="px-4 py-2 bg-gray-900 border-2 border-gray-700 hover:border-yellow-400 text-sm font-bold transition-colors"
                         >
                           {name1} vs {name2}
                         </button>

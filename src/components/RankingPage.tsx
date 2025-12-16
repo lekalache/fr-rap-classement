@@ -89,10 +89,10 @@ export function RankingPage({ artists, onSelectDuel }: Props) {
 
   const getMedalBg = (rank: number) => {
     switch (rank) {
-      case 1: return 'bg-yellow-400/10 ring-2 ring-yellow-400/50';
-      case 2: return 'bg-gray-300/10 ring-2 ring-gray-300/50';
-      case 3: return 'bg-amber-600/10 ring-2 ring-amber-600/50';
-      default: return 'bg-white/5';
+      case 1: return 'bg-yellow-900';
+      case 2: return 'bg-gray-800';
+      case 3: return 'bg-amber-900';
+      default: return 'bg-gray-900';
     }
   };
 
@@ -127,18 +127,18 @@ export function RankingPage({ artists, onSelectDuel }: Props) {
       {/* Sélection pour duel */}
       {selectedArtists.length > 0 && (
         <div className="sticky top-4 z-20 mb-6">
-          <div className="bg-gray-800/95 backdrop-blur-sm rounded-xl p-4 flex items-center justify-between">
+          <div className="bg-gray-900 border-2 border-gray-600 p-4 flex items-center justify-between">
             <div className="flex items-center gap-4">
-              <span className="text-gray-400">{t('ranking.selection')}</span>
+              <span className="text-gray-400 font-bold uppercase">{t('ranking.selection')}</span>
               {selectedArtists.map((artist) => (
                 <div
                   key={artist.id}
-                  className="flex items-center gap-2 bg-purple-500/20 px-3 py-1 rounded-lg"
+                  className="flex items-center gap-2 bg-purple-600 px-3 py-1 border-2 border-white"
                 >
-                  <span className="font-semibold">{artist.name}</span>
+                  <span className="font-bold">{artist.name}</span>
                   <button
                     onClick={() => toggleArtistSelection(artist)}
-                    className="text-gray-400 hover:text-white"
+                    className="text-gray-300 hover:text-white"
                   >
                     ×
                   </button>
@@ -151,7 +151,7 @@ export function RankingPage({ artists, onSelectDuel }: Props) {
             {selectedArtists.length === 2 && (
               <button
                 onClick={handleLaunchDuel}
-                className="px-6 py-2 bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg font-bold hover:from-purple-600 hover:to-blue-600 transition-colors"
+                className="px-6 py-2 bg-yellow-400 text-black border-2 border-white font-black uppercase hover:bg-yellow-300 transition-colors"
               >
                 {t('ranking.launchDuel')}
               </button>
@@ -161,41 +161,46 @@ export function RankingPage({ artists, onSelectDuel }: Props) {
       )}
 
       {/* Filtres */}
-      <div className="mb-6 flex flex-wrap gap-2">
-        <span className="text-gray-400 py-2">{t('ranking.sortBy')}</span>
-        <button
-          onClick={() => setSortBy('total')}
-          className={`px-4 py-2 rounded-lg font-semibold transition-colors ${
-            sortBy === 'total'
-              ? 'bg-purple-500 text-white'
-              : 'bg-white/5 text-gray-400 hover:bg-white/10'
-          }`}
-        >
-          {t('ranking.totalScore')}
-        </button>
-        {pillarKeys.map((pillar) => (
+      <div className="mb-6 bg-gray-900 border-4 border-yellow-400 p-4">
+        <div className="flex items-center gap-3 mb-4">
+          <span className="text-yellow-400 font-black text-lg uppercase tracking-wider">[ {t('ranking.sortBy')} ]</span>
+          <div className="flex-1 h-1 bg-yellow-400"></div>
+        </div>
+        <div className="flex flex-wrap gap-2">
           <button
-            key={pillar}
-            onClick={() => setSortBy(pillar)}
-            className={`px-4 py-2 rounded-lg font-semibold transition-colors ${
-              sortBy === pillar
-                ? 'bg-purple-500 text-white'
-                : 'bg-white/5 text-gray-400 hover:bg-white/10'
+            onClick={() => setSortBy('total')}
+            className={`px-5 py-3 font-black uppercase text-sm transition-all ${
+              sortBy === 'total'
+                ? 'bg-yellow-400 text-black border-4 border-white shadow-[4px_4px_0px_0px_rgba(255,255,255,0.5)]'
+                : 'bg-black text-yellow-400 border-4 border-yellow-400 hover:bg-yellow-400 hover:text-black'
             }`}
           >
-            {pillarLabels[pillar]}
+            ★ {t('ranking.totalScore')}
           </button>
-        ))}
+          {pillarKeys.map((pillar, index) => (
+            <button
+              key={pillar}
+              onClick={() => setSortBy(pillar)}
+              className={`px-4 py-3 font-black uppercase text-xs transition-all ${
+                sortBy === pillar
+                  ? 'bg-yellow-400 text-black border-4 border-white shadow-[4px_4px_0px_0px_rgba(255,255,255,0.5)]'
+                  : 'bg-black text-gray-300 border-2 border-gray-600 hover:border-yellow-400 hover:text-yellow-400'
+              }`}
+            >
+              {String(index + 1).padStart(2, '0')}. {pillarLabels[pillar]}
+            </button>
+          ))}
+        </div>
       </div>
 
       {/* Custom Weight Sliders */}
       <div className="mb-6">
         <button
           onClick={() => setShowWeightSliders(!showWeightSliders)}
-          className={`flex items-center gap-2 px-4 py-2 rounded-lg font-semibold transition-colors ${
+          className={`flex items-center gap-2 px-4 py-2 font-bold uppercase text-sm transition-colors ${
             isCustomMode
-              ? 'bg-gradient-to-r from-purple-500 to-blue-500 text-white'
-              : 'bg-white/5 text-gray-400 hover:bg-white/10'
+              ? 'bg-yellow-400 text-black border-2 border-white'
+              : 'bg-gray-900 text-gray-300 border-2 border-gray-600 hover:border-yellow-400'
           }`}
         >
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -209,13 +214,13 @@ export function RankingPage({ artists, onSelectDuel }: Props) {
         </button>
 
         {showWeightSliders && (
-          <div className="mt-4 bg-white/5 rounded-xl p-6">
+          <div className="mt-4 bg-gray-900 border-2 border-gray-700 p-6">
             <div className="flex justify-between items-center mb-4">
-              <h3 className="text-lg font-semibold text-gray-300">{t('ranking.customWeights')}</h3>
+              <h3 className="text-lg font-black text-gray-300 uppercase">{t('ranking.customWeights')}</h3>
               {isCustomMode && (
                 <button
                   onClick={resetWeights}
-                  className="px-3 py-1 text-sm bg-red-500/20 text-red-400 rounded-lg hover:bg-red-500/30 transition-colors"
+                  className="px-3 py-1 text-sm bg-red-600 text-white border-2 border-white font-bold uppercase hover:bg-red-500 transition-colors"
                 >
                   {t('ranking.resetWeights')}
                 </button>
@@ -274,39 +279,39 @@ export function RankingPage({ artists, onSelectDuel }: Props) {
               className={`
                 ${podiumIndex === 0 ? 'order-2 -mt-4' : podiumIndex === 1 ? 'order-1' : 'order-3'}
                 ${getMedalBg(rank)}
-                ${isSelected ? 'ring-2 ring-purple-500' : ''}
-                rounded-2xl p-6 text-center cursor-pointer hover:bg-white/10 transition-all
+                ${isSelected ? 'border-4 border-purple-500' : 'border-4 border-gray-700'}
+                p-6 text-center cursor-pointer hover:border-yellow-400 transition-all
               `}
             >
               <div className={`text-4xl mb-2 ${getMedalColor(rank)}`}>
                 {rank === 1 ? '🥇' : rank === 2 ? '🥈' : '🥉'}
               </div>
-              <div className={`w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-br ${
-                rank === 1 ? 'from-yellow-400 to-yellow-600' :
-                rank === 2 ? 'from-gray-300 to-gray-500' :
-                'from-amber-500 to-amber-700'
-              } flex items-center justify-center text-2xl font-bold`}>
+              <div className={`w-20 h-20 mx-auto mb-4 border-4 border-white ${
+                rank === 1 ? 'bg-yellow-500' :
+                rank === 2 ? 'bg-gray-400' :
+                'bg-amber-600'
+              } flex items-center justify-center text-2xl font-black`}>
                 {artist.artist.name.charAt(0)}
               </div>
-              <h3 className="text-xl font-bold mb-1">{artist.artist.name}</h3>
+              <h3 className="text-xl font-black mb-1 uppercase">{artist.artist.name}</h3>
               <div className={`text-3xl font-black ${getScoreColor(artist.totalScore)}`}>
                 {artist.totalScore}
               </div>
-              <div className="text-sm text-gray-500">{t('ranking.points')}</div>
+              <div className="text-sm text-gray-500 uppercase">{t('ranking.points')}</div>
             </div>
           );
         })}
       </div>
 
       {/* Tableau complet */}
-      <div className="bg-white/5 rounded-2xl overflow-hidden">
+      <div className="bg-gray-900 border-4 border-gray-700 overflow-hidden">
         <div className="overflow-x-auto">
           <table className="w-full">
             <thead>
-              <tr className="border-b border-gray-700">
-                <th className="text-left p-4 text-gray-400 font-semibold">#</th>
-                <th className="text-left p-4 text-gray-400 font-semibold">{t('ranking.rapper')}</th>
-                <th className="text-center p-4 text-gray-400 font-semibold">{t('ranking.score')}</th>
+              <tr className="border-b-2 border-gray-600 bg-gray-800">
+                <th className="text-left p-4 text-gray-300 font-black uppercase">#</th>
+                <th className="text-left p-4 text-gray-300 font-black uppercase">{t('ranking.rapper')}</th>
+                <th className="text-center p-4 text-gray-300 font-black uppercase">{t('ranking.score')}</th>
                 {pillarKeys.map((pillar) => (
                   <th
                     key={pillar}
@@ -331,22 +336,22 @@ export function RankingPage({ artists, onSelectDuel }: Props) {
                     key={artist.artist.id}
                     onClick={() => toggleArtistSelection(artist.artist)}
                     className={`
-                      border-b border-gray-800 cursor-pointer transition-colors
-                      ${isSelected ? 'bg-purple-500/20' : 'hover:bg-white/5'}
+                      border-b border-gray-700 cursor-pointer transition-colors
+                      ${isSelected ? 'bg-purple-900' : 'hover:bg-gray-800'}
                     `}
                   >
                     <td className="p-4">
-                      <span className={`font-bold ${getMedalColor(displayRank)}`}>
+                      <span className={`font-black ${getMedalColor(displayRank)}`}>
                         {displayRank}
                       </span>
                     </td>
                     <td className="p-4">
                       <div className="flex items-center gap-3">
-                        <div className={`w-10 h-10 rounded-full bg-gradient-to-br from-purple-500 to-blue-500 flex items-center justify-center font-bold`}>
+                        <div className="w-10 h-10 bg-purple-600 border-2 border-white flex items-center justify-center font-black">
                           {artist.artist.name.charAt(0)}
                         </div>
                         <div>
-                          <div className="font-semibold">{artist.artist.name}</div>
+                          <div className="font-bold">{artist.artist.name}</div>
                           <div className="text-xs text-gray-500">
                             {new Date().getFullYear() - artist.artist.debutYear} {t('ranking.yearsCareer')}
                           </div>
@@ -390,29 +395,29 @@ export function RankingPage({ artists, onSelectDuel }: Props) {
 
       {/* Stats globales */}
       <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4">
-        <div className="bg-white/5 rounded-xl p-4 text-center">
+        <div className="bg-gray-900 border-2 border-purple-500 p-4 text-center">
           <div className="text-3xl font-black text-purple-400">
             {Math.round(rankedArtists.reduce((sum, a) => sum + a.totalScore, 0) / rankedArtists.length)}
           </div>
-          <div className="text-sm text-gray-400">{t('ranking.averageScore')}</div>
+          <div className="text-sm text-gray-400 uppercase font-bold">{t('ranking.averageScore')}</div>
         </div>
-        <div className="bg-white/5 rounded-xl p-4 text-center">
+        <div className="bg-gray-900 border-2 border-green-500 p-4 text-center">
           <div className="text-3xl font-black text-green-400">
             {rankedArtists[0]?.totalScore || 0}
           </div>
-          <div className="text-sm text-gray-400">{t('ranking.maxScore')}</div>
+          <div className="text-sm text-gray-400 uppercase font-bold">{t('ranking.maxScore')}</div>
         </div>
-        <div className="bg-white/5 rounded-xl p-4 text-center">
+        <div className="bg-gray-900 border-2 border-yellow-500 p-4 text-center">
           <div className="text-3xl font-black text-yellow-400">
             {Math.round(rankedArtists.reduce((sum, a) => sum + (new Date().getFullYear() - a.artist.debutYear), 0) / rankedArtists.length)}
           </div>
-          <div className="text-sm text-gray-400">{t('ranking.avgCareerYears')}</div>
+          <div className="text-sm text-gray-400 uppercase font-bold">{t('ranking.avgCareerYears')}</div>
         </div>
-        <div className="bg-white/5 rounded-xl p-4 text-center">
+        <div className="bg-gray-900 border-2 border-blue-500 p-4 text-center">
           <div className="text-3xl font-black text-blue-400">
             {rankedArtists.length}
           </div>
-          <div className="text-sm text-gray-400">{t('ranking.rappers')}</div>
+          <div className="text-sm text-gray-400 uppercase font-bold">{t('ranking.rappers')}</div>
         </div>
       </div>
     </div>

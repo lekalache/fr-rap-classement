@@ -113,7 +113,7 @@ export function DataPage() {
   return (
     <div className="max-w-4xl mx-auto">
       <div className="text-center mb-8">
-        <h1 className="text-4xl font-black mb-4 bg-gradient-to-r from-green-400 via-emerald-500 to-teal-500 text-transparent bg-clip-text">
+        <h1 className="text-4xl font-black mb-4 text-green-400 uppercase tracking-wider">
           {t('data.title').toUpperCase()}
         </h1>
         <p className="text-gray-400">
@@ -123,27 +123,27 @@ export function DataPage() {
 
       {/* Stats overview */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-        <div className="bg-white/5 rounded-xl p-4 text-center">
+        <div className="bg-gray-900 border-2 border-green-500 p-4 text-center">
           <div className="text-3xl font-black text-green-400">{totalArtists}</div>
-          <div className="text-sm text-gray-500">Artistes</div>
+          <div className="text-sm text-gray-500 font-bold uppercase">Artistes</div>
         </div>
-        <div className="bg-white/5 rounded-xl p-4 text-center">
+        <div className="bg-gray-900 border-2 border-blue-500 p-4 text-center">
           <div className="text-3xl font-black text-blue-400">{totalMetrics}</div>
-          <div className="text-sm text-gray-500">Métriques</div>
+          <div className="text-sm text-gray-500 font-bold uppercase">Métriques</div>
         </div>
-        <div className="bg-white/5 rounded-xl p-4 text-center">
+        <div className="bg-gray-900 border-2 border-purple-500 p-4 text-center">
           <div className="text-3xl font-black text-purple-400">{avgPunchlineScore}</div>
-          <div className="text-sm text-gray-500">Punchline moy.</div>
+          <div className="text-sm text-gray-500 font-bold uppercase">Punchline moy.</div>
         </div>
-        <div className="bg-white/5 rounded-xl p-4 text-center">
+        <div className="bg-gray-900 border-2 border-yellow-500 p-4 text-center">
           <div className="text-3xl font-black text-yellow-400">{avgFlowScore}</div>
-          <div className="text-sm text-gray-500">Flow moy.</div>
+          <div className="text-sm text-gray-500 font-bold uppercase">Flow moy.</div>
         </div>
       </div>
 
       {/* Download buttons */}
-      <div className="bg-white/5 rounded-xl p-6 mb-6">
-        <h2 className="text-lg font-bold text-green-400 mb-4">
+      <div className="bg-gray-900 border-2 border-green-500 p-6 mb-6">
+        <h2 className="text-lg font-black text-green-400 mb-4 uppercase">
           {t('data.downloadJson')} / {t('data.downloadCsv')}
         </h2>
 
@@ -152,9 +152,9 @@ export function DataPage() {
             <button
               key={format.extension}
               onClick={() => handleDownload(format)}
-              className="flex items-center gap-4 p-4 bg-black/30 hover:bg-black/50 rounded-xl border border-white/10 hover:border-green-500/50 transition-all group"
+              className="flex items-center gap-4 p-4 bg-gray-800 hover:bg-gray-700 border-2 border-gray-600 hover:border-green-500 transition-all group"
             >
-              <div className="text-3xl w-12 h-12 flex items-center justify-center bg-green-500/20 rounded-lg group-hover:bg-green-500/30">
+              <div className="text-3xl w-12 h-12 flex items-center justify-center bg-green-600 border-2 border-white">
                 {format.icon}
               </div>
               <div className="text-left flex-1">
@@ -248,7 +248,7 @@ export function DataPage() {
       </div>
 
       {/* Lyrics Database Section */}
-      <div className="bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-xl p-6 border border-purple-500/20 mb-6">
+      <div className="bg-gray-900 border-2 border-purple-500 p-6 mb-6">
         <h2 className="text-lg font-bold text-purple-400 mb-4">
           BASE DE PAROLES (LYRICS)
         </h2>
@@ -281,7 +281,7 @@ export function DataPage() {
               <span className="text-gray-500 text-sm">{artist.songs} songs</span>
               <div className="w-32 bg-black/30 rounded-full h-2">
                 <div
-                  className="bg-gradient-to-r from-purple-500 to-pink-500 h-2 rounded-full"
+                  className="bg-purple-500 h-2"
                   style={{ width: `${(artist.chars / LYRICS_STATS.artists[0].chars) * 100}%` }}
                 />
               </div>
@@ -296,7 +296,7 @@ export function DataPage() {
         <a
           href="/lyrics.db"
           download="fr-rap-lyrics.db"
-          className="mt-6 flex items-center justify-center gap-3 p-4 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 rounded-xl font-bold transition-all"
+          className="mt-6 flex items-center justify-center gap-3 p-4 bg-purple-600 hover:bg-purple-500 border-4 border-white font-black uppercase transition-all"
         >
           <span className="text-2xl">📥</span>
           <div className="text-left">

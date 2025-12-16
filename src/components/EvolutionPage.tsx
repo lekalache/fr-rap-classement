@@ -66,7 +66,7 @@ export function EvolutionPage() {
     <div className="space-y-8">
       {/* Header */}
       <div>
-        <h1 className="text-3xl font-black bg-gradient-to-r from-purple-400 via-pink-500 to-blue-500 text-transparent bg-clip-text">
+        <h1 className="text-3xl font-black text-yellow-400 uppercase tracking-wider">
           Évolution du Classement
         </h1>
         <p className="text-gray-400 mt-2">
@@ -75,8 +75,8 @@ export function EvolutionPage() {
       </div>
 
       {/* Sélection des artistes */}
-      <div className="bg-gray-800/50 rounded-xl p-6">
-        <h3 className="text-lg font-semibold text-white mb-4">
+      <div className="bg-gray-900 border-2 border-gray-700 p-6">
+        <h3 className="text-lg font-black text-white mb-4 uppercase">
           Sélectionner les artistes (max 5)
         </h3>
         <div className="flex flex-wrap gap-2">

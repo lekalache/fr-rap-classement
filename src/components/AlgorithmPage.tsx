@@ -249,7 +249,7 @@ export function AlgorithmPage() {
     <div className="max-w-6xl mx-auto">
       {/* Header */}
       <div className="text-center mb-12">
-        <h1 className="text-4xl font-black mb-4">{t('algorithm.title')}</h1>
+        <h1 className="text-4xl font-black mb-4 text-yellow-400 uppercase tracking-wider">{t('algorithm.title')}</h1>
         <p className="text-xl text-gray-400">
           {t('algorithm.subtitle')}
         </p>
@@ -257,7 +257,7 @@ export function AlgorithmPage() {
 
       {/* Philosophie */}
       <section className="mb-16">
-        <div className="bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-2xl p-8">
+        <div className="bg-gray-900 border-4 border-purple-500 p-8">
           <h2 className="text-2xl font-bold mb-6">{t('algorithm.philosophy')}</h2>
 
           <div className="grid md:grid-cols-3 gap-6 mb-8">
@@ -318,7 +318,7 @@ export function AlgorithmPage() {
       <section className="mb-16">
         <h2 className="text-2xl font-bold mb-6">{t('algorithm.dataSources')}</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-gradient-to-br from-yellow-500/20 to-orange-500/20 rounded-2xl p-6 border border-yellow-500/30">
+          <div className="bg-gray-900 border-2 border-yellow-500 p-6">
             <div className="flex items-center gap-3 mb-4">
               <span className="text-3xl">🎵</span>
               <div>
@@ -346,7 +346,7 @@ export function AlgorithmPage() {
             </div>
           </div>
 
-          <div className="bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-2xl p-6 border border-blue-500/30">
+          <div className="bg-gray-900 border-2 border-blue-500 p-6">
             <div className="flex items-center gap-3 mb-4">
               <span className="text-3xl">📊</span>
               <div>
@@ -372,7 +372,7 @@ export function AlgorithmPage() {
             </div>
           </div>
 
-          <div className="bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-2xl p-6 border border-purple-500/30">
+          <div className="bg-gray-900 border-2 border-purple-500 p-6">
             <div className="flex items-center gap-3 mb-4">
               <span className="text-3xl">📚</span>
               <div>
@@ -470,7 +470,7 @@ export function AlgorithmPage() {
         </p>
 
         {/* Introduction NLP */}
-        <div className="bg-gradient-to-r from-green-500/10 to-emerald-500/10 border border-green-500/30 rounded-2xl p-6 mb-8">
+        <div className="bg-gray-900 border-2 border-green-500 p-6 mb-8">
           <div className="flex items-start gap-4">
             <div className="text-4xl">🧠</div>
             <div>
@@ -507,7 +507,7 @@ export function AlgorithmPage() {
         </div>
 
         {/* Vue d'ensemble pipeline */}
-        <div className="bg-gradient-to-r from-yellow-500/10 to-green-500/10 rounded-2xl p-6 mb-8">
+        <div className="bg-gray-900 border-2 border-yellow-500 p-6 mb-8">
           <MermaidChart chart={dataPipelineChart} id="data-pipeline" />
         </div>
 
@@ -553,7 +553,7 @@ export function AlgorithmPage() {
         <div className="bg-white/5 rounded-2xl p-6 mb-8">
           <h3 className="text-lg font-bold mb-4">{t('algorithm.technologiesUsed')}</h3>
           <div className="grid md:grid-cols-3 gap-4">
-            <div className="bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-xl p-4 border border-blue-500/30">
+            <div className="bg-gray-900 border-2 border-blue-500 p-4">
               <div className="flex items-center gap-2 mb-2">
                 <span className="text-2xl">🔬</span>
                 <h4 className="font-bold text-blue-400">spaCy</h4>
@@ -566,7 +566,7 @@ export function AlgorithmPage() {
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-xl p-4 border border-purple-500/30">
+            <div className="bg-gray-900 border-2 border-purple-500 p-4">
               <div className="flex items-center gap-2 mb-2">
                 <span className="text-2xl">🔊</span>
                 <h4 className="font-bold text-purple-400">Phonétique IPA</h4>
@@ -579,7 +579,7 @@ export function AlgorithmPage() {
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-orange-500/20 to-red-500/20 rounded-xl p-4 border border-orange-500/30">
+            <div className="bg-gray-900 border-2 border-orange-500 p-4">
               <div className="flex items-center gap-2 mb-2">
                 <span className="text-2xl">🗣️</span>
                 <h4 className="font-bold text-orange-400">Dictionnaire Argot</h4>
@@ -731,7 +731,7 @@ export function AlgorithmPage() {
         </div>
 
         {/* Dictionnaire Argot */}
-        <div className="mt-8 bg-gradient-to-r from-orange-500/10 to-red-500/10 border border-orange-500/30 rounded-2xl p-6">
+        <div className="mt-8 bg-gray-900 border-2 border-orange-500 p-6">
           <div className="flex items-center gap-3 mb-4">
             <span className="text-3xl">🗣️</span>
             <div>
@@ -834,7 +834,7 @@ export function AlgorithmPage() {
       {/* Score final */}
       <section className="mb-16">
         <h2 className="text-2xl font-bold mb-6">{t('algorithm.finalScore')}</h2>
-        <div className="bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-2xl p-8">
+        <div className="bg-gray-900 border-4 border-purple-500 p-8">
           <div className="text-center">
             <div className="text-lg text-gray-300 mb-4">{t('algorithm.formula')}</div>
             <code className="text-xl font-mono text-white bg-gray-800 px-6 py-3 rounded-xl inline-block">
